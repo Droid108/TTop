@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">TweetTop</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="second_fragement">Second Fragment</string>
+    <string name="first_fragement">First Fragment</string>
+
+
+    <string-array name="nav_drawer_items">
+        <item >Love</item>
+        <item >Night At</item>
+        <item >Sunshine</item>
+        <item >Rainy Season </item>
+        <item >Winter Season</item>
+        <item >Hot Temp</item>
+    </string-array>
+
+    <!-- Content Description -->
+    <string name="desc_list_item_icon">Item Icon</string>
+
+
+    <string name="spf_love_tweets" translatable="false">com.droid108.tweetrap.spf_love_tweets</string>
+</resources>
