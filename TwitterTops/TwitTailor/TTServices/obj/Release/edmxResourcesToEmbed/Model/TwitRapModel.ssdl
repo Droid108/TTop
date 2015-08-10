@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TwitRapDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="TwitRapDBModelStoreContainer">
+    <EntitySet Name="tblCatLove" EntityType="TwitRapDBModel.Store.tblCatLove" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="tblCatLove">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="TwitID" Type="numeric" Nullable="false" />
+    <Property Name="text" Type="nvarchar" Nullable="false" MaxLength="150" />
+    <Property Name="userid" Type="numeric" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="screenname" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="location" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsVerified" Type="bit" Nullable="false" />
+    <Property Name="ProfileUrl" Type="nvarchar" MaxLength="150" />
+    <Property Name="RT_Count" Type="numeric" Nullable="false" />
+    <Property Name="Fav_Count" Type="numeric" Nullable="false" />
+    <Property Name="created_at" Type="datetime" />
+  </EntityType>
+</Schema>

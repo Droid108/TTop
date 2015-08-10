@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TwitRapDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="TwitRapDBModelStoreContainer">
+          <EntitySet Name="tblCatLove" EntityType="TwitRapDBModel.Store.tblCatLove" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblDemoBeacon" EntityType="TwitRapDBModel.Store.tblDemoBeacon" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="tblCatLove">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TwitID" Type="numeric" Nullable="false" />
+          <Property Name="text" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="userid" Type="numeric" />
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="screenname" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="location" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsVerified" Type="bit" Nullable="false" />
+          <Property Name="ProfileUrl" Type="nvarchar" MaxLength="150" />
+          <Property Name="RT_Count" Type="numeric" Nullable="false" />
+          <Property Name="Fav_Count" Type="numeric" Nullable="false" />
+          <Property Name="created_at" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tblDemoBeacon">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="int" Nullable="false" />
+          <Property Name="DeviceName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ZoneName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LogTime" Type="datetime" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TwitRapDBModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="TwitRapDBEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="tblCatLoves" EntityType="TwitRapDBModel.tblCatLove" />
+          <EntitySet Name="tblDemoBeacons" EntityType="TwitRapDBModel.tblDemoBeacon" />
+        </EntityContainer>
+        <EntityType Name="tblCatLove">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="TwitID" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="text" Type="String" Nullable="false" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="userid" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="screenname" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="location" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IsVerified" Type="Boolean" Nullable="false" />
+          <Property Name="ProfileUrl" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="RT_Count" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="Fav_Count" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="created_at" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tblDemoBeacon">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="Int32" Nullable="false" />
+          <Property Name="DeviceName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ZoneName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="LogTime" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TwitRapDBModelStoreContainer" CdmEntityContainer="TwitRapDBEntities">
+          <EntitySetMapping Name="tblCatLoves">
+            <EntityTypeMapping TypeName="TwitRapDBModel.tblCatLove">
+              <MappingFragment StoreEntitySet="tblCatLove">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="TwitID" ColumnName="TwitID" />
+                <ScalarProperty Name="text" ColumnName="text" />
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="screenname" ColumnName="screenname" />
+                <ScalarProperty Name="location" ColumnName="location" />
+                <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
+                <ScalarProperty Name="ProfileUrl" ColumnName="ProfileUrl" />
+                <ScalarProperty Name="RT_Count" ColumnName="RT_Count" />
+                <ScalarProperty Name="Fav_Count" ColumnName="Fav_Count" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblDemoBeacons">
+            <EntityTypeMapping TypeName="TwitRapDBModel.tblDemoBeacon">
+              <MappingFragment StoreEntitySet="tblDemoBeacon">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="DeviceName" ColumnName="DeviceName" />
+                <ScalarProperty Name="ZoneName" ColumnName="ZoneName" />
+                <ScalarProperty Name="LogTime" ColumnName="LogTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

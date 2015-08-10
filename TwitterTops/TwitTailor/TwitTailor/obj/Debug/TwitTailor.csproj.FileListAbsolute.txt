@@ -1,0 +1,7 @@
+c:\users\supportpedia\documents\visual studio 2012\Projects\TwitTailor\TwitTailor\obj\Debug\TwitTailor.csprojResolveAssemblyReference.cache
+c:\users\supportpedia\documents\visual studio 2012\Projects\TwitTailor\TwitTailor\bin\Debug\TwitTailor.dll
+c:\users\supportpedia\documents\visual studio 2012\Projects\TwitTailor\TwitTailor\bin\Debug\TwitTailor.pdb
+c:\users\supportpedia\documents\visual studio 2012\Projects\TwitTailor\TwitTailor\bin\Debug\OpenRasta.dll
+c:\users\supportpedia\documents\visual studio 2012\Projects\TwitTailor\TwitTailor\bin\Debug\OpenRasta.Hosting.AspNet.dll
+c:\users\supportpedia\documents\visual studio 2012\Projects\TwitTailor\TwitTailor\obj\Debug\TwitTailor.dll
+c:\users\supportpedia\documents\visual studio 2012\Projects\TwitTailor\TwitTailor\obj\Debug\TwitTailor.pdb

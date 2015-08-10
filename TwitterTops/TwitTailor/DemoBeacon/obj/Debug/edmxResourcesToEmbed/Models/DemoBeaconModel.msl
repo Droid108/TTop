@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TwitRapDBModelStoreContainer" CdmEntityContainer="TwitRapDBEntities">
+    <EntitySetMapping Name="tblCatLoves">
+      <EntityTypeMapping TypeName="TwitRapDBModel.tblCatLove">
+        <MappingFragment StoreEntitySet="tblCatLove">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TwitID" ColumnName="TwitID" />
+          <ScalarProperty Name="text" ColumnName="text" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="screenname" ColumnName="screenname" />
+          <ScalarProperty Name="location" ColumnName="location" />
+          <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
+          <ScalarProperty Name="ProfileUrl" ColumnName="ProfileUrl" />
+          <ScalarProperty Name="RT_Count" ColumnName="RT_Count" />
+          <ScalarProperty Name="Fav_Count" ColumnName="Fav_Count" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblDemoBeacons">
+      <EntityTypeMapping TypeName="TwitRapDBModel.tblDemoBeacon">
+        <MappingFragment StoreEntitySet="tblDemoBeacon">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="DeviceName" ColumnName="DeviceName" />
+          <ScalarProperty Name="ZoneName" ColumnName="ZoneName" />
+          <ScalarProperty Name="LogTime" ColumnName="LogTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

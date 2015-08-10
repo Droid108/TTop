@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TwitRapDBModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="TwitRapDBEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="tblCatLoves" EntityType="TwitRapDBModel.tblCatLove" />
+  </EntityContainer>
+  <EntityType Name="tblCatLove">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Decimal" Name="TwitID" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="text" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="userid" Precision="18" Scale="0" />
+    <Property Type="String" Name="name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="screenname" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="location" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsVerified" Nullable="false" />
+    <Property Type="String" Name="ProfileUrl" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="RT_Count" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="Fav_Count" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="DateTime" Name="created_at" Precision="3" />
+  </EntityType>
+</Schema>

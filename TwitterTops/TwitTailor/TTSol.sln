@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TTServices", "TTServices\TTServices.csproj", "{DA70C446-DD2C-4725-A208-28A4A1CAB3EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TWITRAPServices", "TWITRAPServices\TWITRAPServices.csproj", "{CE04565A-6C98-4B19-841E-B16940B1576F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoBeacon", "DemoBeacon\DemoBeacon.csproj", "{040C3AC6-2441-4691-A87A-B15A1D432EA2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DA70C446-DD2C-4725-A208-28A4A1CAB3EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA70C446-DD2C-4725-A208-28A4A1CAB3EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA70C446-DD2C-4725-A208-28A4A1CAB3EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA70C446-DD2C-4725-A208-28A4A1CAB3EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE04565A-6C98-4B19-841E-B16940B1576F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE04565A-6C98-4B19-841E-B16940B1576F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE04565A-6C98-4B19-841E-B16940B1576F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE04565A-6C98-4B19-841E-B16940B1576F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{040C3AC6-2441-4691-A87A-B15A1D432EA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{040C3AC6-2441-4691-A87A-B15A1D432EA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{040C3AC6-2441-4691-A87A-B15A1D432EA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{040C3AC6-2441-4691-A87A-B15A1D432EA2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

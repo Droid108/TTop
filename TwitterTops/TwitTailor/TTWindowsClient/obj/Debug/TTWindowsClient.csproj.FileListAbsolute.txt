@@ -1,0 +1,6 @@
+C:\Users\SupportPedia\documents\visual studio 2012\Projects\TwitTailor\TTWindowsClient\bin\Debug\TTWindowsClient.exe.config
+C:\Users\SupportPedia\documents\visual studio 2012\Projects\TwitTailor\TTWindowsClient\bin\Debug\TTWindowsClient.exe
+C:\Users\SupportPedia\documents\visual studio 2012\Projects\TwitTailor\TTWindowsClient\bin\Debug\TTWindowsClient.pdb
+C:\Users\SupportPedia\documents\visual studio 2012\Projects\TwitTailor\TTWindowsClient\obj\Debug\TTWindowsClient.csprojResolveAssemblyReference.cache
+C:\Users\SupportPedia\documents\visual studio 2012\Projects\TwitTailor\TTWindowsClient\obj\Debug\TTWindowsClient.exe
+C:\Users\SupportPedia\documents\visual studio 2012\Projects\TwitTailor\TTWindowsClient\obj\Debug\TTWindowsClient.pdb

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="TweetServices">
+  <DataContextMoniker Name="/TweetServicesDataContext" />
+  <nestedChildShapes>
+    <classShape Id="9efc3573-f632-498f-bb30-380db0454db7" absoluteBounds="1, 0.5, 2, 3.1170068359375">
+      <DataClassMoniker Name="/TweetServicesDataContext/tblCatLove" />
+      <nestedChildShapes>
+        <elementListCompartment Id="61413e2e-0545-4583-b287-6aeb3b39700a" absoluteBounds="1.0150000000000006, 0.96, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
