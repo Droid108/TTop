@@ -78,7 +78,7 @@ public class LoveFragment extends Fragment {
         pullToRefreshView.setAdapter(madapter);
         fromIds = firstId;
         callClient(fTypes, fromIds);
-        //pullToRefreshView.setRefreshing(true);
+        pullToRefreshView.setRefreshing(true);
         return rootView;
     }
 
@@ -106,7 +106,7 @@ public class LoveFragment extends Fragment {
             }
         };
         JSONClient _client = new JSONClient(getActivity(), listener);
-        _client.execute("http://tweetrap.elasticbeanstalk.com/api/oget?fType=" + fType + "&fromId=" + fromId);
+        _client.execute("http://tweetrap.elasticbeanstalk.com/api/oget?ftype=" + fType + "&fromid=" + fromId);
 
     }
 

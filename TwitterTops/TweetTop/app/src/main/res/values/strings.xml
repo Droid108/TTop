@@ -6,6 +6,11 @@
     <string name="action_settings">Settings</string>
     <string name="second_fragement">Second Fragment</string>
     <string name="first_fragement">First Fragment</string>
+    <string name="Dialog_share_title">Share Tweet</string>
+    <string name="Dialog_share_body">You should be logged in to share this tweet.</string>
+    <string name="options_ok">Ok</string>
+    <string name="options_cancel">Cancel</string>
+    <string name="options_continue">Continue</string>
 
 
     <string-array name="nav_drawer_items">

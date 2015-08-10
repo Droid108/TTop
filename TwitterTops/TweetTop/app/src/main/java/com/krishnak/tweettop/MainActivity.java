@@ -36,14 +36,17 @@ public class MainActivity extends AppCompatActivity  {
 
         // Set the menu icon instead of the launcher icon.
         final ActionBar ab = getSupportActionBar();
-        ab.setHomeAsUpIndicator(R.drawable.ic_menu_black_48dp);
+        ab.setHomeAsUpIndicator(R.drawable.ic_action_nd);
         ab.setDisplayHomeAsUpEnabled(true);
 
         // Find our drawer view
         nvDrawer = (NavigationView) findViewById(R.id.nvView);
+        nvDrawer.setSelected(true);
         // Setup drawer view
         setupDrawerContent(nvDrawer);
+        nvDrawer.setSelected(true);
     }
+
 
     private void setupDrawerContent(NavigationView navigationView) {
         navigationView.setNavigationItemSelectedListener(
@@ -63,7 +66,7 @@ public class MainActivity extends AppCompatActivity  {
 
         Class fragmentClass;
         switch(menuItem.getItemId()) {
-            case R.id.nav_first_fragment:
+            case R.id.nav_love_fragment:
                 fragmentClass = LoveFragment.class;
                 break;
             case R.id.nav_second_fragment:
