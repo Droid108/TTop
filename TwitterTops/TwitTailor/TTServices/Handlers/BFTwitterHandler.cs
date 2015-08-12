@@ -53,7 +53,6 @@ namespace TwitTailor.Handlers
         {
             try
             {
-                // You need to set your own keys and screen name
                 var oAuthConsumerKey = "lpdiWZCCPkC5CSwdZJ91xLsrf";
                 var oAuthConsumerSecret = "8cdgZjEfw8snsEqPV3ntPkYn5Klw432kroJCQFxEzqYJOo2bPY";
                 var oAuthUrl = ConfigurationManager.AppSettings["TwitAuthAPI"].ToString();
@@ -123,39 +122,43 @@ namespace TwitTailor.Handlers
             return sb.ToString();
         }
 
+        private dynamic makeRequestForData(string scNames)
+        {
+            if (twitAuthResponse == null)
+            {
+                createAuthToken();
+            }
+
+            var timelineFormat = ConfigurationManager.AppSettings["TwitSearchAPI"].ToString();
+            scNames = scNames.Replace("@", "");
+            string screenname = buildScreenNames(scNames);
+            if (string.IsNullOrEmpty(timelineFormat))
+                throw new Exception("Twitter Search API Url is not found or invalid");
+            var timelineUrl = string.Format(timelineFormat, screenname);
+            timelineUrl = timelineUrl + "&count=500";
+            HttpWebRequest timeLineRequest = (HttpWebRequest)WebRequest.Create(timelineUrl);
+            var timelineHeaderFormat = "{0} {1}";
+            timeLineRequest.Headers.Add("Authorization", string.Format(timelineHeaderFormat, twitAuthResponse.token_type, twitAuthResponse.access_token));
+            timeLineRequest.Method = "Get";
+            WebResponse timeLineResponse = timeLineRequest.GetResponse();
+            var timeLineJson = string.Empty;
+            using (timeLineResponse)
+            {
+                using (var reader = new StreamReader(timeLineResponse.GetResponseStream()))
+                {
+                    timeLineJson = reader.ReadToEnd();
+                }
+            }
+            return JsonConvert.DeserializeObject(timeLineJson);
+        }
+
         private string getCATLove()
         {
             try
             {
-                if (twitAuthResponse == null)
-                {
-                    createAuthToken();
-                }
                 string scNames = ConfigurationManager.AppSettings["CATLOVE"].ToString();
-                scNames = scNames.Replace("@", "");
-                string screenname = buildScreenNames(scNames);
-                // Do the Search call
-                var timelineFormat = ConfigurationManager.AppSettings["TwitSearchAPI"].ToString();
-                if (string.IsNullOrEmpty(timelineFormat))
-                    throw new Exception("Twitter Search API Url is not found or invalid");
-                var timelineUrl = string.Format(timelineFormat, screenname);
-                timelineUrl = timelineUrl + "&count=100";
-                HttpWebRequest timeLineRequest = (HttpWebRequest)WebRequest.Create(timelineUrl);
-                var timelineHeaderFormat = "{0} {1}";
-                timeLineRequest.Headers.Add("Authorization", string.Format(timelineHeaderFormat, twitAuthResponse.token_type, twitAuthResponse.access_token));
-                timeLineRequest.Method = "Get";
-                WebResponse timeLineResponse = timeLineRequest.GetResponse();
-                var timeLineJson = string.Empty;
                 tblCatLove tblObj = null;
-                using (timeLineResponse)
-                {
-                    using (var reader = new StreamReader(timeLineResponse.GetResponseStream()))
-                    {
-                        timeLineJson = reader.ReadToEnd();
-                    }
-                }
-                dynamic jsonObj = JsonConvert.DeserializeObject(timeLineJson);
-
+                dynamic jsonObj = makeRequestForData(scNames);
                 foreach (JObject res in jsonObj.statuses)
                 {
                     decimal tweetId = res["id"].Value<decimal>();
@@ -211,6 +214,16 @@ namespace TwitTailor.Handlers
                 throw ex;
             }
 
+        }
+
+        public async Task GetGizmosAsync()
+        {
+            var uri = Util.getServiceUri("Gizmos");
+            using (HttpClient httpClient = new HttpClient())
+            {
+                var response = await httpClient.GetAsync(uri);
+                return (await response.Content.ReadAsAsync<List<Gizmo>>());
+            }
         }
 
         private Exception getEFException(DbEntityValidationException dbEx)
