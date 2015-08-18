@@ -325,3 +325,50 @@ GO
 
 
 
+CREATE TABLE [dbo].[tblCatTech](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[TwitID] [numeric](18, 0) NOT NULL,
+	[text] [nvarchar](500) NULL,
+	[userid] [numeric](18, 0) NULL,
+	[name] [nvarchar](50) NOT NULL,
+	[screenname] [nvarchar](50) NOT NULL,
+	[location] [nvarchar](50) NULL,
+	[IsVerified] [bit] NOT NULL,
+	[ProfileUrl] [nvarchar](150) NULL,
+	[RT_Count] [numeric](18, 0) NOT NULL,
+	[Fav_Count] [numeric](18, 0) NOT NULL,
+	[created_at] [datetime] NULL,
+	[MediaUrl] [nvarchar](300) NULL,
+	[MediaType] [nvarchar](50) NULL,
+ CONSTRAINT [PK_tblCatTech] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 99) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+
+
+CREATE TABLE [dbo].[tblCatScience](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[TwitID] [numeric](18, 0) NOT NULL,
+	[text] [nvarchar](500) NULL,
+	[userid] [numeric](18, 0) NULL,
+	[name] [nvarchar](50) NOT NULL,
+	[screenname] [nvarchar](50) NOT NULL,
+	[location] [nvarchar](50) NULL,
+	[IsVerified] [bit] NOT NULL,
+	[ProfileUrl] [nvarchar](150) NULL,
+	[RT_Count] [numeric](18, 0) NOT NULL,
+	[Fav_Count] [numeric](18, 0) NOT NULL,
+	[created_at] [datetime] NULL,
+	[MediaUrl] [nvarchar](300) NULL,
+	[MediaType] [nvarchar](50) NULL,
+ CONSTRAINT [PK_tblCatScience] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 99) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO

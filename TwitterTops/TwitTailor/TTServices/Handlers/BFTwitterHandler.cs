@@ -34,31 +34,38 @@ namespace TwitTailor.Handlers
             }
         }
 
+        public string Get(int id)
+        {
+            dataDumper(id);
+            return "true";
+        }
+
         private TwitAuthenticateResponse twitAuthResponse;
         private string resultString = string.Empty;
         public string Get()
         {
             try
             {
-                getCATLove();
-                Thread.Sleep(1000);
-                getCATFacts();
-                Thread.Sleep(1000);
-                getCATAuto();
-                Thread.Sleep(1000);
-                getCATTravel();
-                Thread.Sleep(1000);
-                getCATJokes();
-                Thread.Sleep(1000);
-                getCATSports();
-                Thread.Sleep(1000);
-                getCATNews();
-                Thread.Sleep(1000);
-                getCATMusic();
-                Thread.Sleep(1000);
-                getCATAuto();
+                //getCATLove();
+                //Thread.Sleep(1000);
+                //getCATFacts();
                 //Thread.Sleep(1000);
                 //getCATAuto();
+                //Thread.Sleep(1000);
+                //getCATTravel();
+                //Thread.Sleep(1000);
+                //getCATJokes();
+                //Thread.Sleep(1000);
+                //getCATSports();
+                //Thread.Sleep(1000);
+                //getCATNews();
+                //Thread.Sleep(1000);
+                //getCATMusic();
+                //Thread.Sleep(1000);
+                //getCATAuto();
+                //Thread.Sleep(1000);
+                //getCATAuto();
+                //dataDumper(1);
                 return resultString;
             }
             catch (Exception ex)
@@ -67,6 +74,49 @@ namespace TwitTailor.Handlers
                 return ex.ToString();
             }
         }
+
+        private void dataDumper(int categoryId)
+        {
+            int i;
+            for (i = 0; i < 100; i++)
+            {
+                switch (categoryId)
+                {
+                    case 1:
+                        getCATLove();
+                        break;
+                    case 2:
+                        getCATAuto();
+                        break;
+                    case 3:
+                        getCATBusiness();
+                        break;
+                    case 4:
+                        getCATFacts();
+                        break;
+                    case 5:
+                        getCATScience();
+                        break;
+                    case 6:
+                        getCATJokes();
+                        break;
+                    case 7:
+                        getCATTechnology();
+                        break;
+                    case 8:
+                        getCATSports();
+                        break;
+                    case 9:
+                        getCATNews();
+                        break;
+                    default:
+                        getCATLove();
+                        break;
+                }
+                Thread.Sleep(1000);
+            }
+        }
+
 
         private void createAuthToken()
         {
@@ -140,7 +190,7 @@ namespace TwitTailor.Handlers
             }
             return sb.ToString();
         }
-
+        private string finalUrlString;
         private dynamic makeRequestForData(string scNames)
         {
             if (twitAuthResponse == null)
@@ -153,8 +203,17 @@ namespace TwitTailor.Handlers
             string screenname = buildScreenNames(scNames);
             if (string.IsNullOrEmpty(timelineFormat))
                 throw new Exception("Twitter Search API Url is not found or invalid");
-            var timelineUrl = string.Format(timelineFormat, screenname);
-            timelineUrl = timelineUrl + "&count=200";
+            var timelineUrl = "";
+            if (finalUrlString != null)
+            {
+                screenname = finalUrlString;
+                timelineFormat = timelineFormat.Replace("?q=", "");
+            }
+
+            timelineUrl = string.Format(timelineFormat, screenname);
+
+            if (finalUrlString == null)
+                timelineUrl = timelineUrl + "&count=200";
             HttpWebRequest timeLineRequest = (HttpWebRequest)WebRequest.Create(timelineUrl);
             var timelineHeaderFormat = "{0} {1}";
             timeLineRequest.Headers.Add("Authorization", string.Format(timelineHeaderFormat, twitAuthResponse.token_type, twitAuthResponse.access_token));
@@ -180,6 +239,7 @@ namespace TwitTailor.Handlers
                 dynamic jsonObj = makeRequestForData(scNames);
                 string media_url = null;
                 string media_type = null;
+                finalUrlString = jsonObj.search_metadata["next_results"].Value;
                 foreach (JObject res in jsonObj.statuses)
                 {
                     media_url = string.Empty;
@@ -504,12 +564,12 @@ namespace TwitTailor.Handlers
 
         }
 
-        private string getCATTravel()
+        private string getCATScience()
         {
             try
             {
-                string scNames = ConfigurationManager.AppSettings["CAT_TRAVEL"].ToString();
-                tblCatTravel tblObj = null;
+                string scNames = ConfigurationManager.AppSettings["CAT_SCIENCE"].ToString();
+                tblCatScience tblObj = null;
                 dynamic jsonObj = makeRequestForData(scNames);
                 string media_url = null;
                 string media_type = null;
@@ -524,10 +584,10 @@ namespace TwitTailor.Handlers
                         media_type = jObjects[0]["type"] == null ? "" : jObjects[0]["type"].Value<string>();
                     }
                     decimal tweetId = res["id"].Value<decimal>();
-                    tblCatTravel tbObj = EntityObj.tblCatTravels.Where(x => x.TwitID.Equals(tweetId)).FirstOrDefault();
+                    tblCatScience tbObj = EntityObj.tblCatSciences.Where(x => x.TwitID.Equals(tweetId)).FirstOrDefault();
                     if (tbObj == null)
                     {
-                        tblObj = new tblCatTravel();
+                        tblObj = new tblCatScience();
                         tblObj.IsVerified = res["user"]["verified"].Value<bool>();
                         tblObj.location = res["user"]["location"].Value<string>();
                         tblObj.text = res["text"].Value<string>();
@@ -545,7 +605,7 @@ namespace TwitTailor.Handlers
                             tblObj.MediaUrl = media_url;
                         if (media_type.Length >= 0)
                             tblObj.MediaType = media_type;
-                        EntityObj.tblCatTravels.Add(tblObj);
+                        EntityObj.tblCatSciences.Add(tblObj);
                     }
                     else
                     {
@@ -570,18 +630,18 @@ namespace TwitTailor.Handlers
                     }
                 }
                 EntityObj.SaveChanges();
-                resultString += "getCATTravel &nbsp;<br/>";
+                resultString += "tblCatScience &nbsp;<br/>";
                 return resultString;
             }
             catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
             {
-                ExceptionHandler.SendExceptionEmail(dbEx, "getCATTravel", "MANUAL", "");
+                ExceptionHandler.SendExceptionEmail(dbEx, "tblCatScience", "MANUAL", "");
                 throw getEFException(dbEx);
             }
             catch (Exception ex)
             {
 
-                ExceptionHandler.SendExceptionEmail(ex, "getCATTravel", "MANUAL", "");
+                ExceptionHandler.SendExceptionEmail(ex, "tblCatScience", "MANUAL", "");
                 throw ex;
             }
 
@@ -753,12 +813,12 @@ namespace TwitTailor.Handlers
 
         }
 
-        private string getCATMusic()
+        private string getCATBusiness()
         {
             try
             {
-                string scNames = ConfigurationManager.AppSettings["CAT_MUSIC"].ToString();
-                tblCatMusic tblObj = null;
+                string scNames = ConfigurationManager.AppSettings["CAT_BUSINESS"].ToString();
+                tblCatBusiness tblObj = null;
                 dynamic jsonObj = makeRequestForData(scNames);
                 string media_url = null;
                 string media_type = null;
@@ -773,10 +833,10 @@ namespace TwitTailor.Handlers
                         media_type = jObjects[0]["type"] == null ? "" : jObjects[0]["type"].Value<string>();
                     }
                     decimal tweetId = res["id"].Value<decimal>();
-                    tblCatMusic tbObj = EntityObj.tblCatMusics.Where(x => x.TwitID.Equals(tweetId)).FirstOrDefault();
+                    tblCatBusiness tbObj = EntityObj.tblCatBusinesses.Where(x => x.TwitID.Equals(tweetId)).FirstOrDefault();
                     if (tbObj == null)
                     {
-                        tblObj = new tblCatMusic();
+                        tblObj = new tblCatBusiness();
                         tblObj.IsVerified = res["user"]["verified"].Value<bool>();
                         tblObj.location = res["user"]["location"].Value<string>();
                         tblObj.text = res["text"].Value<string>();
@@ -794,7 +854,7 @@ namespace TwitTailor.Handlers
                             tblObj.MediaUrl = media_url;
                         if (media_type.Length >= 0)
                             tblObj.MediaType = media_type;
-                        EntityObj.tblCatMusics.Add(tblObj);
+                        EntityObj.tblCatBusinesses.Add(tblObj);
                     }
                     else
                     {
@@ -819,18 +879,101 @@ namespace TwitTailor.Handlers
                     }
                 }
                 EntityObj.SaveChanges();
-                resultString += "getCATMusic &nbsp;<br/>";
+                resultString += "tblCatBusiness &nbsp;<br/>";
                 return resultString;
             }
             catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
             {
-                ExceptionHandler.SendExceptionEmail(dbEx, "getCATMusic", "MANUAL", "");
+                ExceptionHandler.SendExceptionEmail(dbEx, "tblCatBusiness", "MANUAL", "");
                 throw getEFException(dbEx);
             }
             catch (Exception ex)
             {
 
-                ExceptionHandler.SendExceptionEmail(ex, "getCATMusic", "MANUAL", "");
+                ExceptionHandler.SendExceptionEmail(ex, "tblCatBusiness", "MANUAL", "");
+                throw ex;
+            }
+
+        }
+
+        private string getCATTechnology()
+        {
+            try
+            {
+                string scNames = ConfigurationManager.AppSettings["CAT_TECHNOLOGY"].ToString();
+                tblCatTech tblObj = null;
+                dynamic jsonObj = makeRequestForData(scNames);
+                string media_url = null;
+                string media_type = null;
+                foreach (JObject res in jsonObj.statuses)
+                {
+                    media_url = string.Empty;
+                    media_type = string.Empty;
+                    if (res["entities"]["media"] != null)
+                    {
+                        JArray jObjects = res["entities"]["media"].Value<JArray>();
+                        media_url = jObjects[0]["media_url"] == null ? "" : jObjects[0]["media_url"].Value<string>();
+                        media_type = jObjects[0]["type"] == null ? "" : jObjects[0]["type"].Value<string>();
+                    }
+                    decimal tweetId = res["id"].Value<decimal>();
+                    tblCatTech tbObj = EntityObj.tblCatTeches.Where(x => x.TwitID.Equals(tweetId)).FirstOrDefault();
+                    if (tbObj == null)
+                    {
+                        tblObj = new tblCatTech();
+                        tblObj.IsVerified = res["user"]["verified"].Value<bool>();
+                        tblObj.location = res["user"]["location"].Value<string>();
+                        tblObj.text = res["text"].Value<string>();
+                        tblObj.TwitID = res["id"].Value<decimal>();
+                        tblObj.userid = res["user"]["id"].Value<decimal>();
+                        tblObj.name = res["user"]["name"].Value<string>();
+                        tblObj.screenname = res["user"]["screen_name"].Value<string>();
+                        tblObj.ProfileUrl = res["user"]["profile_image_url"].Value<string>();
+                        tblObj.RT_Count = res["retweet_count"].Value<decimal>();
+                        tblObj.Fav_Count = res["favorite_count"].Value<decimal>();
+                        DateTime createdAt = DateTime.ParseExact((string)res["created_at"], Const_TwitterDateTemplate, CultureInfo.InvariantCulture,
+                                  DateTimeStyles.AdjustToUniversal);
+                        tblObj.created_at = createdAt;
+                        if (media_url.Length >= 0)
+                            tblObj.MediaUrl = media_url;
+                        if (media_type.Length >= 0)
+                            tblObj.MediaType = media_type;
+                        EntityObj.tblCatTeches.Add(tblObj);
+                    }
+                    else
+                    {
+                        tbObj.IsVerified = res["user"]["verified"].Value<bool>();
+                        tbObj.location = res["user"]["location"].Value<string>();
+                        tbObj.text = res["text"].Value<string>();
+                        tbObj.TwitID = res["id"].Value<decimal>();
+                        tbObj.userid = res["user"]["id"].Value<decimal>();
+                        tbObj.name = res["user"]["name"].Value<string>();
+                        tbObj.screenname = res["user"]["screen_name"].Value<string>();
+                        tbObj.ProfileUrl = res["user"]["profile_image_url"].Value<string>();
+                        tbObj.RT_Count = res["retweet_count"].Value<decimal>();
+                        tbObj.Fav_Count = res["favorite_count"].Value<decimal>();
+                        DateTime createdAt = DateTime.ParseExact((string)res["created_at"], Const_TwitterDateTemplate, CultureInfo.InvariantCulture,
+                                  DateTimeStyles.AdjustToUniversal);
+                        tbObj.created_at = createdAt;
+                        if (media_url.Length >= 0)
+                            tbObj.MediaUrl = media_url;
+                        if (media_type.Length >= 0)
+                            tbObj.MediaType = media_type;
+                        EntityObj.Entry(tbObj).State = System.Data.EntityState.Modified;
+                    }
+                }
+                EntityObj.SaveChanges();
+                resultString += "tblCatTech &nbsp;<br/>";
+                return resultString;
+            }
+            catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
+            {
+                ExceptionHandler.SendExceptionEmail(dbEx, "tblCatTech", "MANUAL", "");
+                throw getEFException(dbEx);
+            }
+            catch (Exception ex)
+            {
+
+                ExceptionHandler.SendExceptionEmail(ex, "tblCatTech", "MANUAL", "");
                 throw ex;
             }
 

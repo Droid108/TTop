@@ -41,6 +41,8 @@ namespace TTServices.Model
         public DbSet<tblCatTravel> tblCatTravels { get; set; }
         public DbSet<tblDemoBeacon> tblDemoBeacons { get; set; }
         public DbSet<tblCatLove> tblCatLoves { get; set; }
+        public DbSet<tblCatTech> tblCatTeches { get; set; }
+        public DbSet<tblCatScience> tblCatSciences { get; set; }
     
         public virtual ObjectResult<USP_FetchCATLoveTweets_Result> USP_FetchCATLoveTweets(Nullable<int> fType, Nullable<int> fromId)
         {

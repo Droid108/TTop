@@ -18,6 +18,11 @@ namespace TwitTailor
                 .AtUri("/iget")
                 .HandledBy<BFTwitterHandler>()
                 .AsJsonDataContract();
+
+                ResourceSpace.Has.ResourcesOfType<string>()
+                .AtUri("/dumper/{id}")
+                .HandledBy<BFTwitterHandler>()
+                .AsJsonDataContract();
             }
         }
     }

@@ -372,5 +372,45 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <EntitySetMapping Name="tblCatTeches">
+      <EntityTypeMapping TypeName="TwitRapDBModel.tblCatTech">
+        <MappingFragment StoreEntitySet="tblCatTech">
+          <ScalarProperty Name="MediaType" ColumnName="MediaType" />
+          <ScalarProperty Name="MediaUrl" ColumnName="MediaUrl" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="Fav_Count" ColumnName="Fav_Count" />
+          <ScalarProperty Name="RT_Count" ColumnName="RT_Count" />
+          <ScalarProperty Name="ProfileUrl" ColumnName="ProfileUrl" />
+          <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
+          <ScalarProperty Name="location" ColumnName="location" />
+          <ScalarProperty Name="screenname" ColumnName="screenname" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="text" ColumnName="text" />
+          <ScalarProperty Name="TwitID" ColumnName="TwitID" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCatSciences">
+      <EntityTypeMapping TypeName="TwitRapDBModel.tblCatScience">
+        <MappingFragment StoreEntitySet="tblCatScience">
+          <ScalarProperty Name="MediaType" ColumnName="MediaType" />
+          <ScalarProperty Name="MediaUrl" ColumnName="MediaUrl" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="Fav_Count" ColumnName="Fav_Count" />
+          <ScalarProperty Name="RT_Count" ColumnName="RT_Count" />
+          <ScalarProperty Name="ProfileUrl" ColumnName="ProfileUrl" />
+          <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
+          <ScalarProperty Name="location" ColumnName="location" />
+          <ScalarProperty Name="screenname" ColumnName="screenname" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="text" ColumnName="text" />
+          <ScalarProperty Name="TwitID" ColumnName="TwitID" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

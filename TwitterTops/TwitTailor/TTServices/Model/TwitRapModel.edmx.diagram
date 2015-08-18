@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="5d064894f34e4e37b378ec5c475363ef" Name="Diagram1">
+      <Diagram DiagramId="5d064894f34e4e37b378ec5c475363ef" Name="Diagram1" ZoomLevel="97">
         <EntityTypeShape EntityType="TwitRapDBModel.tblCatAuto" Width="1.5" PointX="5.348911880212329" PointY="15.331697247611217" />
         <EntityTypeShape EntityType="TwitRapDBModel.tblCatBusiness" Width="1.5" PointX="11.194926213098189" PointY="18.2952602143843" />
         <EntityTypeShape EntityType="TwitRapDBModel.tblCatFact" Width="1.5" PointX="4.3948258424153668" PointY="30.758715509790328" />
@@ -18,6 +18,8 @@
         <EntityTypeShape EntityType="TwitRapDBModel.tblCatTravel" Width="1.5" PointX="6.75" PointY="25.375" />
         <EntityTypeShape EntityType="TwitRapDBModel.tblDemoBeacon" Width="1.5" PointX="3.60117379557396" PointY="22.08432879582249" />
         <EntityTypeShape EntityType="TwitRapDBModel.tblCatLove" Width="1.5" PointX="6.2811758510215094" PointY="19.4960516185947" />
+        <EntityTypeShape EntityType="TwitRapDBModel.tblCatTech" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TwitRapDBModel.tblCatScience" Width="1.5" PointX="0.75" PointY="5.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
