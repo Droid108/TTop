@@ -6,7 +6,7 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="TwitID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
-    <Property Name="text" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="text" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
     <Property Name="userid" Type="Decimal" Precision="18" Scale="0" />
     <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="screenname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
@@ -23,7 +23,7 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="TwitID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
-    <Property Name="text" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="text" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
     <Property Name="userid" Type="Decimal" Precision="18" Scale="0" />
     <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="screenname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
@@ -40,7 +40,7 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="TwitID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
-    <Property Name="text" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="text" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
     <Property Name="userid" Type="Decimal" Precision="18" Scale="0" />
     <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="screenname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
@@ -57,7 +57,7 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="TwitID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
-    <Property Name="text" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="text" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
     <Property Name="userid" Type="Decimal" Precision="18" Scale="0" />
     <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="screenname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
@@ -74,7 +74,7 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="TwitID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
-    <Property Name="text" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="text" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
     <Property Name="userid" Type="Decimal" Precision="18" Scale="0" />
     <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="screenname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
@@ -91,7 +91,7 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="TwitID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
-    <Property Name="text" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="text" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
     <Property Name="userid" Type="Decimal" Precision="18" Scale="0" />
     <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="screenname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
@@ -108,7 +108,7 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="TwitID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
-    <Property Name="text" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="text" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
     <Property Name="userid" Type="Decimal" Precision="18" Scale="0" />
     <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="screenname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
@@ -125,7 +125,7 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="TwitID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
-    <Property Name="text" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="text" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
     <Property Name="userid" Type="Decimal" Precision="18" Scale="0" />
     <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="screenname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
@@ -142,7 +142,7 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="TwitID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
-    <Property Name="text" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="text" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
     <Property Name="userid" Type="Decimal" Precision="18" Scale="0" />
     <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="screenname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
@@ -159,7 +159,7 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="TwitID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
-    <Property Name="text" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="text" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
     <Property Name="userid" Type="Decimal" Precision="18" Scale="0" />
     <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="screenname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
@@ -176,7 +176,7 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="TwitID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
-    <Property Name="text" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="text" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
     <Property Name="userid" Type="Decimal" Precision="18" Scale="0" />
     <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="screenname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
@@ -193,7 +193,7 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="TwitID" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
-    <Property Name="text" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="text" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
     <Property Name="userid" Type="Decimal" Precision="18" Scale="0" />
     <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="screenname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />

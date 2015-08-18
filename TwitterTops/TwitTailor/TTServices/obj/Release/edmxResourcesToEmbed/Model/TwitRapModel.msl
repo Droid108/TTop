@@ -1,6 +1,233 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="TwitRapDBModelStoreContainer" CdmEntityContainer="TwitRapDBEntities">
+    <EntitySetMapping Name="tblCatAutoes">
+      <EntityTypeMapping TypeName="TwitRapDBModel.tblCatAuto">
+        <MappingFragment StoreEntitySet="tblCatAuto">
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="Fav_Count" ColumnName="Fav_Count" />
+          <ScalarProperty Name="RT_Count" ColumnName="RT_Count" />
+          <ScalarProperty Name="ProfileUrl" ColumnName="ProfileUrl" />
+          <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
+          <ScalarProperty Name="location" ColumnName="location" />
+          <ScalarProperty Name="screenname" ColumnName="screenname" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="text" ColumnName="text" />
+          <ScalarProperty Name="TwitID" ColumnName="TwitID" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCatBusinesses">
+      <EntityTypeMapping TypeName="TwitRapDBModel.tblCatBusiness">
+        <MappingFragment StoreEntitySet="tblCatBusiness">
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="Fav_Count" ColumnName="Fav_Count" />
+          <ScalarProperty Name="RT_Count" ColumnName="RT_Count" />
+          <ScalarProperty Name="ProfileUrl" ColumnName="ProfileUrl" />
+          <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
+          <ScalarProperty Name="location" ColumnName="location" />
+          <ScalarProperty Name="screenname" ColumnName="screenname" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="text" ColumnName="text" />
+          <ScalarProperty Name="TwitID" ColumnName="TwitID" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCatFacts">
+      <EntityTypeMapping TypeName="TwitRapDBModel.tblCatFact">
+        <MappingFragment StoreEntitySet="tblCatFacts">
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="Fav_Count" ColumnName="Fav_Count" />
+          <ScalarProperty Name="RT_Count" ColumnName="RT_Count" />
+          <ScalarProperty Name="ProfileUrl" ColumnName="ProfileUrl" />
+          <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
+          <ScalarProperty Name="location" ColumnName="location" />
+          <ScalarProperty Name="screenname" ColumnName="screenname" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="text" ColumnName="text" />
+          <ScalarProperty Name="TwitID" ColumnName="TwitID" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCatGadgets">
+      <EntityTypeMapping TypeName="TwitRapDBModel.tblCatGadget">
+        <MappingFragment StoreEntitySet="tblCatGadgets">
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="Fav_Count" ColumnName="Fav_Count" />
+          <ScalarProperty Name="RT_Count" ColumnName="RT_Count" />
+          <ScalarProperty Name="ProfileUrl" ColumnName="ProfileUrl" />
+          <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
+          <ScalarProperty Name="location" ColumnName="location" />
+          <ScalarProperty Name="screenname" ColumnName="screenname" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="text" ColumnName="text" />
+          <ScalarProperty Name="TwitID" ColumnName="TwitID" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCatHFs">
+      <EntityTypeMapping TypeName="TwitRapDBModel.tblCatHF">
+        <MappingFragment StoreEntitySet="tblCatHF">
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="Fav_Count" ColumnName="Fav_Count" />
+          <ScalarProperty Name="RT_Count" ColumnName="RT_Count" />
+          <ScalarProperty Name="ProfileUrl" ColumnName="ProfileUrl" />
+          <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
+          <ScalarProperty Name="location" ColumnName="location" />
+          <ScalarProperty Name="screenname" ColumnName="screenname" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="text" ColumnName="text" />
+          <ScalarProperty Name="TwitID" ColumnName="TwitID" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCatJokes">
+      <EntityTypeMapping TypeName="TwitRapDBModel.tblCatJoke">
+        <MappingFragment StoreEntitySet="tblCatJokes">
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="Fav_Count" ColumnName="Fav_Count" />
+          <ScalarProperty Name="RT_Count" ColumnName="RT_Count" />
+          <ScalarProperty Name="ProfileUrl" ColumnName="ProfileUrl" />
+          <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
+          <ScalarProperty Name="location" ColumnName="location" />
+          <ScalarProperty Name="screenname" ColumnName="screenname" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="text" ColumnName="text" />
+          <ScalarProperty Name="TwitID" ColumnName="TwitID" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCatMovies">
+      <EntityTypeMapping TypeName="TwitRapDBModel.tblCatMovy">
+        <MappingFragment StoreEntitySet="tblCatMovies">
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="Fav_Count" ColumnName="Fav_Count" />
+          <ScalarProperty Name="RT_Count" ColumnName="RT_Count" />
+          <ScalarProperty Name="ProfileUrl" ColumnName="ProfileUrl" />
+          <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
+          <ScalarProperty Name="location" ColumnName="location" />
+          <ScalarProperty Name="screenname" ColumnName="screenname" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="text" ColumnName="text" />
+          <ScalarProperty Name="TwitID" ColumnName="TwitID" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCatMusics">
+      <EntityTypeMapping TypeName="TwitRapDBModel.tblCatMusic">
+        <MappingFragment StoreEntitySet="tblCatMusic">
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="Fav_Count" ColumnName="Fav_Count" />
+          <ScalarProperty Name="RT_Count" ColumnName="RT_Count" />
+          <ScalarProperty Name="ProfileUrl" ColumnName="ProfileUrl" />
+          <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
+          <ScalarProperty Name="location" ColumnName="location" />
+          <ScalarProperty Name="screenname" ColumnName="screenname" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="text" ColumnName="text" />
+          <ScalarProperty Name="TwitID" ColumnName="TwitID" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCatNews">
+      <EntityTypeMapping TypeName="TwitRapDBModel.tblCatNew">
+        <MappingFragment StoreEntitySet="tblCatNews">
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="Fav_Count" ColumnName="Fav_Count" />
+          <ScalarProperty Name="RT_Count" ColumnName="RT_Count" />
+          <ScalarProperty Name="ProfileUrl" ColumnName="ProfileUrl" />
+          <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
+          <ScalarProperty Name="location" ColumnName="location" />
+          <ScalarProperty Name="screenname" ColumnName="screenname" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="text" ColumnName="text" />
+          <ScalarProperty Name="TwitID" ColumnName="TwitID" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCatSports">
+      <EntityTypeMapping TypeName="TwitRapDBModel.tblCatSport">
+        <MappingFragment StoreEntitySet="tblCatSports">
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="Fav_Count" ColumnName="Fav_Count" />
+          <ScalarProperty Name="RT_Count" ColumnName="RT_Count" />
+          <ScalarProperty Name="ProfileUrl" ColumnName="ProfileUrl" />
+          <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
+          <ScalarProperty Name="location" ColumnName="location" />
+          <ScalarProperty Name="screenname" ColumnName="screenname" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="text" ColumnName="text" />
+          <ScalarProperty Name="TwitID" ColumnName="TwitID" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCatTravels">
+      <EntityTypeMapping TypeName="TwitRapDBModel.tblCatTravel">
+        <MappingFragment StoreEntitySet="tblCatTravel">
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="Fav_Count" ColumnName="Fav_Count" />
+          <ScalarProperty Name="RT_Count" ColumnName="RT_Count" />
+          <ScalarProperty Name="ProfileUrl" ColumnName="ProfileUrl" />
+          <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
+          <ScalarProperty Name="location" ColumnName="location" />
+          <ScalarProperty Name="screenname" ColumnName="screenname" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="text" ColumnName="text" />
+          <ScalarProperty Name="TwitID" ColumnName="TwitID" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblDemoBeacons">
+      <EntityTypeMapping TypeName="TwitRapDBModel.tblDemoBeacon">
+        <MappingFragment StoreEntitySet="tblDemoBeacon">
+          <ScalarProperty Name="LogTime" ColumnName="LogTime" />
+          <ScalarProperty Name="ZoneName" ColumnName="ZoneName" />
+          <ScalarProperty Name="DeviceName" ColumnName="DeviceName" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="USP_FetchCATLoveTweets" FunctionName="TwitRapDBModel.Store.USP_FetchCATLoveTweets">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TwitRapDBModel.USP_FetchCATLoveTweets_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TwitID" ColumnName="TwitID" />
+          <ScalarProperty Name="text" ColumnName="text" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="screenname" ColumnName="screenname" />
+          <ScalarProperty Name="location" ColumnName="location" />
+          <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
+          <ScalarProperty Name="ProfileUrl" ColumnName="ProfileUrl" />
+          <ScalarProperty Name="RT_Count" ColumnName="RT_Count" />
+          <ScalarProperty Name="Fav_Count" ColumnName="Fav_Count" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
     <EntitySetMapping Name="tblCatLoves">
       <EntityTypeMapping TypeName="TwitRapDBModel.tblCatLove">
         <MappingFragment StoreEntitySet="tblCatLove">

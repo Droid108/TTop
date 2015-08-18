@@ -36,11 +36,14 @@ namespace TTINServices.Controllers
         }
 
         private TwitAuthenticateResponse twitAuthResponse;
-        [Route("/services/iget")]
+        [Route("services/iget")]
         public string Get()
         {
             try
             {
+                //getCATLove();
+                //Thread.Sleep(1000);
+                getCATAuto();
                 return "true";
             }
             catch (Exception ex)
@@ -130,6 +133,7 @@ namespace TTINServices.Controllers
             {
                 createAuthToken();
             }
+            createAuthToken();
             var timelineFormat = ConfigurationManager.AppSettings["TwitSearchAPI"].ToString();
             scNames = scNames.Replace("@", "");
             var timelineHeaderFormat = "{0} {1}";
@@ -137,7 +141,7 @@ namespace TTINServices.Controllers
             if (string.IsNullOrEmpty(timelineFormat))
                 throw new Exception("Twitter Search API Url is not found or invalid");
             var timelineUrl = string.Format(timelineFormat, screenname);
-            timelineUrl = timelineUrl + "&count=500";
+            timelineUrl = timelineUrl + "&count=200";
             //using (var httpClient = new HttpClient())
             //{
             //    httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Authorization", string.Format(timelineHeaderFormat, twitAuthResponse.token_type, twitAuthResponse.access_token));
@@ -224,7 +228,7 @@ namespace TTINServices.Controllers
             {
 
                 ExceptionHandler.SendExceptionEmail(ex, "getCATLove", "MANUAL", "");
-                throw ex;
+                return ExceptionHandler.AddExceptionText(ex);
             }
 
         }
@@ -233,7 +237,7 @@ namespace TTINServices.Controllers
         {
             try
             {
-                string scNames = ConfigurationManager.AppSettings["CAT_AUTO"].ToString();
+                string scNames = ConfigurationManager.AppSettings["CAT_JOKES"].ToString();
                 tblCatAuto tblObj = null;
 
                 dynamic jsonObj = makeRequestForData(scNames);
@@ -288,7 +292,7 @@ namespace TTINServices.Controllers
             catch (Exception ex)
             {
 
-                ExceptionHandler.SendExceptionEmail(ex, "getCATLove", "MANUAL", "");
+                ExceptionHandler.SendExceptionEmail(ex, "getCATAuto", "MANUAL", "");
                 throw ex;
             }
         }

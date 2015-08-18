@@ -26,5 +26,7 @@ namespace TTServices.Model
         public decimal RT_Count { get; set; }
         public decimal Fav_Count { get; set; }
         public Nullable<System.DateTime> created_at { get; set; }
+        public string MediaUrl { get; set; }
+        public string MediaType { get; set; }
     }
 }

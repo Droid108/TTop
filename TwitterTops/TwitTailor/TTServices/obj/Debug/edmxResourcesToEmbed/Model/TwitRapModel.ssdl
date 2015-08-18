@@ -1,15 +1,84 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="TwitRapDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityContainer Name="TwitRapDBModelStoreContainer">
+    <EntitySet Name="tblCatAuto" EntityType="TwitRapDBModel.Store.tblCatAuto" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tblCatBusiness" EntityType="TwitRapDBModel.Store.tblCatBusiness" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tblCatFacts" EntityType="TwitRapDBModel.Store.tblCatFacts" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tblCatGadgets" EntityType="TwitRapDBModel.Store.tblCatGadgets" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tblCatHF" EntityType="TwitRapDBModel.Store.tblCatHF" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tblCatJokes" EntityType="TwitRapDBModel.Store.tblCatJokes" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="tblCatLove" EntityType="TwitRapDBModel.Store.tblCatLove" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tblCatMovies" EntityType="TwitRapDBModel.Store.tblCatMovies" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tblCatMusic" EntityType="TwitRapDBModel.Store.tblCatMusic" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tblCatNews" EntityType="TwitRapDBModel.Store.tblCatNews" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tblCatSports" EntityType="TwitRapDBModel.Store.tblCatSports" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tblCatTravel" EntityType="TwitRapDBModel.Store.tblCatTravel" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tblDemoBeacon" EntityType="TwitRapDBModel.Store.tblDemoBeacon" store:Type="Tables" Schema="dbo" />
   </EntityContainer>
-  <EntityType Name="tblCatLove">
+  <EntityType Name="tblCatAuto">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="TwitID" Type="numeric" Nullable="false" />
-    <Property Name="text" Type="nvarchar" Nullable="false" MaxLength="150" />
+    <Property Name="text" Type="nvarchar" MaxLength="500" />
+    <Property Name="userid" Type="numeric" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="screenname" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="location" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsVerified" Type="bit" Nullable="false" />
+    <Property Name="ProfileUrl" Type="nvarchar" MaxLength="150" />
+    <Property Name="RT_Count" Type="numeric" Nullable="false" />
+    <Property Name="Fav_Count" Type="numeric" Nullable="false" />
+    <Property Name="created_at" Type="datetime" />
+    <Property Name="MediaUrl" Type="nvarchar" MaxLength="300" />
+    <Property Name="MediaType" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblCatBusiness">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="TwitID" Type="numeric" Nullable="false" />
+    <Property Name="text" Type="nvarchar" MaxLength="500" />
+    <Property Name="userid" Type="numeric" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="screenname" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="location" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsVerified" Type="bit" Nullable="false" />
+    <Property Name="ProfileUrl" Type="nvarchar" MaxLength="150" />
+    <Property Name="RT_Count" Type="numeric" Nullable="false" />
+    <Property Name="Fav_Count" Type="numeric" Nullable="false" />
+    <Property Name="created_at" Type="datetime" />
+    <Property Name="MediaUrl" Type="nvarchar" MaxLength="300" />
+    <Property Name="MediaType" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblCatFacts">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="TwitID" Type="numeric" Nullable="false" />
+    <Property Name="text" Type="nvarchar" MaxLength="500" />
+    <Property Name="userid" Type="numeric" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="screenname" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="location" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsVerified" Type="bit" Nullable="false" />
+    <Property Name="ProfileUrl" Type="nvarchar" MaxLength="150" />
+    <Property Name="RT_Count" Type="numeric" Nullable="false" />
+    <Property Name="Fav_Count" Type="numeric" Nullable="false" />
+    <Property Name="created_at" Type="datetime" />
+    <Property Name="MediaUrl" Type="nvarchar" MaxLength="300" />
+    <Property Name="MediaType" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblCatGadgets">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="TwitID" Type="numeric" Nullable="false" />
+    <Property Name="text" Type="nvarchar" MaxLength="500" />
     <Property Name="userid" Type="numeric" />
     <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
     <Property Name="screenname" Type="nvarchar" Nullable="false" MaxLength="50" />
@@ -20,4 +89,190 @@
     <Property Name="Fav_Count" Type="numeric" Nullable="false" />
     <Property Name="created_at" Type="datetime" />
   </EntityType>
+  <EntityType Name="tblCatHF">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="TwitID" Type="numeric" Nullable="false" />
+    <Property Name="text" Type="nvarchar" MaxLength="500" />
+    <Property Name="userid" Type="numeric" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="screenname" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="location" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsVerified" Type="bit" Nullable="false" />
+    <Property Name="ProfileUrl" Type="nvarchar" MaxLength="150" />
+    <Property Name="RT_Count" Type="numeric" Nullable="false" />
+    <Property Name="Fav_Count" Type="numeric" Nullable="false" />
+    <Property Name="created_at" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblCatJokes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="TwitID" Type="numeric" Nullable="false" />
+    <Property Name="text" Type="nvarchar" MaxLength="500" />
+    <Property Name="userid" Type="numeric" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="screenname" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="location" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsVerified" Type="bit" Nullable="false" />
+    <Property Name="ProfileUrl" Type="nvarchar" MaxLength="150" />
+    <Property Name="RT_Count" Type="numeric" Nullable="false" />
+    <Property Name="Fav_Count" Type="numeric" Nullable="false" />
+    <Property Name="created_at" Type="datetime" />
+    <Property Name="MediaUrl" Type="nvarchar" MaxLength="300" />
+    <Property Name="MediaType" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblCatLove">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="TwitID" Type="numeric" Nullable="false" />
+    <Property Name="text" Type="nvarchar" MaxLength="500" />
+    <Property Name="userid" Type="numeric" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="screenname" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="location" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsVerified" Type="bit" Nullable="false" />
+    <Property Name="ProfileUrl" Type="nvarchar" MaxLength="150" />
+    <Property Name="RT_Count" Type="numeric" Nullable="false" />
+    <Property Name="Fav_Count" Type="numeric" Nullable="false" />
+    <Property Name="created_at" Type="datetime" />
+    <Property Name="MediaUrl" Type="nvarchar" MaxLength="300" />
+    <Property Name="MediaType" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblCatMovies">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="TwitID" Type="numeric" Nullable="false" />
+    <Property Name="text" Type="nvarchar" MaxLength="500" />
+    <Property Name="userid" Type="numeric" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="screenname" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="location" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsVerified" Type="bit" Nullable="false" />
+    <Property Name="ProfileUrl" Type="nvarchar" MaxLength="150" />
+    <Property Name="RT_Count" Type="numeric" Nullable="false" />
+    <Property Name="Fav_Count" Type="numeric" Nullable="false" />
+    <Property Name="created_at" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tblCatMusic">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="TwitID" Type="numeric" Nullable="false" />
+    <Property Name="text" Type="nvarchar" MaxLength="500" />
+    <Property Name="userid" Type="numeric" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="screenname" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="location" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsVerified" Type="bit" Nullable="false" />
+    <Property Name="ProfileUrl" Type="nvarchar" MaxLength="150" />
+    <Property Name="RT_Count" Type="numeric" Nullable="false" />
+    <Property Name="Fav_Count" Type="numeric" Nullable="false" />
+    <Property Name="created_at" Type="datetime" />
+    <Property Name="MediaUrl" Type="nvarchar" MaxLength="300" />
+    <Property Name="MediaType" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblCatNews">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="TwitID" Type="numeric" Nullable="false" />
+    <Property Name="text" Type="nvarchar" MaxLength="500" />
+    <Property Name="userid" Type="numeric" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="screenname" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="location" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsVerified" Type="bit" Nullable="false" />
+    <Property Name="ProfileUrl" Type="nvarchar" MaxLength="150" />
+    <Property Name="RT_Count" Type="numeric" Nullable="false" />
+    <Property Name="Fav_Count" Type="numeric" Nullable="false" />
+    <Property Name="created_at" Type="datetime" />
+    <Property Name="MediaUrl" Type="nvarchar" MaxLength="300" />
+    <Property Name="MediaType" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblCatSports">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="TwitID" Type="numeric" Nullable="false" />
+    <Property Name="text" Type="nvarchar" MaxLength="500" />
+    <Property Name="userid" Type="numeric" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="screenname" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="location" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsVerified" Type="bit" Nullable="false" />
+    <Property Name="ProfileUrl" Type="nvarchar" MaxLength="150" />
+    <Property Name="RT_Count" Type="numeric" Nullable="false" />
+    <Property Name="Fav_Count" Type="numeric" Nullable="false" />
+    <Property Name="created_at" Type="datetime" />
+    <Property Name="MediaUrl" Type="nvarchar" MaxLength="300" />
+    <Property Name="MediaType" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblCatTravel">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="TwitID" Type="numeric" Nullable="false" />
+    <Property Name="text" Type="nvarchar" MaxLength="500" />
+    <Property Name="userid" Type="numeric" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="screenname" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="location" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsVerified" Type="bit" Nullable="false" />
+    <Property Name="ProfileUrl" Type="nvarchar" MaxLength="150" />
+    <Property Name="RT_Count" Type="numeric" Nullable="false" />
+    <Property Name="Fav_Count" Type="numeric" Nullable="false" />
+    <Property Name="created_at" Type="datetime" />
+    <Property Name="MediaUrl" Type="nvarchar" MaxLength="300" />
+    <Property Name="MediaType" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblDemoBeacon">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Type" Type="int" Nullable="false" />
+    <Property Name="DeviceName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="ZoneName" Type="nvarchar" MaxLength="50" />
+    <Property Name="LogTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <Function Name="USP_FetchCATAutoTweets" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="fType" Type="int" Mode="In" />
+    <Parameter Name="fromId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="USP_FetchCATFactsTweets" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="fType" Type="int" Mode="In" />
+    <Parameter Name="fromId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="USP_FetchCATJokesTweets" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="fType" Type="int" Mode="In" />
+    <Parameter Name="fromId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="USP_FetchCATLoveTweets" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="fType" Type="int" Mode="In" />
+    <Parameter Name="fromId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="USP_FetchCATNewsTweets" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="fType" Type="int" Mode="In" />
+    <Parameter Name="fromId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="USP_FetchCATSportsTweets" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="fType" Type="int" Mode="In" />
+    <Parameter Name="fromId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="USP_FetchCATTravelTweets" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="fType" Type="int" Mode="In" />
+    <Parameter Name="fromId" Type="int" Mode="In" />
+  </Function>
 </Schema>
