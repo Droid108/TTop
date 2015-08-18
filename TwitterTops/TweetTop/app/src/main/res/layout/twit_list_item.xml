@@ -54,6 +54,7 @@
             android:layout_width="18dp"
             android:layout_height="18dp"
             android:layout_marginLeft="10dp"
+            android:visibility="invisible"
             android:src="@drawable/ic_action_share" />
 
         <ImageView

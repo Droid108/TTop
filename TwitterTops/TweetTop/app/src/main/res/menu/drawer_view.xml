@@ -4,24 +4,40 @@
         <item
             android:id="@+id/nav_love_fragment"
             android:icon="@drawable/ic_one"
+            android:checked="true"
             android:title="Love Quotes" />
         <item
-            android:id="@+id/nav_second_fragment"
+            android:id="@+id/nav_jokes_fragment"
             android:icon="@drawable/ic_two"
-            android:title="Second" />
+            android:title="Jokes" />
         <item
-            android:id="@+id/nav_third_fragment"
+            android:id="@+id/nav_latest_news_fragment"
             android:icon="@drawable/ic_three"
-            android:title="Third" />
+            android:title="Latest News" />
+        <item
+            android:id="@+id/nav_sports_fragment"
+            android:icon="@drawable/ic_three"
+            android:title="Sports" />
+
+        <item
+            android:id="@+id/nav_facts_fragment"
+            android:icon="@drawable/ic_three"
+            android:title="Facts" />
+        <item
+            android:id="@+id/nav_travel_fragment"
+            android:icon="@drawable/ic_three"
+            android:title="Travel" />
     </group>
-    <item android:title="Sub items">
+    <item android:title="@string/options_appplication">
         <menu>
             <item
+                android:id="@+id/nav_Ad_Free"
                 android:icon="@drawable/ic_one"
-                android:title="Sub item 1" />
+                android:title="Ad Free Version" />
             <item
+                android:id="@+id/nav_open_soource"
                 android:icon="@drawable/ic_three"
-                android:title="Sub item 2" />
+                android:title="Open Source Licenses" />
         </menu>
     </item>
 </menu>

@@ -191,7 +191,43 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Handlers\BFTwitterHandler.cs" />
+    <Compile Include="Model\tblCatAuto.cs">
+      <DependentUpon>TwitRapModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\tblCatBusiness.cs">
+      <DependentUpon>TwitRapModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\tblCatFact.cs">
+      <DependentUpon>TwitRapModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\tblCatGadget.cs">
+      <DependentUpon>TwitRapModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\tblCatHF.cs">
+      <DependentUpon>TwitRapModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\tblCatJoke.cs">
+      <DependentUpon>TwitRapModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\tblCatLove.cs">
+      <DependentUpon>TwitRapModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\tblCatMovy.cs">
+      <DependentUpon>TwitRapModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\tblCatMusic.cs">
+      <DependentUpon>TwitRapModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\tblCatNew.cs">
+      <DependentUpon>TwitRapModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\tblCatSport.cs">
+      <DependentUpon>TwitRapModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\tblCatTravel.cs">
+      <DependentUpon>TwitRapModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\tblDemoBeacon.cs">
       <DependentUpon>TwitRapModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\TwitRapModel.Context.cs">
@@ -208,6 +244,27 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TwitRapModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\USP_FetchCATAutoTweets_Result.cs">
+      <DependentUpon>TwitRapModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\USP_FetchCATFactsTweets_Result.cs">
+      <DependentUpon>TwitRapModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\USP_FetchCATJokesTweets_Result.cs">
+      <DependentUpon>TwitRapModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\USP_FetchCATLoveTweets_Result.cs">
+      <DependentUpon>TwitRapModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\USP_FetchCATNewsTweets_Result.cs">
+      <DependentUpon>TwitRapModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\USP_FetchCATSportsTweets_Result.cs">
+      <DependentUpon>TwitRapModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\USP_FetchCATTravelTweets_Result.cs">
+      <DependentUpon>TwitRapModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\ExceptionHandler.cs" />

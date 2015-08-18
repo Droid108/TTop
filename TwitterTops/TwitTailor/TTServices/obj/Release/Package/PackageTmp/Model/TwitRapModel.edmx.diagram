@@ -5,7 +5,19 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="5d064894f34e4e37b378ec5c475363ef" Name="Diagram1">
-        <EntityTypeShape EntityType="TwitRapDBModel.tblCatLove" Width="1.5" PointX="1.25" PointY="0.75" />
+        <EntityTypeShape EntityType="TwitRapDBModel.tblCatAuto" Width="1.5" PointX="5.348911880212329" PointY="15.331697247611217" />
+        <EntityTypeShape EntityType="TwitRapDBModel.tblCatBusiness" Width="1.5" PointX="11.194926213098189" PointY="18.2952602143843" />
+        <EntityTypeShape EntityType="TwitRapDBModel.tblCatFact" Width="1.5" PointX="4.3948258424153668" PointY="30.758715509790328" />
+        <EntityTypeShape EntityType="TwitRapDBModel.tblCatGadget" Width="1.5" PointX="11.015639064375144" PointY="5.1965345615504939" />
+        <EntityTypeShape EntityType="TwitRapDBModel.tblCatHF" Width="1.5" PointX="3.0044826264514044" PointY="14.739189274021978" />
+        <EntityTypeShape EntityType="TwitRapDBModel.tblCatJoke" Width="1.5" PointX="5.0612486065650586" PointY="3.474494548269778" />
+        <EntityTypeShape EntityType="TwitRapDBModel.tblCatMovy" Width="1.5" PointX="1.8697821432118222" PointY="23.096742163922983" />
+        <EntityTypeShape EntityType="TwitRapDBModel.tblCatMusic" Width="1.5" PointX="10.935432448487465" PointY="13.085182389749765" />
+        <EntityTypeShape EntityType="TwitRapDBModel.tblCatNew" Width="1.5" PointX="11.184978000440159" PointY="14.526614270418238" />
+        <EntityTypeShape EntityType="TwitRapDBModel.tblCatSport" Width="1.5" PointX="2.2019979926766817" PointY="19.010721230418756" />
+        <EntityTypeShape EntityType="TwitRapDBModel.tblCatTravel" Width="1.5" PointX="2.3954075921305491" PointY="25.238622692059085" />
+        <EntityTypeShape EntityType="TwitRapDBModel.tblDemoBeacon" Width="1.5" PointX="3.60117379557396" PointY="22.08432879582249" />
+        <EntityTypeShape EntityType="TwitRapDBModel.tblCatLove" Width="1.5" PointX="6.2811758510215094" PointY="19.4960516185947" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
