@@ -14,9 +14,12 @@
     <string name="spf_love_tweets" translatable="false">com.droid108.tweetrap.spf_love_tweets</string>
     <string name="spf_news_tweets" translatable="false">com.droid108.tweetrap.spf_news_tweets</string>
     <string name="spf_jokes_tweets" translatable="false">com.droid108.tweetrap.spf_jokes_tweets</string>
-    <string name="spf_travel_tweets" translatable="false">com.droid108.tweetrap.spf_travel_tweets</string>
+    <string name="spf_busines_tweets" translatable="false">com.droid108.tweetrap.spf_busines_tweets</string>
     <string name="spf_facts_tweets" translatable="false">com.droid108.tweetrap.spf_facts_tweets</string>
     <string name="spf_sports_tweets" translatable="false">com.droid108.tweetrap.spf_sports_tweets</string>
+    <string name="spf_tecchnology_tweets" translatable="false">com.droid108.tweetrap.spf_tecchnology_tweets</string>
+    <string name="spf_science_tweets" translatable="false">com.droid108.tweetrap.spf_science_tweets</string>
+    <string name="spf_auto_tweets" translatable="false">com.droid108.tweetrap.spf_auto_tweets</string>
 
     <string name="empty_tweet_view">Pull down to get tweets..</string>
 

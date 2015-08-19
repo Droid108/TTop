@@ -46,23 +46,23 @@ namespace TwitTailor.Handlers
         {
             try
             {
-                //getCATLove();
-                //Thread.Sleep(1000);
-                //getCATFacts();
-                //Thread.Sleep(1000);
-                //getCATAuto();
-                //Thread.Sleep(1000);
-                //getCATTravel();
-                //Thread.Sleep(1000);
-                //getCATJokes();
-                //Thread.Sleep(1000);
-                //getCATSports();
-                //Thread.Sleep(1000);
-                //getCATNews();
-                //Thread.Sleep(1000);
-                //getCATMusic();
-                //Thread.Sleep(1000);
-                //getCATAuto();
+                getCATLove();
+                Thread.Sleep(1000);
+                getCATAuto();
+                Thread.Sleep(1000);
+                getCATBusiness();
+                Thread.Sleep(1000);
+                getCATFacts();
+                Thread.Sleep(1000);
+                getCATScience();
+                Thread.Sleep(1000);
+                getCATJokes();
+                Thread.Sleep(1000);
+                getCATTechnology();
+                Thread.Sleep(1000);
+                getCATSports();
+                Thread.Sleep(1000);
+                getCATNews();
                 //Thread.Sleep(1000);
                 //getCATAuto();
                 //dataDumper(1);

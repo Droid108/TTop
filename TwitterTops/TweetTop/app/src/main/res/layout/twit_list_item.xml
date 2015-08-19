@@ -40,10 +40,20 @@
         android:textColor="#4c4c4c"
         android:textSize="14dp" />
 
-    <LinearLayout
+    <ImageView
+        android:id="@+id/media_image"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/desc"
+        android:layout_toRightOf="@+id/icon"
+        android:visibility="invisible"
+        android:contentDescription="No Image"
+        android:padding="3dp" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/media_image"
         android:layout_marginLeft="10dp"
         android:layout_toRightOf="@+id/icon"
         android:padding="2dp">

@@ -1,4 +1,4 @@
-package com.droid108.tweetrap.fragments;
+package com.krishnak.tweetrap.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -14,7 +14,6 @@ import com.droid108.tweetrap.Helpers.SPF;
 import com.droid108.tweetrap.R;
 import com.droid108.tweetrap.Tasks.GetJSONListener;
 import com.droid108.tweetrap.Tasks.JSONClient;
-import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
@@ -34,7 +33,7 @@ import java.util.Collections;
 /**
  * Created by SupportPedia on 04-04-2015.
  */
-public class TravelFragment extends Fragment {
+public class AutoFragment extends Fragment {
 
     PullToRefreshListView pullToRefreshView;
     TweetAdapter madapter;
@@ -46,7 +45,7 @@ public class TravelFragment extends Fragment {
     ArrayList<JSONObject> jsonData = null;
     InterstitialAd mInterstitialAd;
 
-    public TravelFragment() {
+    public AutoFragment() {
     }
 
     @Override
@@ -62,7 +61,7 @@ public class TravelFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        rootView = inflater.inflate(R.layout.fragment_travel, container, false);
+        rootView = inflater.inflate(R.layout.fragment_auto, container, false);
 
         AdView mAdView = (AdView) rootView.findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
@@ -88,7 +87,7 @@ public class TravelFragment extends Fragment {
         });
 
         jsonData = new ArrayList<JSONObject>();
-        String jsonString = SPF.GetSharedPreference(R.string.spf_busines_tweets, rootView.getContext());
+        String jsonString = SPF.GetSharedPreference(R.string.spf_auto_tweets, rootView.getContext());
         Type type = new TypeToken<ArrayList<JSONObject>>() {
         }.getType();
         Gson gson = new Gson();
@@ -137,7 +136,7 @@ public class TravelFragment extends Fragment {
             }
         };
         JSONClient _client = new JSONClient(rootView.getContext(), listener);
-        _client.execute("http://com.droid108.tweetrap.elasticbeanstalk.com/api/cattravel?ftype=" + fType + "&fromid=" + fromId);
+        _client.execute("http://com.droid108.tweetrap.elasticbeanstalk.com/api/catauto?ftype=" + fType + "&fromid=" + fromId);
 
     }
 
@@ -190,7 +189,7 @@ public class TravelFragment extends Fragment {
         }
         Gson gson = new Gson();
         String json = gson.toJson(jsonData);
-        SPF.SetSharedPreference(rootView.getContext(), R.string.spf_busines_tweets, json);
+        SPF.SetSharedPreference(rootView.getContext(), R.string.spf_auto_tweets, json);
     }
 
     private ArrayList<JSONObject> convertJsonToAL(JSONArray jsonObject) {

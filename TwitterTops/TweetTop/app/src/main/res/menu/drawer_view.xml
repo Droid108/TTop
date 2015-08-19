@@ -3,30 +3,41 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_love_fragment"
-            android:icon="@drawable/ic_one"
             android:checked="true"
+            android:icon="@drawable/ic_one"
             android:title="Love Quotes" />
         <item
             android:id="@+id/nav_jokes_fragment"
             android:icon="@drawable/ic_two"
-            android:title="Jokes" />
+            android:title="Jokes Fun" />
         <item
             android:id="@+id/nav_latest_news_fragment"
             android:icon="@drawable/ic_three"
-            android:title="Latest News" />
+            android:title="News" />
         <item
             android:id="@+id/nav_sports_fragment"
             android:icon="@drawable/ic_three"
             android:title="Sports" />
-
         <item
             android:id="@+id/nav_facts_fragment"
             android:icon="@drawable/ic_three"
             android:title="Facts" />
         <item
-            android:id="@+id/nav_travel_fragment"
+            android:id="@+id/nav_business_fragment"
             android:icon="@drawable/ic_three"
-            android:title="Travel" />
+            android:title="Business" />
+        <item
+            android:id="@+id/nav_science_fragment"
+            android:icon="@drawable/ic_three"
+            android:title="Science" />
+        <item
+            android:id="@+id/nav_tech_fragment"
+            android:icon="@drawable/ic_three"
+            android:title="Technology" />
+        <item
+            android:id="@+id/nav_auto_fragment"
+            android:icon="@drawable/ic_three"
+            android:title="Auto" />
     </group>
     <item android:title="@string/options_appplication">
         <menu>

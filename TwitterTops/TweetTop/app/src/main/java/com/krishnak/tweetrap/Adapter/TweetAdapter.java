@@ -41,7 +41,7 @@ import java.util.regex.Pattern;
 public class TweetAdapter extends BaseAdapter {
     Context context;
     ArrayList<JSONObject> list;
-//    Twitter twitter;
+    //    Twitter twitter;
 //    RequestToken requestToken = null;
 //    AccessToken accessToken;
     String oauth_url, oauth_verifier, profile_url;
@@ -101,6 +101,7 @@ public class TweetAdapter extends BaseAdapter {
             holder.imgFav = (ImageView) convertView.findViewById(R.id.imgFav);
             holder.imgShare = (ImageView) convertView.findViewById(R.id.imgShare);
             holder.imgRetweet = (ImageView) convertView.findViewById(R.id.imgRetweet);
+            holder.imgMediaUrl = (ImageView) convertView.findViewById(R.id.media_image);
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
@@ -151,6 +152,8 @@ public class TweetAdapter extends BaseAdapter {
                 .cacheOnDisc(true).resetViewBeforeLoading(true).build();
         ImageView imageView = (ImageView) holder.imgPic;
         imageView.setImageResource(R.drawable.ic_launcher);
+
+
         JSONObject object = list.get(position);
 
         try {
@@ -169,6 +172,13 @@ public class TweetAdapter extends BaseAdapter {
                 getTimeDifference(object.getString("created_at"), holder.txtTime);
             else
                 holder.txtTime.setText("Just now");
+            if (object.has("MediaUrl") && object.getString("MediaUrl") != "null") {
+                ImageView imageMedia = (ImageView) holder.imgMediaUrl;
+                String img_media_url = object.getString("MediaUrl");
+                imageLoader.displayImage(img_media_url, imageMedia, options);
+                holder.imgMediaUrl.setVisibility(View.VISIBLE);
+            } else
+                holder.imgMediaUrl.setVisibility(View.GONE);
             Linkify.TransformFilter filter = new Linkify.TransformFilter() {
                 public final String transformUrl(final Matcher match, String url) {
                     return match.group();
@@ -259,5 +269,6 @@ public class TweetAdapter extends BaseAdapter {
         public ImageView imgShare;
         public ImageView imgRetweet;
         public ImageView imgFav;
+        public ImageView imgMediaUrl;
     }
 }

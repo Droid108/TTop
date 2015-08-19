@@ -18,8 +18,11 @@ import com.droid108.tweetrap.fragments.JokesFragment;
 import com.droid108.tweetrap.fragments.LoveFragment;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
+import com.krishnak.tweetrap.fragments.AutoFragment;
+import com.krishnak.tweetrap.fragments.BusinessFragment;
+import com.krishnak.tweetrap.fragments.ScienceFragment;
+import com.krishnak.tweetrap.fragments.TechnologyFragment;
 
 ;
 
@@ -113,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
     public void displayInterstitial() {
         mHandler.postDelayed(displayAd, 1);
     }
+
     private void setupDrawerContent(NavigationView navigationView) {
         navigationView.setNavigationItemSelectedListener(
                 new NavigationView.OnNavigationItemSelectedListener() {
@@ -139,8 +143,8 @@ public class MainActivity extends AppCompatActivity {
             case R.id.nav_sports_fragment:
                 fragmentClass = com.droid108.tweetrap.fragments.SportsFragment.class;
                 break;
-            case R.id.nav_travel_fragment:
-                fragmentClass = com.droid108.tweetrap.fragments.TravelFragment.class;
+            case R.id.nav_tech_fragment:
+                fragmentClass = TechnologyFragment.class;
                 break;
             case R.id.nav_facts_fragment:
                 fragmentClass = com.droid108.tweetrap.fragments.FactsFragment.class;
@@ -148,9 +152,15 @@ public class MainActivity extends AppCompatActivity {
             case R.id.nav_latest_news_fragment:
                 fragmentClass = com.droid108.tweetrap.fragments.NewsFragment.class;
                 break;
-//            case R.id.nav_open_soource:
-//                com.droid108.tweetrap.fragments.LicenseFragment.displayLicensesFragment(getSupportFragmentManager(), true);
-//                break;
+            case R.id.nav_science_fragment:
+                fragmentClass = ScienceFragment.class;
+                break;
+            case R.id.nav_business_fragment:
+                fragmentClass = BusinessFragment.class;
+                break;
+            case R.id.nav_auto_fragment:
+                fragmentClass = AutoFragment.class;
+                break;
             default:
                 fragmentClass = LoveFragment.class;
         }
@@ -168,8 +178,7 @@ public class MainActivity extends AppCompatActivity {
         // Highlight the selected item, update the title, and close the drawer
         menuItem.setChecked(true);
         setTitle(menuItem.getTitle());
-        if(menuItem.getItemId() == R.id.nav_open_soource)
-        {
+        if (menuItem.getItemId() == R.id.nav_open_soource) {
             com.droid108.tweetrap.fragments.LicenseFragment.displayLicensesFragment(getSupportFragmentManager(), true);
         }
         mDrawer.closeDrawers();
