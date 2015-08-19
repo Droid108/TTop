@@ -44,9 +44,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onAdLoaded() {
                 super.onAdLoaded();
-                if (adView.isLoaded()) {
-                    adView.show();
-                }
+
             }
 
             @Override
@@ -182,6 +180,9 @@ public class MainActivity extends AppCompatActivity {
             com.droid108.tweetrap.fragments.LicenseFragment.displayLicensesFragment(getSupportFragmentManager(), true);
         }
         mDrawer.closeDrawers();
+        if (adView.isLoaded()) {
+            adView.show();
+        }
     }
 
     @Override

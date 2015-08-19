@@ -64,7 +64,7 @@ public class FactsFragment extends Fragment {
         AdRequest adRequest = new AdRequest.Builder().build();
         //adRequest.isTestDevice(this);
         mAdView.loadAd(adRequest);
-        pullToRefreshView = (PullToRefreshListView) rootView.findViewById(R.id.pull_to_refresh_listview);
+        pullToRefreshView = (PullToRefreshListView) rootView.findViewById(R.id.pull_to_refresh_listview_facts);
         TextView emptyVIew = (TextView)rootView.findViewById(R.id.emptyView);
         pullToRefreshView.setMode(PullToRefreshBase.Mode.BOTH);
         pullToRefreshView.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener2<ListView>() {

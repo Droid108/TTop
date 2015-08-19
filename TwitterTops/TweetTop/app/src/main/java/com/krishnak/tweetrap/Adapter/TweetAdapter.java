@@ -168,7 +168,7 @@ public class TweetAdapter extends BaseAdapter {
             //holder.txtTime.setText(object.getString("Id"));
             holder.txtFavCount.setText(Integer.toString(object.getInt("Fav_Count")));
             holder.txtRetweetCount.setText(Integer.toString(object.getInt("RT_Count")));
-            if (object.has("created_at"))
+            if (object.has("created_at") && object.get("created_at") != null)
                 getTimeDifference(object.getString("created_at"), holder.txtTime);
             else
                 holder.txtTime.setText("Just now");
@@ -222,6 +222,13 @@ public class TweetAdapter extends BaseAdapter {
                 d2 = format.parse(pDate);
             } catch (java.text.ParseException e) {
                 e.printStackTrace();
+            }
+            if(d2 == null && pDate.contains("/Date"))
+            {
+                String json = pDate;
+                json=json.replace("/Date(", "").replace("-0700)/", "");
+                long time_format = Long.parseLong(json);
+                d2= new Date(time_format);
             }
             long diff = d1.getTime() - d2.getTime();
 
