@@ -46,23 +46,23 @@ namespace TwitTailor.Handlers
         {
             try
             {
-                getCATLove();
-                Thread.Sleep(1000);
-                getCATAuto();
-                Thread.Sleep(1000);
-                getCATBusiness();
-                Thread.Sleep(1000);
-                getCATFacts();
-                Thread.Sleep(1000);
-                getCATScience();
-                Thread.Sleep(1000);
-                getCATJokes();
-                Thread.Sleep(1000);
-                getCATTechnology();
-                Thread.Sleep(1000);
-                getCATSports();
-                Thread.Sleep(1000);
-                getCATNews();
+                //getCATLove();
+                //Thread.Sleep(1000);
+                //getCATAuto();
+                //Thread.Sleep(1000);
+                //getCATBusiness();
+                //Thread.Sleep(1000);
+                //getCATFacts();
+                //Thread.Sleep(1000);
+                //getCATScience();
+                //Thread.Sleep(1000);
+                //getCATJokes();
+                //Thread.Sleep(1000);
+                //getCATTechnology();
+                //Thread.Sleep(1000);
+                //getCATSports();
+                //Thread.Sleep(1000);
+                //getCATNews();
                 //Thread.Sleep(1000);
                 //getCATAuto();
                 //dataDumper(1);
@@ -74,10 +74,11 @@ namespace TwitTailor.Handlers
                 return ex.ToString();
             }
         }
-
+        int i;
         private void dataDumper(int categoryId)
         {
-            int i;
+            i = 0;
+            finalUrlString = null;
             for (i = 0; i < 100; i++)
             {
                 switch (categoryId)
@@ -115,6 +116,7 @@ namespace TwitTailor.Handlers
                 }
                 Thread.Sleep(1000);
             }
+            i = 0;
         }
 
 
@@ -197,7 +199,6 @@ namespace TwitTailor.Handlers
             {
                 createAuthToken();
             }
-
             var timelineFormat = ConfigurationManager.AppSettings["TwitSearchAPI"].ToString();
             scNames = scNames.Replace("@", "");
             string screenname = buildScreenNames(scNames);
@@ -211,7 +212,6 @@ namespace TwitTailor.Handlers
             }
 
             timelineUrl = string.Format(timelineFormat, screenname);
-
             if (finalUrlString == null)
                 timelineUrl = timelineUrl + "&count=200";
             HttpWebRequest timeLineRequest = (HttpWebRequest)WebRequest.Create(timelineUrl);
@@ -239,7 +239,9 @@ namespace TwitTailor.Handlers
                 dynamic jsonObj = makeRequestForData(scNames);
                 string media_url = null;
                 string media_type = null;
-                finalUrlString = jsonObj.search_metadata["next_results"].Value;
+                if (jsonObj.search_metadata != null)
+                    finalUrlString = jsonObj.search_metadata["next_results"].Value;
+
                 foreach (JObject res in jsonObj.statuses)
                 {
                     media_url = string.Empty;
@@ -324,6 +326,8 @@ namespace TwitTailor.Handlers
                 dynamic jsonObj = makeRequestForData(scNames);
                 string media_url = null;
                 string media_type = null;
+                if (jsonObj.search_metadata != null)
+                    finalUrlString = jsonObj.search_metadata["next_results"].Value;
                 foreach (JObject res in jsonObj.statuses)
                 {
                     media_url = string.Empty;
@@ -408,6 +412,8 @@ namespace TwitTailor.Handlers
                 dynamic jsonObj = makeRequestForData(scNames);
                 string media_url = null;
                 string media_type = null;
+                if (jsonObj.search_metadata != null)
+                    finalUrlString = jsonObj.search_metadata["next_results"].Value;
                 foreach (JObject res in jsonObj.statuses)
                 {
                     media_url = string.Empty;
@@ -490,6 +496,8 @@ namespace TwitTailor.Handlers
                 dynamic jsonObj = makeRequestForData(scNames);
                 string media_url = null;
                 string media_type = null;
+                if (jsonObj.search_metadata != null)
+                    finalUrlString = jsonObj.search_metadata["next_results"].Value;
                 foreach (JObject res in jsonObj.statuses)
                 {
                     media_url = string.Empty;
@@ -573,6 +581,8 @@ namespace TwitTailor.Handlers
                 dynamic jsonObj = makeRequestForData(scNames);
                 string media_url = null;
                 string media_type = null;
+                if (jsonObj.search_metadata != null)
+                    finalUrlString = jsonObj.search_metadata["next_results"].Value;
                 foreach (JObject res in jsonObj.statuses)
                 {
                     media_url = string.Empty;
@@ -656,6 +666,8 @@ namespace TwitTailor.Handlers
                 dynamic jsonObj = makeRequestForData(scNames);
                 string media_url = null;
                 string media_type = null;
+                if (jsonObj.search_metadata != null)
+                    finalUrlString = jsonObj.search_metadata["next_results"].Value;
                 foreach (JObject res in jsonObj.statuses)
                 {
                     media_url = string.Empty;
@@ -739,6 +751,8 @@ namespace TwitTailor.Handlers
                 dynamic jsonObj = makeRequestForData(scNames);
                 string media_url = null;
                 string media_type = null;
+                if (jsonObj.search_metadata != null)
+                    finalUrlString = jsonObj.search_metadata["next_results"].Value;
                 foreach (JObject res in jsonObj.statuses)
                 {
                     media_url = string.Empty;
@@ -822,6 +836,8 @@ namespace TwitTailor.Handlers
                 dynamic jsonObj = makeRequestForData(scNames);
                 string media_url = null;
                 string media_type = null;
+                if (jsonObj.search_metadata != null)
+                    finalUrlString = jsonObj.search_metadata["next_results"].Value;
                 foreach (JObject res in jsonObj.statuses)
                 {
                     media_url = string.Empty;
@@ -905,6 +921,8 @@ namespace TwitTailor.Handlers
                 dynamic jsonObj = makeRequestForData(scNames);
                 string media_url = null;
                 string media_type = null;
+                if (jsonObj.search_metadata != null)
+                    finalUrlString = jsonObj.search_metadata["next_results"].Value;
                 foreach (JObject res in jsonObj.statuses)
                 {
                     media_url = string.Empty;
