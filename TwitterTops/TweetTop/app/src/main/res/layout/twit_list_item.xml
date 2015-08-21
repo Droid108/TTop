@@ -43,21 +43,21 @@
 
     <ImageView
         android:id="@+id/media_image"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
         android:layout_below="@+id/desc"
         android:layout_toRightOf="@+id/icon"
-        android:visibility="gone"
         android:contentDescription="No Image"
-        android:padding="3dp" />
+        android:padding="3dp"
+        android:scaleType="centerInside"
+        android:visibility="gone" />
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/media_image"
         android:layout_marginLeft="10dp"
-        android:layout_toRightOf="@+id/icon"
-        android:padding="2dp">
+        android:layout_toRightOf="@+id/icon">
 
 
         <ImageView
@@ -65,8 +65,8 @@
             android:layout_width="18dp"
             android:layout_height="18dp"
             android:layout_marginLeft="10dp"
-            android:visibility="invisible"
-            android:src="@drawable/ic_action_share" />
+            android:src="@drawable/ic_action_share"
+            android:visibility="invisible" />
 
         <ImageView
             android:id="@+id/imgFav"

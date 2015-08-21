@@ -44,6 +44,7 @@ public class BusinessFragment extends Fragment {
     int firstId = 0;
     ArrayList<JSONObject> jsonData = null;
     InterstitialAd mInterstitialAd;
+    boolean isRefreshinProgress = false;
 
     public BusinessFragment() {
     }
@@ -112,7 +113,6 @@ public class BusinessFragment extends Fragment {
     }
 
 
-
     private void callClient(int fType, int fromId) {
         Log.i("call cleint", "Entered Client Method");
         GetJSONListener listener = new GetJSONListener() {
@@ -135,8 +135,11 @@ public class BusinessFragment extends Fragment {
 
             }
         };
-        JSONClient _client = new JSONClient(rootView.getContext(), listener);
-        _client.execute("http://com.droid108.tweetrap.elasticbeanstalk.com/api/catbusiness?ftype=" + fType + "&fromid=" + fromId);
+        if(!isRefreshinProgress) {
+            JSONClient _client = new JSONClient(rootView.getContext(), listener);
+            _client.execute("http://com.droid108.tweetrap.elasticbeanstalk.com/api/catbusiness?ftype=" + fType + "&fromid=" + fromId);
+            isRefreshinProgress = true;
+        }
 
     }
 
@@ -190,6 +193,7 @@ public class BusinessFragment extends Fragment {
         Gson gson = new Gson();
         String json = gson.toJson(jsonData);
         SPF.SetSharedPreference(rootView.getContext(), R.string.spf_busines_tweets, json);
+        isRefreshinProgress = false;
     }
 
     private ArrayList<JSONObject> convertJsonToAL(JSONArray jsonObject) {

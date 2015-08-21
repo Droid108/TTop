@@ -147,6 +147,12 @@ public class TweetAdapter extends BaseAdapter {
 //                        .show();
             }
         });
+        holder.imgMediaUrl.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //viewImage();
+            }
+        });
         ImageLoader imageLoader = ImageLoader.getInstance();
         DisplayImageOptions options = new DisplayImageOptions.Builder().cacheInMemory(true)
                 .cacheOnDisc(true).resetViewBeforeLoading(true).build();
@@ -205,6 +211,7 @@ public class TweetAdapter extends BaseAdapter {
 
     }
 
+
     private void getTimeDifference(String pDate, TextView time) {
         int diffInDays = 0;
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
@@ -223,12 +230,11 @@ public class TweetAdapter extends BaseAdapter {
             } catch (java.text.ParseException e) {
                 e.printStackTrace();
             }
-            if(d2 == null && pDate.contains("/Date"))
-            {
+            if (d2 == null && pDate.contains("/Date")) {
                 String json = pDate;
-                json=json.replace("/Date(", "").replace("-0700)/", "");
+                json = json.replace("/Date(", "").replace("-0700)/", "");
                 long time_format = Long.parseLong(json);
-                d2= new Date(time_format);
+                d2 = new Date(time_format);
             }
             long diff = d1.getTime() - d2.getTime();
 

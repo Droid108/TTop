@@ -37,7 +37,7 @@ public class NewsFragment extends Fragment {
     int lastId = 0;
     int firstId = 0;
     ArrayList<JSONObject> jsonData = null;
-
+    boolean isRefreshinProgress = false;
     @Override
     public void onResume() {
         super.onResume();
@@ -126,9 +126,11 @@ public class NewsFragment extends Fragment {
 
             }
         };
-        com.droid108.tweetrap.Tasks.JSONClient _client = new com.droid108.tweetrap.Tasks.JSONClient(rootView.getContext(), listener);
-        _client.execute("http://com.droid108.tweetrap.elasticbeanstalk.com/api/catnews?ftype=" + fType + "&fromid=" + fromId);
-
+        if(!isRefreshinProgress) {
+            com.droid108.tweetrap.Tasks.JSONClient _client = new com.droid108.tweetrap.Tasks.JSONClient(rootView.getContext(), listener);
+            _client.execute("http://com.droid108.tweetrap.elasticbeanstalk.com/api/catnews?ftype=" + fType + "&fromid=" + fromId);
+            isRefreshinProgress = true;
+        }
     }
 
 
@@ -181,6 +183,7 @@ public class NewsFragment extends Fragment {
         Gson gson = new Gson();
         String json = gson.toJson(jsonData);
         com.droid108.tweetrap.Helpers.SPF.SetSharedPreference(rootView.getContext(), R.string.spf_news_tweets, json);
+        isRefreshinProgress = false;
     }
 
     private ArrayList<JSONObject> convertJsonToAL(JSONArray jsonObject) {

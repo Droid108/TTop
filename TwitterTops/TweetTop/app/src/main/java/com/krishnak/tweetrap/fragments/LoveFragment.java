@@ -9,17 +9,17 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.droid108.tweetrap.Adapter.TweetAdapter;
+import com.droid108.tweetrap.Helpers.SPF;
+import com.droid108.tweetrap.R;
+import com.droid108.tweetrap.Tasks.GetJSONListener;
+import com.droid108.tweetrap.Tasks.JSONClient;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
-import com.droid108.tweetrap.Adapter.TweetAdapter;
-import com.droid108.tweetrap.Helpers.SPF;
-import com.droid108.tweetrap.R;
-import com.droid108.tweetrap.Tasks.GetJSONListener;
-import com.droid108.tweetrap.Tasks.JSONClient;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -42,6 +42,7 @@ public class LoveFragment extends Fragment {
     int lastId = 0;
     int firstId = 0;
     ArrayList<JSONObject> jsonData = null;
+    boolean isRefreshinProgress = false;
 
     public LoveFragment() {
     }
@@ -65,7 +66,7 @@ public class LoveFragment extends Fragment {
         //adRequest.isTestDevice(this);
         mAdView.loadAd(adRequest);
         pullToRefreshView = (PullToRefreshListView) rootView.findViewById(R.id.pull_to_refresh_listview);
-        TextView emptyVIew = (TextView)rootView.findViewById(R.id.emptyView);
+        TextView emptyVIew = (TextView) rootView.findViewById(R.id.emptyView);
         pullToRefreshView.setMode(PullToRefreshBase.Mode.BOTH);
         pullToRefreshView.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener2<ListView>() {
             @Override
@@ -130,9 +131,11 @@ public class LoveFragment extends Fragment {
 
             }
         };
-        JSONClient _client = new JSONClient(rootView.getContext(), listener);
-        _client.execute("http://com.droid108.tweetrap.elasticbeanstalk.com/api/catlove?ftype=" + fType + "&fromid=" + fromId);
-
+        if (!isRefreshinProgress) {
+            JSONClient _client = new JSONClient(rootView.getContext(), listener);
+            _client.execute("http://com.droid108.tweetrap.elasticbeanstalk.com/api/catlove?ftype=" + fType + "&fromid=" + fromId);
+            isRefreshinProgress = true;
+        }
     }
 
 //    private JSONArray syncTweets(JSONArray inputList, JSONArray existingList) {
@@ -243,6 +246,7 @@ public class LoveFragment extends Fragment {
         Gson gson = new Gson();
         String json = gson.toJson(jsonData);
         SPF.SetSharedPreference(rootView.getContext(), R.string.spf_love_tweets, json);
+        isRefreshinProgress = false;
     }
 
     private ArrayList<JSONObject> convertJsonToAL(JSONArray jsonObject) {

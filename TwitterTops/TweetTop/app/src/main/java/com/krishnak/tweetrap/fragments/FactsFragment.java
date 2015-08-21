@@ -42,6 +42,7 @@ public class FactsFragment extends Fragment {
     int lastId = 0;
     int firstId = 0;
     ArrayList<JSONObject> jsonData = null;
+    boolean isRefreshinProgress = false;
 
     public FactsFragment() {
     }
@@ -65,7 +66,7 @@ public class FactsFragment extends Fragment {
         //adRequest.isTestDevice(this);
         mAdView.loadAd(adRequest);
         pullToRefreshView = (PullToRefreshListView) rootView.findViewById(R.id.pull_to_refresh_listview_facts);
-        TextView emptyVIew = (TextView)rootView.findViewById(R.id.emptyView);
+        TextView emptyVIew = (TextView) rootView.findViewById(R.id.emptyView);
         pullToRefreshView.setMode(PullToRefreshBase.Mode.BOTH);
         pullToRefreshView.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener2<ListView>() {
             @Override
@@ -130,9 +131,11 @@ public class FactsFragment extends Fragment {
 
             }
         };
-        JSONClient _client = new JSONClient(rootView.getContext(), listener);
-        _client.execute("http://com.droid108.tweetrap.elasticbeanstalk.com/api/catfacts?ftype=" + fType + "&fromid=" + fromId);
-
+        if (!isRefreshinProgress) {
+            JSONClient _client = new JSONClient(rootView.getContext(), listener);
+            _client.execute("http://com.droid108.tweetrap.elasticbeanstalk.com/api/catfacts?ftype=" + fType + "&fromid=" + fromId);
+            isRefreshinProgress = true;
+        }
     }
 
 
@@ -185,6 +188,7 @@ public class FactsFragment extends Fragment {
         Gson gson = new Gson();
         String json = gson.toJson(jsonData);
         SPF.SetSharedPreference(rootView.getContext(), R.string.spf_facts_tweets, json);
+        isRefreshinProgress = false;
     }
 
     private ArrayList<JSONObject> convertJsonToAL(JSONArray jsonObject) {

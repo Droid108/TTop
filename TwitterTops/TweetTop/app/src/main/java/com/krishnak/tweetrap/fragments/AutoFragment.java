@@ -44,6 +44,7 @@ public class AutoFragment extends Fragment {
     int firstId = 0;
     ArrayList<JSONObject> jsonData = null;
     InterstitialAd mInterstitialAd;
+    boolean isRefreshinProgress = false;
 
     public AutoFragment() {
     }
@@ -112,7 +113,6 @@ public class AutoFragment extends Fragment {
     }
 
 
-
     private void callClient(int fType, int fromId) {
         Log.i("call cleint", "Entered Client Method");
         GetJSONListener listener = new GetJSONListener() {
@@ -135,9 +135,11 @@ public class AutoFragment extends Fragment {
 
             }
         };
-        JSONClient _client = new JSONClient(rootView.getContext(), listener);
-        _client.execute("http://com.droid108.tweetrap.elasticbeanstalk.com/api/catauto?ftype=" + fType + "&fromid=" + fromId);
-
+        if (!isRefreshinProgress) {
+            JSONClient _client = new JSONClient(rootView.getContext(), listener);
+            _client.execute("http://com.droid108.tweetrap.elasticbeanstalk.com/api/catauto?ftype=" + fType + "&fromid=" + fromId);
+            isRefreshinProgress = true;
+        }
     }
 
 
@@ -190,6 +192,7 @@ public class AutoFragment extends Fragment {
         Gson gson = new Gson();
         String json = gson.toJson(jsonData);
         SPF.SetSharedPreference(rootView.getContext(), R.string.spf_auto_tweets, json);
+        isRefreshinProgress = false;
     }
 
     private ArrayList<JSONObject> convertJsonToAL(JSONArray jsonObject) {
