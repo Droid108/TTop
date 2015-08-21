@@ -4,6 +4,9 @@
     <EntitySetMapping Name="tblCatAutoes">
       <EntityTypeMapping TypeName="TwitRapDBModel.tblCatAuto">
         <MappingFragment StoreEntitySet="tblCatAuto">
+          <ScalarProperty Name="expanded_url" ColumnName="expanded_url" />
+          <ScalarProperty Name="display_url" ColumnName="display_url" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
           <ScalarProperty Name="MediaType" ColumnName="MediaType" />
           <ScalarProperty Name="MediaUrl" ColumnName="MediaUrl" />
           <ScalarProperty Name="created_at" ColumnName="created_at" />
@@ -24,6 +27,9 @@
     <EntitySetMapping Name="tblCatBusinesses">
       <EntityTypeMapping TypeName="TwitRapDBModel.tblCatBusiness">
         <MappingFragment StoreEntitySet="tblCatBusiness">
+          <ScalarProperty Name="expanded_url" ColumnName="expanded_url" />
+          <ScalarProperty Name="display_url" ColumnName="display_url" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
           <ScalarProperty Name="MediaType" ColumnName="MediaType" />
           <ScalarProperty Name="MediaUrl" ColumnName="MediaUrl" />
           <ScalarProperty Name="created_at" ColumnName="created_at" />
@@ -44,6 +50,9 @@
     <EntitySetMapping Name="tblCatFacts">
       <EntityTypeMapping TypeName="TwitRapDBModel.tblCatFact">
         <MappingFragment StoreEntitySet="tblCatFacts">
+          <ScalarProperty Name="expanded_url" ColumnName="expanded_url" />
+          <ScalarProperty Name="display_url" ColumnName="display_url" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
           <ScalarProperty Name="MediaType" ColumnName="MediaType" />
           <ScalarProperty Name="MediaUrl" ColumnName="MediaUrl" />
           <ScalarProperty Name="created_at" ColumnName="created_at" />
@@ -100,6 +109,9 @@
     <EntitySetMapping Name="tblCatJokes">
       <EntityTypeMapping TypeName="TwitRapDBModel.tblCatJoke">
         <MappingFragment StoreEntitySet="tblCatJokes">
+          <ScalarProperty Name="expanded_url" ColumnName="expanded_url" />
+          <ScalarProperty Name="display_url" ColumnName="display_url" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
           <ScalarProperty Name="MediaType" ColumnName="MediaType" />
           <ScalarProperty Name="MediaUrl" ColumnName="MediaUrl" />
           <ScalarProperty Name="created_at" ColumnName="created_at" />
@@ -158,6 +170,9 @@
     <EntitySetMapping Name="tblCatNews">
       <EntityTypeMapping TypeName="TwitRapDBModel.tblCatNew">
         <MappingFragment StoreEntitySet="tblCatNews">
+          <ScalarProperty Name="expanded_url" ColumnName="expanded_url" />
+          <ScalarProperty Name="display_url" ColumnName="display_url" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
           <ScalarProperty Name="MediaType" ColumnName="MediaType" />
           <ScalarProperty Name="MediaUrl" ColumnName="MediaUrl" />
           <ScalarProperty Name="created_at" ColumnName="created_at" />
@@ -178,6 +193,9 @@
     <EntitySetMapping Name="tblCatSports">
       <EntityTypeMapping TypeName="TwitRapDBModel.tblCatSport">
         <MappingFragment StoreEntitySet="tblCatSports">
+          <ScalarProperty Name="expanded_url" ColumnName="expanded_url" />
+          <ScalarProperty Name="display_url" ColumnName="display_url" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
           <ScalarProperty Name="MediaType" ColumnName="MediaType" />
           <ScalarProperty Name="MediaUrl" ColumnName="MediaUrl" />
           <ScalarProperty Name="created_at" ColumnName="created_at" />
@@ -247,6 +265,9 @@
     <EntitySetMapping Name="tblCatLoves">
       <EntityTypeMapping TypeName="TwitRapDBModel.tblCatLove">
         <MappingFragment StoreEntitySet="tblCatLove">
+          <ScalarProperty Name="expanded_url" ColumnName="expanded_url" />
+          <ScalarProperty Name="display_url" ColumnName="display_url" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
           <ScalarProperty Name="MediaType" ColumnName="MediaType" />
           <ScalarProperty Name="MediaUrl" ColumnName="MediaUrl" />
           <ScalarProperty Name="created_at" ColumnName="created_at" />
@@ -375,6 +396,9 @@
     <EntitySetMapping Name="tblCatTeches">
       <EntityTypeMapping TypeName="TwitRapDBModel.tblCatTech">
         <MappingFragment StoreEntitySet="tblCatTech">
+          <ScalarProperty Name="expanded_url" ColumnName="expanded_url" />
+          <ScalarProperty Name="display_url" ColumnName="display_url" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
           <ScalarProperty Name="MediaType" ColumnName="MediaType" />
           <ScalarProperty Name="MediaUrl" ColumnName="MediaUrl" />
           <ScalarProperty Name="created_at" ColumnName="created_at" />
@@ -395,6 +419,9 @@
     <EntitySetMapping Name="tblCatSciences">
       <EntityTypeMapping TypeName="TwitRapDBModel.tblCatScience">
         <MappingFragment StoreEntitySet="tblCatScience">
+          <ScalarProperty Name="expanded_url" ColumnName="expanded_url" />
+          <ScalarProperty Name="display_url" ColumnName="display_url" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
           <ScalarProperty Name="MediaType" ColumnName="MediaType" />
           <ScalarProperty Name="MediaUrl" ColumnName="MediaUrl" />
           <ScalarProperty Name="created_at" ColumnName="created_at" />
@@ -412,5 +439,85 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="tblCatLove1">
+      <EntityTypeMapping TypeName="TwitRapDBModel.tblCatLove1">
+        <MappingFragment StoreEntitySet="tblCatLove1">
+          <ScalarProperty Name="MediaType" ColumnName="MediaType" />
+          <ScalarProperty Name="MediaUrl" ColumnName="MediaUrl" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="Fav_Count" ColumnName="Fav_Count" />
+          <ScalarProperty Name="RT_Count" ColumnName="RT_Count" />
+          <ScalarProperty Name="ProfileUrl" ColumnName="ProfileUrl" />
+          <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
+          <ScalarProperty Name="location" ColumnName="location" />
+          <ScalarProperty Name="screenname" ColumnName="screenname" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="text" ColumnName="text" />
+          <ScalarProperty Name="TwitID" ColumnName="TwitID" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="USP_FetchCATBusinessTweets" FunctionName="TwitRapDBModel.Store.USP_FetchCATBusinessTweets">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TwitRapDBModel.USP_FetchCATBusinessTweets_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TwitID" ColumnName="TwitID" />
+          <ScalarProperty Name="text" ColumnName="text" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="screenname" ColumnName="screenname" />
+          <ScalarProperty Name="location" ColumnName="location" />
+          <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
+          <ScalarProperty Name="ProfileUrl" ColumnName="ProfileUrl" />
+          <ScalarProperty Name="RT_Count" ColumnName="RT_Count" />
+          <ScalarProperty Name="Fav_Count" ColumnName="Fav_Count" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="MediaUrl" ColumnName="MediaUrl" />
+          <ScalarProperty Name="MediaType" ColumnName="MediaType" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USP_FetchCATScienceTweets" FunctionName="TwitRapDBModel.Store.USP_FetchCATScienceTweets">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TwitRapDBModel.USP_FetchCATScienceTweets_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TwitID" ColumnName="TwitID" />
+          <ScalarProperty Name="text" ColumnName="text" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="screenname" ColumnName="screenname" />
+          <ScalarProperty Name="location" ColumnName="location" />
+          <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
+          <ScalarProperty Name="ProfileUrl" ColumnName="ProfileUrl" />
+          <ScalarProperty Name="RT_Count" ColumnName="RT_Count" />
+          <ScalarProperty Name="Fav_Count" ColumnName="Fav_Count" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="MediaUrl" ColumnName="MediaUrl" />
+          <ScalarProperty Name="MediaType" ColumnName="MediaType" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="USP_FetchCATTechTweets" FunctionName="TwitRapDBModel.Store.USP_FetchCATTechTweets">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TwitRapDBModel.USP_FetchCATTechTweets_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TwitID" ColumnName="TwitID" />
+          <ScalarProperty Name="text" ColumnName="text" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="screenname" ColumnName="screenname" />
+          <ScalarProperty Name="location" ColumnName="location" />
+          <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
+          <ScalarProperty Name="ProfileUrl" ColumnName="ProfileUrl" />
+          <ScalarProperty Name="RT_Count" ColumnName="RT_Count" />
+          <ScalarProperty Name="Fav_Count" ColumnName="Fav_Count" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="MediaUrl" ColumnName="MediaUrl" />
+          <ScalarProperty Name="MediaType" ColumnName="MediaType" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

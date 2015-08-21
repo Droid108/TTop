@@ -18,6 +18,9 @@
     <Property Name="created_at" Type="datetime" />
     <Property Name="MediaUrl" Type="nvarchar" MaxLength="300" />
     <Property Name="MediaType" Type="nvarchar" MaxLength="50" />
+    <Property Name="Url" Type="nvarchar" MaxLength="300" />
+    <Property Name="display_url" Type="nvarchar" MaxLength="300" />
+    <Property Name="expanded_url" Type="nvarchar" MaxLength="500" />
   </EntityType>
   <EntityType Name="tblCatBusiness">
     <Key>
@@ -37,6 +40,9 @@
     <Property Name="created_at" Type="datetime" />
     <Property Name="MediaUrl" Type="nvarchar" MaxLength="300" />
     <Property Name="MediaType" Type="nvarchar" MaxLength="50" />
+    <Property Name="Url" Type="nvarchar" MaxLength="300" />
+    <Property Name="display_url" Type="nvarchar" MaxLength="300" />
+    <Property Name="expanded_url" Type="nvarchar" MaxLength="500" />
   </EntityType>
   <EntityType Name="tblCatFacts">
     <Key>
@@ -56,6 +62,9 @@
     <Property Name="created_at" Type="datetime" />
     <Property Name="MediaUrl" Type="nvarchar" MaxLength="300" />
     <Property Name="MediaType" Type="nvarchar" MaxLength="50" />
+    <Property Name="Url" Type="nvarchar" MaxLength="300" />
+    <Property Name="display_url" Type="nvarchar" MaxLength="300" />
+    <Property Name="expanded_url" Type="nvarchar" MaxLength="500" />
   </EntityType>
   <EntityType Name="tblCatGadgets">
     <Key>
@@ -109,6 +118,9 @@
     <Property Name="created_at" Type="datetime" />
     <Property Name="MediaUrl" Type="nvarchar" MaxLength="300" />
     <Property Name="MediaType" Type="nvarchar" MaxLength="50" />
+    <Property Name="Url" Type="nvarchar" MaxLength="300" />
+    <Property Name="display_url" Type="nvarchar" MaxLength="300" />
+    <Property Name="expanded_url" Type="nvarchar" MaxLength="500" />
   </EntityType>
   <EntityType Name="tblCatLove">
     <Key>
@@ -128,6 +140,9 @@
     <Property Name="created_at" Type="datetime" />
     <Property Name="MediaUrl" Type="nvarchar" MaxLength="300" />
     <Property Name="MediaType" Type="nvarchar" MaxLength="50" />
+    <Property Name="Url" Type="nvarchar" MaxLength="300" />
+    <Property Name="display_url" Type="nvarchar" MaxLength="300" />
+    <Property Name="expanded_url" Type="nvarchar" MaxLength="500" />
   </EntityType>
   <EntityType Name="tblCatMovies">
     <Key>
@@ -183,6 +198,9 @@
     <Property Name="created_at" Type="datetime" />
     <Property Name="MediaUrl" Type="nvarchar" MaxLength="300" />
     <Property Name="MediaType" Type="nvarchar" MaxLength="50" />
+    <Property Name="Url" Type="nvarchar" MaxLength="300" />
+    <Property Name="display_url" Type="nvarchar" MaxLength="300" />
+    <Property Name="expanded_url" Type="nvarchar" MaxLength="500" />
   </EntityType>
   <EntityType Name="tblCatScience">
     <Key>
@@ -202,6 +220,9 @@
     <Property Name="created_at" Type="datetime" />
     <Property Name="MediaUrl" Type="nvarchar" MaxLength="300" />
     <Property Name="MediaType" Type="nvarchar" MaxLength="50" />
+    <Property Name="Url" Type="nvarchar" MaxLength="300" />
+    <Property Name="display_url" Type="nvarchar" MaxLength="300" />
+    <Property Name="expanded_url" Type="nvarchar" MaxLength="500" />
   </EntityType>
   <EntityType Name="tblCatSports">
     <Key>
@@ -221,6 +242,9 @@
     <Property Name="created_at" Type="datetime" />
     <Property Name="MediaUrl" Type="nvarchar" MaxLength="300" />
     <Property Name="MediaType" Type="nvarchar" MaxLength="50" />
+    <Property Name="Url" Type="nvarchar" MaxLength="300" />
+    <Property Name="display_url" Type="nvarchar" MaxLength="300" />
+    <Property Name="expanded_url" Type="nvarchar" MaxLength="500" />
   </EntityType>
   <EntityType Name="tblCatTech">
     <Key>
@@ -240,6 +264,9 @@
     <Property Name="created_at" Type="datetime" />
     <Property Name="MediaUrl" Type="nvarchar" MaxLength="300" />
     <Property Name="MediaType" Type="nvarchar" MaxLength="50" />
+    <Property Name="Url" Type="nvarchar" MaxLength="300" />
+    <Property Name="display_url" Type="nvarchar" MaxLength="300" />
+    <Property Name="expanded_url" Type="nvarchar" MaxLength="500" />
   </EntityType>
   <EntityType Name="tblCatTravel">
     <Key>
@@ -270,7 +297,38 @@
     <Property Name="ZoneName" Type="nvarchar" MaxLength="50" />
     <Property Name="LogTime" Type="datetime" Nullable="false" />
   </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'TRDB2015.twitrapuser.tblCatLove1' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tblCatLove1">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="TwitID" />
+      <PropertyRef Name="name" />
+      <PropertyRef Name="screenname" />
+      <PropertyRef Name="IsVerified" />
+      <PropertyRef Name="RT_Count" />
+      <PropertyRef Name="Fav_Count" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TwitID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="text" Type="nvarchar" MaxLength="500" />
+    <Property Name="userid" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="screenname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="location" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsVerified" Type="bit" Nullable="false" />
+    <Property Name="ProfileUrl" Type="nvarchar" MaxLength="150" />
+    <Property Name="RT_Count" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Fav_Count" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="created_at" Type="datetime" />
+    <Property Name="MediaUrl" Type="nvarchar" MaxLength="300" />
+    <Property Name="MediaType" Type="nvarchar" MaxLength="50" />
+  </EntityType>
   <Function Name="USP_FetchCATAutoTweets" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="fType" Type="int" Mode="In" />
+    <Parameter Name="fromId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="USP_FetchCATBusinessTweets" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="fType" Type="int" Mode="In" />
     <Parameter Name="fromId" Type="int" Mode="In" />
   </Function>
@@ -290,7 +348,15 @@
     <Parameter Name="fType" Type="int" Mode="In" />
     <Parameter Name="fromId" Type="int" Mode="In" />
   </Function>
+  <Function Name="USP_FetchCATScienceTweets" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="fType" Type="int" Mode="In" />
+    <Parameter Name="fromId" Type="int" Mode="In" />
+  </Function>
   <Function Name="USP_FetchCATSportsTweets" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="fType" Type="int" Mode="In" />
+    <Parameter Name="fromId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="USP_FetchCATTechTweets" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="fType" Type="int" Mode="In" />
     <Parameter Name="fromId" Type="int" Mode="In" />
   </Function>
@@ -314,5 +380,23 @@
     <EntitySet Name="tblCatTech" EntityType="Self.tblCatTech" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblCatTravel" EntityType="Self.tblCatTravel" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tblDemoBeacon" EntityType="Self.tblDemoBeacon" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblCatLove1" EntityType="Self.tblCatLove1" store:Type="Tables" store:Schema="twitrapuser">
+      <DefiningQuery>SELECT 
+[tblCatLove1].[Id] AS [Id], 
+[tblCatLove1].[TwitID] AS [TwitID], 
+[tblCatLove1].[text] AS [text], 
+[tblCatLove1].[userid] AS [userid], 
+[tblCatLove1].[name] AS [name], 
+[tblCatLove1].[screenname] AS [screenname], 
+[tblCatLove1].[location] AS [location], 
+[tblCatLove1].[IsVerified] AS [IsVerified], 
+[tblCatLove1].[ProfileUrl] AS [ProfileUrl], 
+[tblCatLove1].[RT_Count] AS [RT_Count], 
+[tblCatLove1].[Fav_Count] AS [Fav_Count], 
+[tblCatLove1].[created_at] AS [created_at], 
+[tblCatLove1].[MediaUrl] AS [MediaUrl], 
+[tblCatLove1].[MediaType] AS [MediaType]
+FROM [twitrapuser].[tblCatLove1] AS [tblCatLove1]</DefiningQuery>
+    </EntitySet>
   </EntityContainer>
 </Schema>

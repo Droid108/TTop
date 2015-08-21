@@ -12,7 +12,7 @@ namespace TTServices.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class tblCatScience
+    public partial class tblCatLove1
     {
         public int Id { get; set; }
         public decimal TwitID { get; set; }
@@ -28,8 +28,5 @@ namespace TTServices.Model
         public Nullable<System.DateTime> created_at { get; set; }
         public string MediaUrl { get; set; }
         public string MediaType { get; set; }
-        public string Url { get; set; }
-        public string display_url { get; set; }
-        public string expanded_url { get; set; }
     }
 }

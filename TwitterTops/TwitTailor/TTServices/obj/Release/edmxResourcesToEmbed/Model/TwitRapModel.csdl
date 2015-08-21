@@ -44,6 +44,19 @@
     </FunctionImport>
     <EntitySet Name="tblCatTeches" EntityType="TwitRapDBModel.tblCatTech" />
     <EntitySet Name="tblCatSciences" EntityType="TwitRapDBModel.tblCatScience" />
+    <EntitySet Name="tblCatLove1" EntityType="TwitRapDBModel.tblCatLove1" />
+    <FunctionImport Name="USP_FetchCATBusinessTweets" ReturnType="Collection(TwitRapDBModel.USP_FetchCATBusinessTweets_Result)">
+      <Parameter Name="fType" Mode="In" Type="Int32" />
+      <Parameter Name="fromId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="USP_FetchCATScienceTweets" ReturnType="Collection(TwitRapDBModel.USP_FetchCATScienceTweets_Result)">
+      <Parameter Name="fType" Mode="In" Type="Int32" />
+      <Parameter Name="fromId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="USP_FetchCATTechTweets" ReturnType="Collection(TwitRapDBModel.USP_FetchCATTechTweets_Result)">
+      <Parameter Name="fType" Mode="In" Type="Int32" />
+      <Parameter Name="fromId" Mode="In" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
   <EntityType Name="tblCatAuto">
     <Key>
@@ -63,6 +76,9 @@
     <Property Type="DateTime" Name="created_at" Precision="3" />
     <Property Type="String" Name="MediaUrl" MaxLength="300" FixedLength="false" Unicode="true" />
     <Property Type="String" Name="MediaType" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Url" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="display_url" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="expanded_url" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="tblCatBusiness">
     <Key>
@@ -82,6 +98,9 @@
     <Property Type="DateTime" Name="created_at" Precision="3" />
     <Property Type="String" Name="MediaUrl" MaxLength="300" FixedLength="false" Unicode="true" />
     <Property Type="String" Name="MediaType" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Url" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="display_url" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="expanded_url" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="tblCatFact">
     <Key>
@@ -101,6 +120,9 @@
     <Property Type="DateTime" Name="created_at" Precision="3" />
     <Property Type="String" Name="MediaUrl" MaxLength="300" FixedLength="false" Unicode="true" />
     <Property Type="String" Name="MediaType" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Url" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="display_url" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="expanded_url" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="tblCatGadget">
     <Key>
@@ -154,6 +176,9 @@
     <Property Type="DateTime" Name="created_at" Precision="3" />
     <Property Type="String" Name="MediaUrl" MaxLength="300" FixedLength="false" Unicode="true" />
     <Property Type="String" Name="MediaType" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Url" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="display_url" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="expanded_url" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="tblCatMovy">
     <Key>
@@ -209,6 +234,9 @@
     <Property Type="DateTime" Name="created_at" Precision="3" />
     <Property Type="String" Name="MediaUrl" MaxLength="300" FixedLength="false" Unicode="true" />
     <Property Type="String" Name="MediaType" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Url" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="display_url" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="expanded_url" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="tblCatSport">
     <Key>
@@ -228,6 +256,9 @@
     <Property Type="DateTime" Name="created_at" Precision="3" />
     <Property Type="String" Name="MediaUrl" MaxLength="300" FixedLength="false" Unicode="true" />
     <Property Type="String" Name="MediaType" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Url" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="display_url" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="expanded_url" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="tblCatTravel">
     <Key>
@@ -290,6 +321,9 @@
     <Property Type="DateTime" Name="created_at" Precision="3" />
     <Property Type="String" Name="MediaUrl" MaxLength="300" FixedLength="false" Unicode="true" />
     <Property Type="String" Name="MediaType" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Url" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="display_url" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="expanded_url" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
   </EntityType>
   <ComplexType Name="USP_FetchCATAutoTweets_Result">
     <Property Type="Int32" Name="Id" Nullable="false" />
@@ -393,6 +427,9 @@
     <Property Name="created_at" Type="DateTime" Precision="3" />
     <Property Name="MediaUrl" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
     <Property Name="MediaType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Url" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="display_url" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="expanded_url" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="tblCatScience">
     <Key>
@@ -412,5 +449,81 @@
     <Property Name="created_at" Type="DateTime" Precision="3" />
     <Property Name="MediaUrl" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
     <Property Name="MediaType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Url" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="display_url" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="expanded_url" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
   </EntityType>
+  <EntityType Name="tblCatLove1">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="TwitID" />
+      <PropertyRef Name="name" />
+      <PropertyRef Name="screenname" />
+      <PropertyRef Name="IsVerified" />
+      <PropertyRef Name="RT_Count" />
+      <PropertyRef Name="Fav_Count" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TwitID" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="text" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="userid" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="screenname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="location" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsVerified" Type="Boolean" Nullable="false" />
+    <Property Name="ProfileUrl" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="RT_Count" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="Fav_Count" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="created_at" Type="DateTime" Precision="3" />
+    <Property Name="MediaUrl" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="MediaType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <ComplexType Name="USP_FetchCATBusinessTweets_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="Decimal" Name="TwitID" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="text" Nullable="true" MaxLength="500" />
+    <Property Type="Decimal" Name="userid" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="String" Name="name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="screenname" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="location" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsVerified" Nullable="false" />
+    <Property Type="String" Name="ProfileUrl" Nullable="true" MaxLength="150" />
+    <Property Type="Decimal" Name="RT_Count" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="Fav_Count" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="DateTime" Name="created_at" Nullable="true" Precision="23" />
+    <Property Type="String" Name="MediaUrl" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="MediaType" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="USP_FetchCATScienceTweets_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="Decimal" Name="TwitID" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="text" Nullable="true" MaxLength="500" />
+    <Property Type="Decimal" Name="userid" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="String" Name="name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="screenname" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="location" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsVerified" Nullable="false" />
+    <Property Type="String" Name="ProfileUrl" Nullable="true" MaxLength="150" />
+    <Property Type="Decimal" Name="RT_Count" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="Fav_Count" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="DateTime" Name="created_at" Nullable="true" Precision="23" />
+    <Property Type="String" Name="MediaUrl" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="MediaType" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="USP_FetchCATTechTweets_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="Decimal" Name="TwitID" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="text" Nullable="true" MaxLength="500" />
+    <Property Type="Decimal" Name="userid" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="String" Name="name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="screenname" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="location" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsVerified" Nullable="false" />
+    <Property Type="String" Name="ProfileUrl" Nullable="true" MaxLength="150" />
+    <Property Type="Decimal" Name="RT_Count" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Decimal" Name="Fav_Count" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="DateTime" Name="created_at" Nullable="true" Precision="23" />
+    <Property Type="String" Name="MediaUrl" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="MediaType" Nullable="true" MaxLength="50" />
+  </ComplexType>
 </Schema>

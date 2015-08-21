@@ -43,6 +43,7 @@ namespace TTServices.Model
         public DbSet<tblCatLove> tblCatLoves { get; set; }
         public DbSet<tblCatTech> tblCatTeches { get; set; }
         public DbSet<tblCatScience> tblCatSciences { get; set; }
+        public DbSet<tblCatLove1> tblCatLove1 { get; set; }
     
         public virtual ObjectResult<USP_FetchCATLoveTweets_Result> USP_FetchCATLoveTweets(Nullable<int> fType, Nullable<int> fromId)
         {
@@ -133,6 +134,45 @@ namespace TTServices.Model
                 new ObjectParameter("fromId", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<USP_FetchCATTravelTweets_Result>("USP_FetchCATTravelTweets", fTypeParameter, fromIdParameter);
+        }
+    
+        public virtual ObjectResult<USP_FetchCATBusinessTweets_Result> USP_FetchCATBusinessTweets(Nullable<int> fType, Nullable<int> fromId)
+        {
+            var fTypeParameter = fType.HasValue ?
+                new ObjectParameter("fType", fType) :
+                new ObjectParameter("fType", typeof(int));
+    
+            var fromIdParameter = fromId.HasValue ?
+                new ObjectParameter("fromId", fromId) :
+                new ObjectParameter("fromId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<USP_FetchCATBusinessTweets_Result>("USP_FetchCATBusinessTweets", fTypeParameter, fromIdParameter);
+        }
+    
+        public virtual ObjectResult<USP_FetchCATScienceTweets_Result> USP_FetchCATScienceTweets(Nullable<int> fType, Nullable<int> fromId)
+        {
+            var fTypeParameter = fType.HasValue ?
+                new ObjectParameter("fType", fType) :
+                new ObjectParameter("fType", typeof(int));
+    
+            var fromIdParameter = fromId.HasValue ?
+                new ObjectParameter("fromId", fromId) :
+                new ObjectParameter("fromId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<USP_FetchCATScienceTweets_Result>("USP_FetchCATScienceTweets", fTypeParameter, fromIdParameter);
+        }
+    
+        public virtual ObjectResult<USP_FetchCATTechTweets_Result> USP_FetchCATTechTweets(Nullable<int> fType, Nullable<int> fromId)
+        {
+            var fTypeParameter = fType.HasValue ?
+                new ObjectParameter("fType", fType) :
+                new ObjectParameter("fType", typeof(int));
+    
+            var fromIdParameter = fromId.HasValue ?
+                new ObjectParameter("fromId", fromId) :
+                new ObjectParameter("fromId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<USP_FetchCATTechTweets_Result>("USP_FetchCATTechTweets", fTypeParameter, fromIdParameter);
         }
     }
 }

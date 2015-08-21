@@ -214,6 +214,9 @@
     <Compile Include="Model\tblCatLove.cs">
       <DependentUpon>TwitRapModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\tblCatLove1.cs">
+      <DependentUpon>TwitRapModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\tblCatMovy.cs">
       <DependentUpon>TwitRapModel.tt</DependentUpon>
     </Compile>
@@ -256,6 +259,9 @@
     <Compile Include="Model\USP_FetchCATAutoTweets_Result.cs">
       <DependentUpon>TwitRapModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\USP_FetchCATBusinessTweets_Result.cs">
+      <DependentUpon>TwitRapModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\USP_FetchCATFactsTweets_Result.cs">
       <DependentUpon>TwitRapModel.tt</DependentUpon>
     </Compile>
@@ -268,7 +274,13 @@
     <Compile Include="Model\USP_FetchCATNewsTweets_Result.cs">
       <DependentUpon>TwitRapModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\USP_FetchCATScienceTweets_Result.cs">
+      <DependentUpon>TwitRapModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\USP_FetchCATSportsTweets_Result.cs">
+      <DependentUpon>TwitRapModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\USP_FetchCATTechTweets_Result.cs">
       <DependentUpon>TwitRapModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\USP_FetchCATTravelTweets_Result.cs">

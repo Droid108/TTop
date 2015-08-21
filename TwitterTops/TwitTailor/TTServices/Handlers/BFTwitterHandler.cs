@@ -36,7 +36,7 @@ namespace TwitTailor.Handlers
 
         public string Get(int id)
         {
-            dataDumper(id);
+            //dataDumper(id);
             return "true";
         }
 
@@ -46,26 +46,26 @@ namespace TwitTailor.Handlers
         {
             try
             {
-                //getCATLove();
+                getCATLove();
+                Thread.Sleep(1000);
+                getCATAuto();
+                Thread.Sleep(1000);
+                getCATBusiness();
+                Thread.Sleep(1000);
+                getCATFacts();
+                Thread.Sleep(1000);
+                getCATScience();
+                Thread.Sleep(1000);
+                getCATJokes();
+                Thread.Sleep(1000);
+                getCATTechnology();
+                Thread.Sleep(1000);
+                getCATSports();
+                Thread.Sleep(1000);
+                getCATNews();
                 //Thread.Sleep(1000);
                 //getCATAuto();
-                //Thread.Sleep(1000);
-                //getCATBusiness();
-                //Thread.Sleep(1000);
-                //getCATFacts();
-                //Thread.Sleep(1000);
-                //getCATScience();
-                //Thread.Sleep(1000);
-                //getCATJokes();
-                //Thread.Sleep(1000);
-                //getCATTechnology();
-                //Thread.Sleep(1000);
-                //getCATSports();
-                //Thread.Sleep(1000);
-                //getCATNews();
-                //Thread.Sleep(1000);
-                //getCATAuto();
-                //dataDumper(1);
+                ////dataDumper(1);
                 return resultString;
             }
             catch (Exception ex)
@@ -77,46 +77,54 @@ namespace TwitTailor.Handlers
         int i;
         private void dataDumper(int categoryId)
         {
-            i = 0;
-            finalUrlString = null;
-            for (i = 0; i < 100; i++)
+            try
             {
-                switch (categoryId)
+                i = 0;
+                //finalUrlString = null;
+                for (i = 0; i < 100; i++)
                 {
-                    case 1:
-                        getCATLove();
-                        break;
-                    case 2:
-                        getCATAuto();
-                        break;
-                    case 3:
-                        getCATBusiness();
-                        break;
-                    case 4:
-                        getCATFacts();
-                        break;
-                    case 5:
-                        getCATScience();
-                        break;
-                    case 6:
-                        getCATJokes();
-                        break;
-                    case 7:
-                        getCATTechnology();
-                        break;
-                    case 8:
-                        getCATSports();
-                        break;
-                    case 9:
-                        getCATNews();
-                        break;
-                    default:
-                        getCATLove();
-                        break;
+                    switch (categoryId)
+                    {
+                        case 1:
+                            getCATLove();
+                            break;
+                        case 2:
+                            getCATAuto();
+                            break;
+                        case 3:
+                            getCATBusiness();
+                            break;
+                        case 4:
+                            getCATFacts();
+                            break;
+                        case 5:
+                            getCATScience();
+                            break;
+                        case 6:
+                            getCATJokes();
+                            break;
+                        case 7:
+                            getCATTechnology();
+                            break;
+                        case 8:
+                            getCATSports();
+                            break;
+                        case 9:
+                            getCATNews();
+                            break;
+                        default:
+                            getCATLove();
+                            break;
+                    }
+                    Thread.Sleep(1000);
                 }
-                Thread.Sleep(1000);
+                i = 0;
             }
-            i = 0;
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
 
 
@@ -192,7 +200,7 @@ namespace TwitTailor.Handlers
             }
             return sb.ToString();
         }
-        private string finalUrlString;
+        //private string finalUrlString;
         private dynamic makeRequestForData(string scNames)
         {
             if (twitAuthResponse == null)
@@ -205,14 +213,14 @@ namespace TwitTailor.Handlers
             if (string.IsNullOrEmpty(timelineFormat))
                 throw new Exception("Twitter Search API Url is not found or invalid");
             var timelineUrl = "";
-            if (finalUrlString != null)
-            {
-                screenname = finalUrlString;
-                timelineFormat = timelineFormat.Replace("?q=", "");
-            }
+            //if (finalUrlString != null)
+            //{
+            //    screenname = finalUrlString;
+            //    timelineFormat = timelineFormat.Replace("?q=", "");
+            //}
 
             timelineUrl = string.Format(timelineFormat, screenname);
-            if (finalUrlString == null)
+            //if (finalUrlString == null)
                 timelineUrl = timelineUrl + "&count=200";
             HttpWebRequest timeLineRequest = (HttpWebRequest)WebRequest.Create(timelineUrl);
             var timelineHeaderFormat = "{0} {1}";
@@ -229,7 +237,11 @@ namespace TwitTailor.Handlers
             }
             return JsonConvert.DeserializeObject(timeLineJson);
         }
-
+        string media_url = null;
+        string media_type = null;
+        string Url = null;
+        string display_url = null;
+        string expanded_url = null;
         private string getCATLove()
         {
             try
@@ -237,20 +249,23 @@ namespace TwitTailor.Handlers
                 string scNames = ConfigurationManager.AppSettings["CAT_LOVE"].ToString();
                 tblCatLove tblObj = null;
                 dynamic jsonObj = makeRequestForData(scNames);
-                string media_url = null;
-                string media_type = null;
-                if (jsonObj.search_metadata != null)
-                    finalUrlString = jsonObj.search_metadata["next_results"].Value;
-
+                //if (jsonObj.search_metadata != null)
+                //    finalUrlString = jsonObj.search_metadata["next_results"].Value;
                 foreach (JObject res in jsonObj.statuses)
                 {
                     media_url = string.Empty;
                     media_type = string.Empty;
+                    Url = string.Empty;
+                    display_url = string.Empty;
+                    expanded_url = string.Empty;
                     if (res["entities"]["media"] != null)
                     {
                         JArray jObjects = res["entities"]["media"].Value<JArray>();
                         media_url = jObjects[0]["media_url"] == null ? "" : jObjects[0]["media_url"].Value<string>();
                         media_type = jObjects[0]["type"] == null ? "" : jObjects[0]["type"].Value<string>();
+                        Url = jObjects[0]["url"] == null ? "" : jObjects[0]["url"].Value<string>();
+                        display_url = jObjects[0]["display_url"] == null ? "" : jObjects[0]["display_url"].Value<string>();
+                        expanded_url = jObjects[0]["expanded_url"] == null ? "" : jObjects[0]["expanded_url"].Value<string>();
                     }
                     decimal tweetId = res["id"].Value<decimal>();
                     tblCatLove tbObj = EntityObj.tblCatLoves.Where(x => x.TwitID.Equals(tweetId)).FirstOrDefault();
@@ -274,6 +289,12 @@ namespace TwitTailor.Handlers
                             tblObj.MediaUrl = media_url;
                         if (media_type.Length >= 0)
                             tblObj.MediaType = media_type;
+                        if (Url.Length >= 0)
+                            tblObj.Url = Url;
+                        if (display_url.Length >= 0)
+                            tblObj.display_url = display_url;
+                        if (expanded_url.Length >= 0)
+                            tblObj.expanded_url = expanded_url;
                         EntityObj.tblCatLoves.Add(tblObj);
                     }
                     else
@@ -295,6 +316,12 @@ namespace TwitTailor.Handlers
                             tbObj.MediaUrl = media_url;
                         if (media_type.Length >= 0)
                             tbObj.MediaType = media_type;
+                        if (Url.Length >= 0)
+                            tbObj.Url = Url;
+                        if (display_url.Length >= 0)
+                            tbObj.display_url = display_url;
+                        if (expanded_url.Length >= 0)
+                            tbObj.expanded_url = expanded_url;
                         EntityObj.Entry(tbObj).State = System.Data.EntityState.Modified;
                     }
                 }
@@ -324,19 +351,23 @@ namespace TwitTailor.Handlers
                 tblCatFact tblObj = null;
 
                 dynamic jsonObj = makeRequestForData(scNames);
-                string media_url = null;
-                string media_type = null;
-                if (jsonObj.search_metadata != null)
-                    finalUrlString = jsonObj.search_metadata["next_results"].Value;
+                //if (jsonObj.search_metadata != null)
+                //    finalUrlString = jsonObj.search_metadata["next_results"].Value;
                 foreach (JObject res in jsonObj.statuses)
                 {
                     media_url = string.Empty;
                     media_type = string.Empty;
+                    Url = string.Empty;
+                    display_url = string.Empty;
+                    expanded_url = string.Empty;
                     if (res["entities"]["media"] != null)
                     {
                         JArray jObjects = res["entities"]["media"].Value<JArray>();
                         media_url = jObjects[0]["media_url"] == null ? "" : jObjects[0]["media_url"].Value<string>();
                         media_type = jObjects[0]["type"] == null ? "" : jObjects[0]["type"].Value<string>();
+                        Url = jObjects[0]["url"] == null ? "" : jObjects[0]["url"].Value<string>();
+                        display_url = jObjects[0]["display_url"] == null ? "" : jObjects[0]["display_url"].Value<string>();
+                        expanded_url = jObjects[0]["expanded_url"] == null ? "" : jObjects[0]["expanded_url"].Value<string>();
                     }
                     decimal tweetId = res["id"].Value<decimal>();
                     tblCatFact tbObj = EntityObj.tblCatFacts.Where(x => x.TwitID.Equals(tweetId)).FirstOrDefault();
@@ -360,6 +391,12 @@ namespace TwitTailor.Handlers
                             tblObj.MediaUrl = media_url;
                         if (media_type.Length >= 0)
                             tblObj.MediaType = media_type;
+                        if (Url.Length >= 0)
+                            tblObj.Url = Url;
+                        if (display_url.Length >= 0)
+                            tblObj.display_url = display_url;
+                        if (expanded_url.Length >= 0)
+                            tblObj.expanded_url = expanded_url;
                         EntityObj.tblCatFacts.Add(tblObj);
                     }
                     else
@@ -381,6 +418,12 @@ namespace TwitTailor.Handlers
                             tbObj.MediaUrl = media_url;
                         if (media_type.Length >= 0)
                             tbObj.MediaType = media_type;
+                        if (Url.Length >= 0)
+                            tbObj.Url = Url;
+                        if (display_url.Length >= 0)
+                            tbObj.display_url = display_url;
+                        if (expanded_url.Length >= 0)
+                            tbObj.expanded_url = expanded_url;
                         EntityObj.Entry(tbObj).State = System.Data.EntityState.Modified;
                     }
                 }
@@ -410,19 +453,26 @@ namespace TwitTailor.Handlers
                 tblCatAuto tblObj = null;
 
                 dynamic jsonObj = makeRequestForData(scNames);
-                string media_url = null;
-                string media_type = null;
-                if (jsonObj.search_metadata != null)
-                    finalUrlString = jsonObj.search_metadata["next_results"].Value;
+                //if (jsonObj.search_metadata != null && jsonObj.search_metadata["next_results"] != null)
+                //{
+                //   finalUrlString = jsonObj.search_metadata["next_results"].Value;
+                //}
+                    
                 foreach (JObject res in jsonObj.statuses)
                 {
                     media_url = string.Empty;
                     media_type = string.Empty;
+                    Url = string.Empty;
+                    display_url = string.Empty;
+                    expanded_url = string.Empty;
                     if (res["entities"]["media"] != null)
                     {
                         JArray jObjects = res["entities"]["media"].Value<JArray>();
                         media_url = jObjects[0]["media_url"] == null ? "" : jObjects[0]["media_url"].Value<string>();
                         media_type = jObjects[0]["type"] == null ? "" : jObjects[0]["type"].Value<string>();
+                        Url = jObjects[0]["url"] == null ? "" : jObjects[0]["url"].Value<string>();
+                        display_url = jObjects[0]["display_url"] == null ? "" : jObjects[0]["display_url"].Value<string>();
+                        expanded_url = jObjects[0]["expanded_url"] == null ? "" : jObjects[0]["expanded_url"].Value<string>();
                     }
                     decimal tweetId = res["id"].Value<decimal>();
                     tblCatAuto tbObj = EntityObj.tblCatAutoes.Where(x => x.TwitID.Equals(tweetId)).FirstOrDefault();
@@ -446,6 +496,12 @@ namespace TwitTailor.Handlers
                             tblObj.MediaUrl = media_url;
                         if (media_type.Length >= 0)
                             tblObj.MediaType = media_type;
+                        if (Url.Length >= 0)
+                            tblObj.Url = Url;
+                        if (display_url.Length >= 0)
+                            tblObj.display_url = display_url;
+                        if (expanded_url.Length >= 0)
+                            tblObj.expanded_url = expanded_url;
                         EntityObj.tblCatAutoes.Add(tblObj);
                     }
                     else
@@ -467,6 +523,12 @@ namespace TwitTailor.Handlers
                             tbObj.MediaUrl = media_url;
                         if (media_type.Length >= 0)
                             tbObj.MediaType = media_type;
+                        if (Url.Length >= 0)
+                            tbObj.Url = Url;
+                        if (display_url.Length >= 0)
+                            tbObj.display_url = display_url;
+                        if (expanded_url.Length >= 0)
+                            tbObj.expanded_url = expanded_url;
                         EntityObj.Entry(tbObj).State = System.Data.EntityState.Modified;
                     }
                 }
@@ -494,19 +556,23 @@ namespace TwitTailor.Handlers
                 string scNames = ConfigurationManager.AppSettings["CAT_JOKES"].ToString();
                 tblCatJoke tblObj = null;
                 dynamic jsonObj = makeRequestForData(scNames);
-                string media_url = null;
-                string media_type = null;
-                if (jsonObj.search_metadata != null)
-                    finalUrlString = jsonObj.search_metadata["next_results"].Value;
+                //if (jsonObj.search_metadata != null)
+                //    finalUrlString = jsonObj.search_metadata["next_results"].Value;
                 foreach (JObject res in jsonObj.statuses)
                 {
                     media_url = string.Empty;
                     media_type = string.Empty;
+                    Url = string.Empty;
+                    display_url = string.Empty;
+                    expanded_url = string.Empty;
                     if (res["entities"]["media"] != null)
                     {
                         JArray jObjects = res["entities"]["media"].Value<JArray>();
                         media_url = jObjects[0]["media_url"] == null ? "" : jObjects[0]["media_url"].Value<string>();
                         media_type = jObjects[0]["type"] == null ? "" : jObjects[0]["type"].Value<string>();
+                        Url = jObjects[0]["url"] == null ? "" : jObjects[0]["url"].Value<string>();
+                        display_url = jObjects[0]["display_url"] == null ? "" : jObjects[0]["display_url"].Value<string>();
+                        expanded_url = jObjects[0]["expanded_url"] == null ? "" : jObjects[0]["expanded_url"].Value<string>();
                     }
                     decimal tweetId = res["id"].Value<decimal>();
                     tblCatJoke tbObj = EntityObj.tblCatJokes.Where(x => x.TwitID.Equals(tweetId)).FirstOrDefault();
@@ -530,6 +596,12 @@ namespace TwitTailor.Handlers
                             tblObj.MediaUrl = media_url;
                         if (media_type.Length >= 0)
                             tblObj.MediaType = media_type;
+                        if (Url.Length >= 0)
+                            tblObj.Url = Url;
+                        if (display_url.Length >= 0)
+                            tblObj.display_url = display_url;
+                        if (expanded_url.Length >= 0)
+                            tblObj.expanded_url = expanded_url;
                         EntityObj.tblCatJokes.Add(tblObj);
                     }
                     else
@@ -551,6 +623,12 @@ namespace TwitTailor.Handlers
                             tbObj.MediaUrl = media_url;
                         if (media_type.Length >= 0)
                             tbObj.MediaType = media_type;
+                        if (Url.Length >= 0)
+                            tbObj.Url = Url;
+                        if (display_url.Length >= 0)
+                            tbObj.display_url = display_url;
+                        if (expanded_url.Length >= 0)
+                            tbObj.expanded_url = expanded_url;
                         EntityObj.Entry(tbObj).State = System.Data.EntityState.Modified;
                     }
                 }
@@ -581,17 +659,23 @@ namespace TwitTailor.Handlers
                 dynamic jsonObj = makeRequestForData(scNames);
                 string media_url = null;
                 string media_type = null;
-                if (jsonObj.search_metadata != null)
-                    finalUrlString = jsonObj.search_metadata["next_results"].Value;
+                //if (jsonObj.search_metadata != null)
+                //    finalUrlString = jsonObj.search_metadata["next_results"].Value;
                 foreach (JObject res in jsonObj.statuses)
                 {
                     media_url = string.Empty;
                     media_type = string.Empty;
+                    Url = string.Empty;
+                    display_url = string.Empty;
+                    expanded_url = string.Empty;
                     if (res["entities"]["media"] != null)
                     {
                         JArray jObjects = res["entities"]["media"].Value<JArray>();
                         media_url = jObjects[0]["media_url"] == null ? "" : jObjects[0]["media_url"].Value<string>();
                         media_type = jObjects[0]["type"] == null ? "" : jObjects[0]["type"].Value<string>();
+                        Url = jObjects[0]["url"] == null ? "" : jObjects[0]["url"].Value<string>();
+                        display_url = jObjects[0]["display_url"] == null ? "" : jObjects[0]["display_url"].Value<string>();
+                        expanded_url = jObjects[0]["expanded_url"] == null ? "" : jObjects[0]["expanded_url"].Value<string>();
                     }
                     decimal tweetId = res["id"].Value<decimal>();
                     tblCatScience tbObj = EntityObj.tblCatSciences.Where(x => x.TwitID.Equals(tweetId)).FirstOrDefault();
@@ -615,6 +699,12 @@ namespace TwitTailor.Handlers
                             tblObj.MediaUrl = media_url;
                         if (media_type.Length >= 0)
                             tblObj.MediaType = media_type;
+                        if (Url.Length >= 0)
+                            tblObj.Url = Url;
+                        if (display_url.Length >= 0)
+                            tblObj.display_url = display_url;
+                        if (expanded_url.Length >= 0)
+                            tblObj.expanded_url = expanded_url;
                         EntityObj.tblCatSciences.Add(tblObj);
                     }
                     else
@@ -636,6 +726,12 @@ namespace TwitTailor.Handlers
                             tbObj.MediaUrl = media_url;
                         if (media_type.Length >= 0)
                             tbObj.MediaType = media_type;
+                        if (Url.Length >= 0)
+                            tbObj.Url = Url;
+                        if (display_url.Length >= 0)
+                            tbObj.display_url = display_url;
+                        if (expanded_url.Length >= 0)
+                            tbObj.expanded_url = expanded_url;
                         EntityObj.Entry(tbObj).State = System.Data.EntityState.Modified;
                     }
                 }
@@ -666,17 +762,23 @@ namespace TwitTailor.Handlers
                 dynamic jsonObj = makeRequestForData(scNames);
                 string media_url = null;
                 string media_type = null;
-                if (jsonObj.search_metadata != null)
-                    finalUrlString = jsonObj.search_metadata["next_results"].Value;
+                //if (jsonObj.search_metadata != null)
+                //    finalUrlString = jsonObj.search_metadata["next_results"].Value;
                 foreach (JObject res in jsonObj.statuses)
                 {
                     media_url = string.Empty;
                     media_type = string.Empty;
+                    Url = string.Empty;
+                    display_url = string.Empty;
+                    expanded_url = string.Empty;
                     if (res["entities"]["media"] != null)
                     {
                         JArray jObjects = res["entities"]["media"].Value<JArray>();
                         media_url = jObjects[0]["media_url"] == null ? "" : jObjects[0]["media_url"].Value<string>();
                         media_type = jObjects[0]["type"] == null ? "" : jObjects[0]["type"].Value<string>();
+                        Url = jObjects[0]["url"] == null ? "" : jObjects[0]["url"].Value<string>();
+                        display_url = jObjects[0]["display_url"] == null ? "" : jObjects[0]["display_url"].Value<string>();
+                        expanded_url = jObjects[0]["expanded_url"] == null ? "" : jObjects[0]["expanded_url"].Value<string>();
                     }
                     decimal tweetId = res["id"].Value<decimal>();
                     tblCatSport tbObj = EntityObj.tblCatSports.Where(x => x.TwitID.Equals(tweetId)).FirstOrDefault();
@@ -700,6 +802,12 @@ namespace TwitTailor.Handlers
                             tblObj.MediaUrl = media_url;
                         if (media_type.Length >= 0)
                             tblObj.MediaType = media_type;
+                        if (Url.Length >= 0)
+                            tblObj.Url = Url;
+                        if (display_url.Length >= 0)
+                            tblObj.display_url = display_url;
+                        if (expanded_url.Length >= 0)
+                            tblObj.expanded_url = expanded_url;
                         EntityObj.tblCatSports.Add(tblObj);
                     }
                     else
@@ -721,6 +829,12 @@ namespace TwitTailor.Handlers
                             tbObj.MediaUrl = media_url;
                         if (media_type.Length >= 0)
                             tbObj.MediaType = media_type;
+                        if (Url.Length >= 0)
+                            tbObj.Url = Url;
+                        if (display_url.Length >= 0)
+                            tbObj.display_url = display_url;
+                        if (expanded_url.Length >= 0)
+                            tbObj.expanded_url = expanded_url;
                         EntityObj.Entry(tbObj).State = System.Data.EntityState.Modified;
                     }
                 }
@@ -749,19 +863,23 @@ namespace TwitTailor.Handlers
                 string scNames = ConfigurationManager.AppSettings["CAT_NEWS"].ToString();
                 tblCatNew tblObj = null;
                 dynamic jsonObj = makeRequestForData(scNames);
-                string media_url = null;
-                string media_type = null;
-                if (jsonObj.search_metadata != null)
-                    finalUrlString = jsonObj.search_metadata["next_results"].Value;
+                //if (jsonObj.search_metadata != null)
+                //    finalUrlString = jsonObj.search_metadata["next_results"].Value;
                 foreach (JObject res in jsonObj.statuses)
                 {
                     media_url = string.Empty;
                     media_type = string.Empty;
+                    Url = string.Empty;
+                    display_url = string.Empty;
+                    expanded_url = string.Empty;
                     if (res["entities"]["media"] != null)
                     {
                         JArray jObjects = res["entities"]["media"].Value<JArray>();
                         media_url = jObjects[0]["media_url"] == null ? "" : jObjects[0]["media_url"].Value<string>();
                         media_type = jObjects[0]["type"] == null ? "" : jObjects[0]["type"].Value<string>();
+                        Url = jObjects[0]["url"] == null ? "" : jObjects[0]["url"].Value<string>();
+                        display_url = jObjects[0]["display_url"] == null ? "" : jObjects[0]["display_url"].Value<string>();
+                        expanded_url = jObjects[0]["expanded_url"] == null ? "" : jObjects[0]["expanded_url"].Value<string>();
                     }
                     decimal tweetId = res["id"].Value<decimal>();
                     tblCatNew tbObj = EntityObj.tblCatNews.Where(x => x.TwitID.Equals(tweetId)).FirstOrDefault();
@@ -785,6 +903,12 @@ namespace TwitTailor.Handlers
                             tblObj.MediaUrl = media_url;
                         if (media_type.Length >= 0)
                             tblObj.MediaType = media_type;
+                        if (Url.Length >= 0)
+                            tblObj.Url = Url;
+                        if (display_url.Length >= 0)
+                            tblObj.display_url = display_url;
+                        if (expanded_url.Length >= 0)
+                            tblObj.expanded_url = expanded_url;
                         EntityObj.tblCatNews.Add(tblObj);
                     }
                     else
@@ -806,6 +930,12 @@ namespace TwitTailor.Handlers
                             tbObj.MediaUrl = media_url;
                         if (media_type.Length >= 0)
                             tbObj.MediaType = media_type;
+                        if (Url.Length >= 0)
+                            tbObj.Url = Url;
+                        if (display_url.Length >= 0)
+                            tbObj.display_url = display_url;
+                        if (expanded_url.Length >= 0)
+                            tbObj.expanded_url = expanded_url;
                         EntityObj.Entry(tbObj).State = System.Data.EntityState.Modified;
                     }
                 }
@@ -834,19 +964,23 @@ namespace TwitTailor.Handlers
                 string scNames = ConfigurationManager.AppSettings["CAT_BUSINESS"].ToString();
                 tblCatBusiness tblObj = null;
                 dynamic jsonObj = makeRequestForData(scNames);
-                string media_url = null;
-                string media_type = null;
-                if (jsonObj.search_metadata != null)
-                    finalUrlString = jsonObj.search_metadata["next_results"].Value;
+                //if (jsonObj.search_metadata != null)
+                //    finalUrlString = jsonObj.search_metadata["next_results"].Value;
                 foreach (JObject res in jsonObj.statuses)
                 {
                     media_url = string.Empty;
                     media_type = string.Empty;
+                    Url = string.Empty;
+                    display_url = string.Empty;
+                    expanded_url = string.Empty;
                     if (res["entities"]["media"] != null)
                     {
                         JArray jObjects = res["entities"]["media"].Value<JArray>();
                         media_url = jObjects[0]["media_url"] == null ? "" : jObjects[0]["media_url"].Value<string>();
                         media_type = jObjects[0]["type"] == null ? "" : jObjects[0]["type"].Value<string>();
+                        Url = jObjects[0]["url"] == null ? "" : jObjects[0]["url"].Value<string>();
+                        display_url = jObjects[0]["display_url"] == null ? "" : jObjects[0]["display_url"].Value<string>();
+                        expanded_url = jObjects[0]["expanded_url"] == null ? "" : jObjects[0]["expanded_url"].Value<string>();
                     }
                     decimal tweetId = res["id"].Value<decimal>();
                     tblCatBusiness tbObj = EntityObj.tblCatBusinesses.Where(x => x.TwitID.Equals(tweetId)).FirstOrDefault();
@@ -870,6 +1004,12 @@ namespace TwitTailor.Handlers
                             tblObj.MediaUrl = media_url;
                         if (media_type.Length >= 0)
                             tblObj.MediaType = media_type;
+                        if (Url.Length >= 0)
+                            tblObj.Url = Url;
+                        if (display_url.Length >= 0)
+                            tblObj.display_url = display_url;
+                        if (expanded_url.Length >= 0)
+                            tblObj.expanded_url = expanded_url;
                         EntityObj.tblCatBusinesses.Add(tblObj);
                     }
                     else
@@ -891,6 +1031,12 @@ namespace TwitTailor.Handlers
                             tbObj.MediaUrl = media_url;
                         if (media_type.Length >= 0)
                             tbObj.MediaType = media_type;
+                        if (Url.Length >= 0)
+                            tbObj.Url = Url;
+                        if (display_url.Length >= 0)
+                            tbObj.display_url = display_url;
+                        if (expanded_url.Length >= 0)
+                            tbObj.expanded_url = expanded_url;
                         EntityObj.Entry(tbObj).State = System.Data.EntityState.Modified;
                     }
                 }
@@ -919,19 +1065,24 @@ namespace TwitTailor.Handlers
                 string scNames = ConfigurationManager.AppSettings["CAT_TECHNOLOGY"].ToString();
                 tblCatTech tblObj = null;
                 dynamic jsonObj = makeRequestForData(scNames);
-                string media_url = null;
-                string media_type = null;
-                if (jsonObj.search_metadata != null)
-                    finalUrlString = jsonObj.search_metadata["next_results"].Value;
+
+                //if (jsonObj.search_metadata != null)
+                //    finalUrlString = jsonObj.search_metadata["next_results"].Value;
                 foreach (JObject res in jsonObj.statuses)
                 {
                     media_url = string.Empty;
                     media_type = string.Empty;
+                    Url = string.Empty;
+                    display_url = string.Empty;
+                    expanded_url = string.Empty;
                     if (res["entities"]["media"] != null)
                     {
                         JArray jObjects = res["entities"]["media"].Value<JArray>();
                         media_url = jObjects[0]["media_url"] == null ? "" : jObjects[0]["media_url"].Value<string>();
                         media_type = jObjects[0]["type"] == null ? "" : jObjects[0]["type"].Value<string>();
+                        Url = jObjects[0]["url"] == null ? "" : jObjects[0]["url"].Value<string>();
+                        display_url = jObjects[0]["display_url"] == null ? "" : jObjects[0]["display_url"].Value<string>();
+                        expanded_url = jObjects[0]["expanded_url"] == null ? "" : jObjects[0]["expanded_url"].Value<string>();
                     }
                     decimal tweetId = res["id"].Value<decimal>();
                     tblCatTech tbObj = EntityObj.tblCatTeches.Where(x => x.TwitID.Equals(tweetId)).FirstOrDefault();
@@ -955,6 +1106,12 @@ namespace TwitTailor.Handlers
                             tblObj.MediaUrl = media_url;
                         if (media_type.Length >= 0)
                             tblObj.MediaType = media_type;
+                        if (Url.Length >= 0)
+                            tblObj.Url = Url;
+                        if (display_url.Length >= 0)
+                            tblObj.display_url = display_url;
+                        if (expanded_url.Length >= 0)
+                            tblObj.expanded_url = expanded_url;
                         EntityObj.tblCatTeches.Add(tblObj);
                     }
                     else
@@ -976,6 +1133,12 @@ namespace TwitTailor.Handlers
                             tbObj.MediaUrl = media_url;
                         if (media_type.Length >= 0)
                             tbObj.MediaType = media_type;
+                        if (Url.Length >= 0)
+                            tbObj.Url = Url;
+                        if (display_url.Length >= 0)
+                            tbObj.display_url = display_url;
+                        if (expanded_url.Length >= 0)
+                            tbObj.expanded_url = expanded_url;
                         EntityObj.Entry(tbObj).State = System.Data.EntityState.Modified;
                     }
                 }
@@ -1030,11 +1193,63 @@ namespace TwitTailor.Handlers
     //--ALter table tblcatnews ALTER COLUMN text Nvarchar(500)
     //--ALter table tblcatsports ALTER COLUMN text Nvarchar(500)
     //--ALter table tblcattravel ALTER COLUMN text Nvarchar(500)
+
+    //    Alter table tblCatLove Add Url Nvarchar(300)
+    //Alter table tblCatLove Add display_url Nvarchar(300)
+    //Alter table tblCatLove Add expanded_url Nvarchar(500)
+
+    //Alter table tblCatAuto Add Url Nvarchar(300)
+    //Alter table tblCatAuto Add display_url Nvarchar(300)
+    //Alter table tblCatAuto Add expanded_url Nvarchar(500)
+
+    //Alter table tblCatBusiness Add Url Nvarchar(300)
+    //Alter table tblCatBusiness Add display_url Nvarchar(300)
+    //Alter table tblCatBusiness Add expanded_url Nvarchar(500)
+
+    //Alter table tblCatFacts Add Url Nvarchar(300)
+    //Alter table tblCatFacts Add display_url Nvarchar(300)
+    //Alter table tblCatFacts Add expanded_url Nvarchar(500)
+
+    //Alter table tblCatScience Add Url Nvarchar(300)
+    //Alter table tblCatScience Add display_url Nvarchar(300)
+    //Alter table tblCatScience Add expanded_url Nvarchar(500)
+
+    //Alter table tblCatJokes Add Url Nvarchar(300)
+    //Alter table tblCatJokes Add display_url Nvarchar(300)
+    //Alter table tblCatJokes Add expanded_url Nvarchar(500)
+
+    //Alter table tblCatTech Add Url Nvarchar(300)
+    //Alter table tblCatTech Add display_url Nvarchar(300)
+    //Alter table tblCatTech Add expanded_url Nvarchar(500)
+
+    //Alter table tblCatSports Add Url Nvarchar(300)
+    //Alter table tblCatSports Add display_url Nvarchar(300)
+    //Alter table tblCatSports Add expanded_url Nvarchar(500)
+
+    //Alter table tblCatNews Add Url Nvarchar(300)
+    //Alter table tblCatNews Add display_url Nvarchar(300)
+    //Alter table tblCatNews Add expanded_url Nvarchar(500)
     public class TwitAuthenticateResponse
     {
         public string token_type { get; set; }
         public string access_token { get; set; }
     }
 
+//    select count( *) from tblcatlove where url is not null and Len(Url) > 0
 
+//select count( *) from tblcatAuto where url is not null and Len(Url) > 0
+
+//select count( *) from tblcatBusiness where url is not null and Len(Url) > 0
+
+//select count( *) from tblcatFacts where url is not null and Len(Url) > 0
+
+//select count( *) from tblcatScience where url is not null and Len(Url) > 0
+
+//select count( *) from tblcatJokes where url is not null and Len(Url) > 0
+
+//select count( *) from tblcatTech where url is not null and Len(Url) > 0
+
+//select count( *) from tblcatSports where url is not null and Len(Url) > 0
+
+//select count( *) from tblcatNews where url is not null and Len(Url) > 0
 }

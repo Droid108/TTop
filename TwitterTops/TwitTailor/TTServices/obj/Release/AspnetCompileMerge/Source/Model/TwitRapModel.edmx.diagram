@@ -11,7 +11,7 @@
         <EntityTypeShape EntityType="TwitRapDBModel.tblCatGadget" Width="1.5" PointX="11.015639064375144" PointY="5.1965345615504939" />
         <EntityTypeShape EntityType="TwitRapDBModel.tblCatHF" Width="1.5" PointX="3.0044826264514044" PointY="14.739189274021978" />
         <EntityTypeShape EntityType="TwitRapDBModel.tblCatJoke" Width="1.5" PointX="5.0612486065650586" PointY="3.474494548269778" />
-        <EntityTypeShape EntityType="TwitRapDBModel.tblCatMovy" Width="1.5" PointX="1.8697821432118222" PointY="23.096742163922983" />
+        <EntityTypeShape EntityType="TwitRapDBModel.tblCatMovy" Width="1.5" PointX="0.625" PointY="23.125" />
         <EntityTypeShape EntityType="TwitRapDBModel.tblCatMusic" Width="1.5" PointX="10.935432448487465" PointY="13.085182389749765" />
         <EntityTypeShape EntityType="TwitRapDBModel.tblCatNew" Width="1.5" PointX="11.184978000440159" PointY="14.526614270418238" />
         <EntityTypeShape EntityType="TwitRapDBModel.tblCatSport" Width="1.5" PointX="2.2019979926766817" PointY="19.010721230418756" />
@@ -20,6 +20,7 @@
         <EntityTypeShape EntityType="TwitRapDBModel.tblCatLove" Width="1.5" PointX="6.2811758510215094" PointY="19.4960516185947" />
         <EntityTypeShape EntityType="TwitRapDBModel.tblCatTech" Width="1.5" PointX="0.75" PointY="0.75" />
         <EntityTypeShape EntityType="TwitRapDBModel.tblCatScience" Width="1.5" PointX="0.75" PointY="5.75" />
+        <EntityTypeShape EntityType="TwitRapDBModel.tblCatLove1" Width="1.5" PointX="7.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

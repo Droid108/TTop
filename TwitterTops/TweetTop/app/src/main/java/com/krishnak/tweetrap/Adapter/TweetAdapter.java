@@ -172,7 +172,7 @@ public class TweetAdapter extends BaseAdapter {
                 getTimeDifference(object.getString("created_at"), holder.txtTime);
             else
                 holder.txtTime.setText("Just now");
-            if (object.has("MediaUrl") && object.getString("MediaUrl") != "null") {
+            if (object.has("MediaUrl") && object.getString("MediaUrl").length() > 4) {
                 ImageView imageMedia = (ImageView) holder.imgMediaUrl;
                 String img_media_url = object.getString("MediaUrl");
                 imageLoader.displayImage(img_media_url, imageMedia, options);

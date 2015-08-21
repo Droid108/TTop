@@ -28,5 +28,8 @@ namespace TTServices.Model
         public Nullable<System.DateTime> created_at { get; set; }
         public string MediaUrl { get; set; }
         public string MediaType { get; set; }
+        public string Url { get; set; }
+        public string display_url { get; set; }
+        public string expanded_url { get; set; }
     }
 }
