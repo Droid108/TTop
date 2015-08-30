@@ -162,7 +162,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/12/2015 10:51:53</publishTime>
     </File>
     <File Include="bin/TTServices.dll">
-      <publishTime>08/20/2015 14:43:02</publishTime>
+      <publishTime>08/21/2015 11:42:18</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>08/12/2015 10:51:54</publishTime>
@@ -201,7 +201,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/18/2015 11:12:37</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>08/20/2015 14:43:03</publishTime>
+      <publishTime>08/21/2015 11:42:22</publishTime>
     </File>
     <File Include="Web.config">
       <publishTime>08/20/2015 13:15:05</publishTime>

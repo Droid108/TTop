@@ -3,9 +3,11 @@ package com.droid108.tweetrap.Adapter;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.net.ParseException;
+import android.net.Uri;
 import android.text.util.Linkify;
 import android.util.Patterns;
 import android.view.LayoutInflater;
@@ -17,6 +19,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.droid108.tweetrap.R;
+import com.krishnak.tweetrap.FullScreenActivity;
 import com.nostra13.universalimageloader.cache.memory.impl.WeakMemoryCache;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -133,6 +136,8 @@ public class TweetAdapter extends BaseAdapter {
 //                            }
 //                        })
 //                        .show();
+
+
             }
         });
 
@@ -164,11 +169,19 @@ public class TweetAdapter extends BaseAdapter {
 
         try {
             holder.txtTweet.setText(object.getString("name"));
-            holder.txtDesc.setText(android.text.Html.fromHtml(object.getString("text")));
             String img_profile_pic = object.getString("ProfileUrl");
             if (img_profile_pic.indexOf("normal") > 0) {
                 img_profile_pic = img_profile_pic.replace("_normal", "");
             }
+            final String finalImg_profile_pic = img_profile_pic;
+            imageView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(context, FullScreenActivity.class);
+                    intent.putExtra("portimages", finalImg_profile_pic);
+                    context.startActivity(intent);
+                }
+            });
             imageLoader.displayImage(img_profile_pic, imageView, options);
             holder.txtTweet_Id.setText("@" + object.getString("screenname"));
             //holder.txtTime.setText(object.getString("Id"));
@@ -178,13 +191,31 @@ public class TweetAdapter extends BaseAdapter {
                 getTimeDifference(object.getString("created_at"), holder.txtTime);
             else
                 holder.txtTime.setText("Just now");
+            String img_media_url = null;
+            String tweetText = null;
             if (object.has("MediaUrl") && object.getString("MediaUrl").length() > 4) {
                 ImageView imageMedia = (ImageView) holder.imgMediaUrl;
-                String img_media_url = object.getString("MediaUrl");
+                img_media_url = object.getString("MediaUrl");
                 imageLoader.displayImage(img_media_url, imageMedia, options);
                 holder.imgMediaUrl.setVisibility(View.VISIBLE);
-            } else
+                final String finalImg_media_url = img_media_url;
+                holder.imgMediaUrl.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(context, FullScreenActivity.class);
+                        intent.putExtra("portimages", finalImg_media_url);
+                        context.startActivity(intent);
+                    }
+                });
+                tweetText = object.getString("text");
+                tweetText = tweetText.replace(img_media_url, "");
+            } else {
                 holder.imgMediaUrl.setVisibility(View.GONE);
+                tweetText = object.getString("text");
+            }
+
+
+            holder.txtDesc.setText(android.text.Html.fromHtml(tweetText));
             Linkify.TransformFilter filter = new Linkify.TransformFilter() {
                 public final String transformUrl(final Matcher match, String url) {
                     return match.group();

@@ -137,7 +137,7 @@ public class TravelFragment extends Fragment {
             }
         };
         JSONClient _client = new JSONClient(rootView.getContext(), listener);
-        _client.execute("http://com.droid108.tweetrap.elasticbeanstalk.com/api/cattravel?ftype=" + fType + "&fromid=" + fromId);
+        _client.execute("http://tweetrap.elasticbeanstalk.com/api/cattravel?ftype=" + fType + "&fromid=" + fromId);
 
     }
 

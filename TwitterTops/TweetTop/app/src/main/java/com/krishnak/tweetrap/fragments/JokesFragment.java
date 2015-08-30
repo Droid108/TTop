@@ -143,7 +143,7 @@ public class JokesFragment extends Fragment {
         };
         if (!isRefreshinProgress) {
             com.droid108.tweetrap.Tasks.JSONClient _client = new com.droid108.tweetrap.Tasks.JSONClient(rootView.getContext(), listener);
-            _client.execute("http://com.droid108.tweetrap.elasticbeanstalk.com/api/catjokes?ftype=" + fType + "&fromid=" + fromId);
+            _client.execute("http://tweetrap.elasticbeanstalk.com/api/catjokes?ftype=" + fType + "&fromid=" + fromId);
             isRefreshinProgress = true;
         }
     }

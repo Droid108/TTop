@@ -1,0 +1,16 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_floating_material_dark"
+    tools:context="com.krishnak.tweetrap.FullScreenActivity">
+
+    <ImageView
+        android:id="@+id/image_Full"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:scaleType="fitXY"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</RelativeLayout>

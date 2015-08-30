@@ -9,8 +9,6 @@
     <string name="options_cancel">Cancel</string>
     <string name="options_continue">Continue</string>
     <string name="options_appplication">Application</string>
-
-
     <string name="spf_love_tweets" translatable="false">com.droid108.tweetrap.spf_love_tweets</string>
     <string name="spf_news_tweets" translatable="false">com.droid108.tweetrap.spf_news_tweets</string>
     <string name="spf_jokes_tweets" translatable="false">com.droid108.tweetrap.spf_jokes_tweets</string>
@@ -20,12 +18,13 @@
     <string name="spf_tecchnology_tweets" translatable="false">com.droid108.tweetrap.spf_tecchnology_tweets</string>
     <string name="spf_science_tweets" translatable="false">com.droid108.tweetrap.spf_science_tweets</string>
     <string name="spf_auto_tweets" translatable="false">com.droid108.tweetrap.spf_auto_tweets</string>
-
     <string name="empty_tweet_view">Pull down to get tweets..</string>
 
-<!-- TODO: Remove or change this placeholder text -->
+    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-
     <string name="banner_ad_unit_id">ca-app-pub-5466072481479588/9117897157</string>
     <string name="center_ad_unit_id">ca-app-pub-5466072481479588/8699094755</string>
+    <string name="title_activity_full_screen">FullScreenActivity</string>
+    <string name="hello_world">Hello world!</string>
+
 </resources>

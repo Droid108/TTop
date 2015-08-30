@@ -19,7 +19,7 @@ namespace TTServices
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
-            RegisterTweetGetterService("DoTask", 60);
+            //RegisterTweetGetterService("DoTask", 60);
         }
 
         public void DoTask()

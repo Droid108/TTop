@@ -50,7 +50,8 @@ public class LoveFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        pullToRefreshView.setRefreshing(true);
+        if (!pullToRefreshView.isRefreshing())
+            pullToRefreshView.setRefreshing(true);
     }
 
     @Override
@@ -133,7 +134,7 @@ public class LoveFragment extends Fragment {
         };
         if (!isRefreshinProgress) {
             JSONClient _client = new JSONClient(rootView.getContext(), listener);
-            _client.execute("http://com.droid108.tweetrap.elasticbeanstalk.com/api/catlove?ftype=" + fType + "&fromid=" + fromId);
+            _client.execute("http://tweetrap.elasticbeanstalk.com/api/catlove?ftype=" + fType + "&fromid=" + fromId);
             isRefreshinProgress = true;
         }
     }

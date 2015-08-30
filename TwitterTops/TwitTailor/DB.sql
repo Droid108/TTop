@@ -372,3 +372,66 @@ CREATE TABLE [dbo].[tblCatScience](
 ) ON [PRIMARY]
 
 GO
+
+
+select count( *) from tblcatlove where url is not null and Len(Url) > 0
+
+select count( *) from tblcatAuto where url is not null and Len(Url) > 0
+
+select count( *) from tblcatBusiness where url is not null and Len(Url) > 0
+
+select count( *) from tblcatFacts where url is not null and Len(Url) > 0
+
+select count( *) from tblcatScience where url is not null and Len(Url) > 0
+
+select count( *) from tblcatJokes where url is not null and Len(Url) > 0
+
+select count( *) from tblcatTech where url is not null and Len(Url) > 0
+
+select count( *) from tblcatSports where url is not null and Len(Url) > 0
+
+select count( *) from tblcatNews where url is not null and Len(Url) > 0
+
+--sp_helptext 'USP_FetchCATLoveTweets'
+
+select top 1000 * from tblcatlove where screenname = 'LovesQuote0'
+
+elete from tblcatlove where screenname = 'LovesQuote0'
+
+
+
+
+
+CREATE Procedure [dbo].[USP_FetchCATLoveTweets]  
+
+ @fType int,  
+
+ @fromId Int  
+
+  
+
+As  
+
+Begin  
+
+if (@fType = 0)  
+
+BEGIN  
+
+ select top 50 Id, TwitID, text, userid, name, screenname, location,IsVerified, ProfileUrl, RT_Count, Fav_Count, created_at, MediaUrl, MediaType from tblCatLove Where Id > @fromId order by id desc   
+
+END  
+
+ELSE   
+
+BEGIN  
+
+ select top 50 Id, TwitID, text, userid, name, screenname, location,IsVerified, ProfileUrl, RT_Count, Fav_Count, created_at, MediaUrl, MediaType from tblCatLove Where Id < @fromId order by id desc   
+
+END   
+
+   
+
+End  
+
+  

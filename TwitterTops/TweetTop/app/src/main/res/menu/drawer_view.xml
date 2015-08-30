@@ -4,50 +4,48 @@
         <item
             android:id="@+id/nav_love_fragment"
             android:checked="true"
-            android:icon="@drawable/ic_one"
+            android:icon="@drawable/ic_like_100"
             android:title="Love Quotes" />
         <item
             android:id="@+id/nav_jokes_fragment"
-            android:icon="@drawable/ic_two"
-            android:title="Jokes Fun" />
+            android:icon="@drawable/ic_wink_100"
+            android:title="Jokes &amp;  Fun" />
         <item
             android:id="@+id/nav_latest_news_fragment"
-            android:icon="@drawable/ic_three"
+            android:icon="@drawable/ic_news_100"
             android:title="News" />
         <item
             android:id="@+id/nav_sports_fragment"
-            android:icon="@drawable/ic_three"
+            android:icon="@drawable/ic_tennis_100"
             android:title="Sports" />
         <item
             android:id="@+id/nav_facts_fragment"
-            android:icon="@drawable/ic_three"
+            android:icon="@drawable/ic_tongue_out_100"
             android:title="Facts" />
         <item
             android:id="@+id/nav_business_fragment"
-            android:icon="@drawable/ic_three"
+            android:icon="@drawable/ic_business_100"
             android:title="Business" />
         <item
             android:id="@+id/nav_science_fragment"
-            android:icon="@drawable/ic_three"
+            android:icon="@drawable/ic_research_100"
             android:title="Science" />
         <item
             android:id="@+id/nav_tech_fragment"
-            android:icon="@drawable/ic_three"
+            android:icon="@drawable/ic_processor_100"
             android:title="Technology" />
         <item
             android:id="@+id/nav_auto_fragment"
-            android:icon="@drawable/ic_three"
+            android:icon="@drawable/ic_taxi_100"
             android:title="Auto" />
     </group>
     <item android:title="@string/options_appplication">
         <menu>
             <item
                 android:id="@+id/nav_Ad_Free"
-                android:icon="@drawable/ic_one"
                 android:title="Ad Free Version" />
             <item
                 android:id="@+id/nav_open_soource"
-                android:icon="@drawable/ic_three"
                 android:title="Open Source Licenses" />
         </menu>
     </item>

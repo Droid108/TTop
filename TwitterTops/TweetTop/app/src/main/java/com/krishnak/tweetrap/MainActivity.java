@@ -1,5 +1,6 @@
 package com.droid108.tweetrap;
 
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -24,7 +25,6 @@ import com.krishnak.tweetrap.fragments.BusinessFragment;
 import com.krishnak.tweetrap.fragments.ScienceFragment;
 import com.krishnak.tweetrap.fragments.TechnologyFragment;
 
-;
 
 public class MainActivity extends AppCompatActivity {
     private DrawerLayout mDrawer;

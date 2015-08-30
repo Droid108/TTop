@@ -137,7 +137,7 @@ public class TechnologyFragment extends Fragment {
         };
         if (!isRefreshinProgress) {
             JSONClient _client = new JSONClient(rootView.getContext(), listener);
-            _client.execute("http://com.droid108.tweetrap.elasticbeanstalk.com/api/cattech?ftype=" + fType + "&fromid=" + fromId);
+            _client.execute("http://tweetrap.elasticbeanstalk.com/api/cattech?ftype=" + fType + "&fromid=" + fromId);
             isRefreshinProgress = true;
         }
     }
