@@ -115,7 +115,7 @@ public class TravelFragment extends Fragment {
 
 
     private void callClient(int fType, int fromId) {
-        Log.i("call cleint", "Entered Client Method");
+        //Log.i("call cleint", "Entered Client Method");
         GetJSONListener listener = new GetJSONListener() {
             @Override
             public void onRemoteCallComplete(JSONArray jsonFromNet) {

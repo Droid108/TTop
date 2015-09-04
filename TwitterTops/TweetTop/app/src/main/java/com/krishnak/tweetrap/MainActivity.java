@@ -20,11 +20,10 @@ import com.droid108.tweetrap.fragments.LoveFragment;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
-import com.krishnak.tweetrap.fragments.AutoFragment;
-import com.krishnak.tweetrap.fragments.BusinessFragment;
-import com.krishnak.tweetrap.fragments.ScienceFragment;
-import com.krishnak.tweetrap.fragments.TechnologyFragment;
-
+import com.droid108.tweetrap.fragments.AutoFragment;
+import com.droid108.tweetrap.fragments.BusinessFragment;
+import com.droid108.tweetrap.fragments.ScienceFragment;
+import com.droid108.tweetrap.fragments.TechnologyFragment;
 
 public class MainActivity extends AppCompatActivity {
     private DrawerLayout mDrawer;
@@ -84,15 +83,12 @@ public class MainActivity extends AppCompatActivity {
         // Set a Toolbar to replace the ActionBar.
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
         // Find our drawer view
         mDrawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-
         // Set the menu icon instead of the launcher icon.
         final ActionBar ab = getSupportActionBar();
         ab.setHomeAsUpIndicator(R.drawable.ic_action_nd);
         ab.setDisplayHomeAsUpEnabled(true);
-
         // Find our drawer view
         nvDrawer = (NavigationView) findViewById(R.id.nvView);
         nvDrawer.setSelected(true);
@@ -175,7 +171,9 @@ public class MainActivity extends AppCompatActivity {
 
         // Highlight the selected item, update the title, and close the drawer
         menuItem.setChecked(true);
-        setTitle(menuItem.getTitle());
+        if(menuItem.getItemId() != R.id.nav_open_soource) {
+            setTitle(menuItem.getTitle());
+        }
         if (menuItem.getItemId() == R.id.nav_open_soource) {
             com.droid108.tweetrap.fragments.LicenseFragment.displayLicensesFragment(getSupportFragmentManager(), true);
         }

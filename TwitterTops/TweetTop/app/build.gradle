@@ -1,10 +1,18 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        config {
+            keyAlias 'Tweetrap_KS'
+            keyPassword 'Thumsup1'
+            storeFile file('C:/Users/krishnak/KStore.jks')
+            storePassword 'Thumsup1'
+        }
+    }
     compileSdkVersion 22
     buildToolsVersion "22.0.0"
     defaultConfig {
-        applicationId 'com.droid108.tweetrap'
+        applicationId 'com.droid108.tweetraplite'
         minSdkVersion 9
         targetSdkVersion 22
         versionCode 1

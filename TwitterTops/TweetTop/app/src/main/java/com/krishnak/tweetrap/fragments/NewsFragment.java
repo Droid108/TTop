@@ -41,7 +41,7 @@ public class NewsFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        pullToRefreshView.setRefreshing(true);
+        //pullToRefreshView.setRefreshing(true);
     }
 
     @Override
@@ -60,7 +60,7 @@ public class NewsFragment extends Fragment {
         AdView mAdView = (AdView) rootView.findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         //adRequest.isTestDevice(this);
-        mAdView.loadAd(adRequest);
+        //mAdView.loadAd(adRequest);
         pullToRefreshView = (PullToRefreshListView) rootView.findViewById(R.id.pull_to_refresh_listview_news);
         pullToRefreshView.setMode(PullToRefreshBase.Mode.BOTH);
         pullToRefreshView.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener2<ListView>() {
@@ -105,7 +105,7 @@ public class NewsFragment extends Fragment {
     }
 
     private void callClient(int fType, int fromId) {
-        Log.i("call cleint", "Entered Client Method");
+        //Log.i("call cleint", "Entered Client Method");
         com.droid108.tweetrap.Tasks.GetJSONListener listener = new com.droid108.tweetrap.Tasks.GetJSONListener() {
             @Override
             public void onRemoteCallComplete(JSONArray jsonFromNet) {

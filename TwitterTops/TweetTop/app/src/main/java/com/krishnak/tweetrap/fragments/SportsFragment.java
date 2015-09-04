@@ -50,7 +50,7 @@ public class SportsFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        pullToRefreshView.setRefreshing(true);
+        //pullToRefreshView.setRefreshing(true);
     }
 
     @Override
@@ -110,7 +110,7 @@ public class SportsFragment extends Fragment {
     }
 
     private void callClient(int fType, int fromId) {
-        Log.i("call cleint", "Entered Client Method");
+        //Log.i("call cleint", "Entered Client Method");
         GetJSONListener listener = new GetJSONListener() {
             @Override
             public void onRemoteCallComplete(JSONArray jsonFromNet) {

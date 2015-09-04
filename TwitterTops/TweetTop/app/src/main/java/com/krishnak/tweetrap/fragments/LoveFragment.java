@@ -50,8 +50,8 @@ public class LoveFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        if (!pullToRefreshView.isRefreshing())
-            pullToRefreshView.setRefreshing(true);
+//        if (!pullToRefreshView.isRefreshing())
+//            pullToRefreshView.setRefreshing(true);
     }
 
     @Override
@@ -65,7 +65,7 @@ public class LoveFragment extends Fragment {
         AdView mAdView = (AdView) rootView.findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         //adRequest.isTestDevice(this);
-        mAdView.loadAd(adRequest);
+        //mAdView.loadAd(adRequest);
         pullToRefreshView = (PullToRefreshListView) rootView.findViewById(R.id.pull_to_refresh_listview);
         TextView emptyVIew = (TextView) rootView.findViewById(R.id.emptyView);
         pullToRefreshView.setMode(PullToRefreshBase.Mode.BOTH);
@@ -111,7 +111,7 @@ public class LoveFragment extends Fragment {
     }
 
     private void callClient(int fType, int fromId) {
-        Log.i("call cleint", "Entered Client Method");
+        //Log.i("call cleint", "Entered Client Method");
         GetJSONListener listener = new GetJSONListener() {
             @Override
             public void onRemoteCallComplete(JSONArray jsonFromNet) {

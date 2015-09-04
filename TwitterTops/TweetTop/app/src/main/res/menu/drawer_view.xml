@@ -39,11 +39,11 @@
             android:icon="@drawable/ic_taxi_100"
             android:title="Auto" />
     </group>
-    <item android:title="@string/options_appplication">
+    <item android:title="App">
         <menu>
-            <item
-                android:id="@+id/nav_Ad_Free"
-                android:title="Ad Free Version" />
+            <!--<item-->
+                <!--android:id="@+id/nav_Ad_Free"-->
+                <!--android:title="Ad Free Version" />-->
             <item
                 android:id="@+id/nav_open_soource"
                 android:title="Open Source Licenses" />

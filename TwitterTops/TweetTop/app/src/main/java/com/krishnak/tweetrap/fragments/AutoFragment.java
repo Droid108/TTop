@@ -1,4 +1,4 @@
-package com.krishnak.tweetrap.fragments;
+package com.droid108.tweetrap.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -52,7 +52,7 @@ public class AutoFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        pullToRefreshView.setRefreshing(true);
+        //pullToRefreshView.setRefreshing(true);
     }
 
     @Override
@@ -114,7 +114,7 @@ public class AutoFragment extends Fragment {
 
 
     private void callClient(int fType, int fromId) {
-        Log.i("call cleint", "Entered Client Method");
+        //Log.i("call cleint", "Entered Client Method");
         GetJSONListener listener = new GetJSONListener() {
             @Override
             public void onRemoteCallComplete(JSONArray jsonFromNet) {

@@ -1,7 +1,8 @@
-package com.krishnak.tweetrap;
+package com.droid108.tweetrap;
 
 import android.app.Application;
 
+import org.acra.ACRA;
 import org.acra.annotation.ReportsCrashes;
 
 /**
@@ -12,4 +13,11 @@ import org.acra.annotation.ReportsCrashes;
         formUri = "https://collector.tracepot.com/2e0e3ce5"
 )
 public class TRApplication extends Application {
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        // The following line triggers the initialization of ACRA
+        ACRA.init(this);
+    }
 }
