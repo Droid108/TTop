@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <setParameter name="IIS Web Application Name" value="Default Web Site/" />
+  <setParameter name="DefaultConnection-Web.config Connection String" value="Data Source=(LocalDb)\v11.0;Initial Catalog=aspnet-TTServices-20150102164129;Integrated Security=SSPI;AttachDBFilename=|DataDirectory|\aspnet-TTServices-20150102164129.mdf" />
+  <setParameter name="TwitRapDBEntities-Web.config Connection String" value="metadata=res://*/Model.TwitRapModel.csdl|res://*/Model.TwitRapModel.ssdl|res://*/Model.TwitRapModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=trdb2015.ckhklxm7l9us.us-west-2.rds.amazonaws.com,1433;initial catalog=TRDB2015;persist security info=True;user id=TRUser2015;password=Pr!ket!12;multipleactiveresultsets=True;application name=EntityFramework&quot;" />
+</parameters>

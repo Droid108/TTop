@@ -2,7 +2,6 @@ package com.droid108.tweetrap.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -122,6 +121,7 @@ public class ScienceFragment extends Fragment {
                     syncTweets(jsonFromNet, jsonData);
                     madapter.notifyDataSetChanged();
                 }
+                isRefreshinProgress = false;
                 pullToRefreshView.onRefreshComplete();
             }
 
@@ -192,7 +192,6 @@ public class ScienceFragment extends Fragment {
         Gson gson = new Gson();
         String json = gson.toJson(jsonData);
         SPF.SetSharedPreference(rootView.getContext(), R.string.spf_science_tweets, json);
-        isRefreshinProgress = false;
     }
 
     private ArrayList<JSONObject> convertJsonToAL(JSONArray jsonObject) {

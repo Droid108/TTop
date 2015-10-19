@@ -1,0 +1,12 @@
+C:\Users\SupportPedia\Documents\GitHub\TTop\TwitterTops\TwitTailor\TTWinAPp\bin\Debug\TTWinAPp.exe.config
+C:\Users\SupportPedia\Documents\GitHub\TTop\TwitterTops\TwitTailor\TTWinAPp\bin\Debug\TTWinAPp.exe
+C:\Users\SupportPedia\Documents\GitHub\TTop\TwitterTops\TwitTailor\TTWinAPp\bin\Debug\TTWinAPp.pdb
+C:\Users\SupportPedia\Documents\GitHub\TTop\TwitterTops\TwitTailor\TTWinAPp\obj\Debug\TTWinAPp.csprojResolveAssemblyReference.cache
+C:\Users\SupportPedia\Documents\GitHub\TTop\TwitterTops\TwitTailor\TTWinAPp\obj\Debug\TTWinAPp.Form1.resources
+C:\Users\SupportPedia\Documents\GitHub\TTop\TwitterTops\TwitTailor\TTWinAPp\obj\Debug\TTWinAPp.Properties.Resources.resources
+C:\Users\SupportPedia\Documents\GitHub\TTop\TwitterTops\TwitTailor\TTWinAPp\obj\Debug\TTWinAPp.csproj.GenerateResource.Cache
+C:\Users\SupportPedia\Documents\GitHub\TTop\TwitterTops\TwitTailor\TTWinAPp\obj\Debug\TTWinAPp.exe
+C:\Users\SupportPedia\Documents\GitHub\TTop\TwitterTops\TwitTailor\TTWinAPp\obj\Debug\TTWinAPp.pdb
+C:\Users\SupportPedia\Documents\GitHub\TTop\TwitterTops\TwitTailor\TTWinAPp\bin\Debug\EntityFramework.dll
+C:\Users\SupportPedia\Documents\GitHub\TTop\TwitterTops\TwitTailor\TTWinAPp\bin\Debug\EntityFramework.xml
+C:\Users\SupportPedia\Documents\GitHub\TTop\TwitterTops\TwitTailor\TTWinAPp\obj\Debug\TTWinAPp.frmTwitterManager.resources

@@ -74,7 +74,7 @@ public class JokesFragment extends Fragment {
         AdView mAdView = (AdView) rootView.findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         //adRequest.isTestDevice(this);
-        //mAdView.loadAd(adRequest);
+        mAdView.loadAd(adRequest);
         pullToRefreshView = (PullToRefreshListView) rootView.findViewById(R.id.pull_to_refresh_listview_jokes);
         pullToRefreshView.setMode(PullToRefreshBase.Mode.BOTH);
         pullToRefreshView.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener2<ListView>() {
@@ -128,6 +128,7 @@ public class JokesFragment extends Fragment {
                     syncTweets(jsonFromNet, jsonData);
                     madapter.notifyDataSetChanged();
                 }
+                isRefreshinProgress = false;
                 pullToRefreshView.onRefreshComplete();
             }
 
@@ -198,7 +199,6 @@ public class JokesFragment extends Fragment {
         Gson gson = new Gson();
         String json = gson.toJson(jsonData);
         com.droid108.tweetrap.Helpers.SPF.SetSharedPreference(rootView.getContext(), R.string.spf_jokes_tweets, json);
-        isRefreshinProgress = false;
     }
 
     private ArrayList<JSONObject> convertJsonToAL(JSONArray jsonObject) {

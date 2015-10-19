@@ -64,7 +64,7 @@ public class FactsFragment extends Fragment {
         AdView mAdView = (AdView) rootView.findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         //adRequest.isTestDevice(this);
-        //mAdView.loadAd(adRequest);
+        mAdView.loadAd(adRequest);
         pullToRefreshView = (PullToRefreshListView) rootView.findViewById(R.id.pull_to_refresh_listview_facts);
         TextView emptyVIew = (TextView) rootView.findViewById(R.id.emptyView);
         pullToRefreshView.setMode(PullToRefreshBase.Mode.BOTH);
@@ -118,6 +118,7 @@ public class FactsFragment extends Fragment {
                     syncTweets(jsonFromNet, jsonData);
                     madapter.notifyDataSetChanged();
                 }
+                isRefreshinProgress = false;
                 pullToRefreshView.onRefreshComplete();
             }
 
@@ -188,7 +189,7 @@ public class FactsFragment extends Fragment {
         Gson gson = new Gson();
         String json = gson.toJson(jsonData);
         SPF.SetSharedPreference(rootView.getContext(), R.string.spf_facts_tweets, json);
-        isRefreshinProgress = false;
+
     }
 
     private ArrayList<JSONObject> convertJsonToAL(JSONArray jsonObject) {

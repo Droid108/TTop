@@ -12,7 +12,7 @@ android {
     compileSdkVersion 22
     buildToolsVersion "22.0.0"
     defaultConfig {
-        applicationId 'com.droid108.tweetraplite'
+        applicationId 'com.droid108.tweetrapl'
         minSdkVersion 9
         targetSdkVersion 22
         versionCode 1

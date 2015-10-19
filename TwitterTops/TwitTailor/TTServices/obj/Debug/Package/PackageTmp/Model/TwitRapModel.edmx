@@ -1,0 +1,1484 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="TwitRapDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tblCatAuto">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TwitID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="text" Type="nvarchar" MaxLength="500" />
+          <Property Name="userid" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="screenname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="location" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsVerified" Type="bit" Nullable="false" />
+          <Property Name="ProfileUrl" Type="nvarchar" MaxLength="150" />
+          <Property Name="RT_Count" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Fav_Count" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="created_at" Type="datetime" />
+          <Property Name="MediaUrl" Type="nvarchar" MaxLength="300" />
+          <Property Name="MediaType" Type="nvarchar" MaxLength="50" />
+          <Property Name="Url" Type="nvarchar" MaxLength="300" />
+          <Property Name="display_url" Type="nvarchar" MaxLength="300" />
+          <Property Name="expanded_url" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="tblCatBusiness">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TwitID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="text" Type="nvarchar" MaxLength="500" />
+          <Property Name="userid" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="screenname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="location" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsVerified" Type="bit" Nullable="false" />
+          <Property Name="ProfileUrl" Type="nvarchar" MaxLength="150" />
+          <Property Name="RT_Count" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Fav_Count" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="created_at" Type="datetime" />
+          <Property Name="MediaUrl" Type="nvarchar" MaxLength="300" />
+          <Property Name="MediaType" Type="nvarchar" MaxLength="50" />
+          <Property Name="Url" Type="nvarchar" MaxLength="300" />
+          <Property Name="display_url" Type="nvarchar" MaxLength="300" />
+          <Property Name="expanded_url" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="tblCatFacts">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TwitID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="text" Type="nvarchar" MaxLength="500" />
+          <Property Name="userid" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="screenname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="location" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsVerified" Type="bit" Nullable="false" />
+          <Property Name="ProfileUrl" Type="nvarchar" MaxLength="150" />
+          <Property Name="RT_Count" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Fav_Count" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="created_at" Type="datetime" />
+          <Property Name="MediaUrl" Type="nvarchar" MaxLength="300" />
+          <Property Name="MediaType" Type="nvarchar" MaxLength="50" />
+          <Property Name="Url" Type="nvarchar" MaxLength="300" />
+          <Property Name="display_url" Type="nvarchar" MaxLength="300" />
+          <Property Name="expanded_url" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="tblCatGadgets">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TwitID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="text" Type="nvarchar" MaxLength="500" />
+          <Property Name="userid" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="screenname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="location" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsVerified" Type="bit" Nullable="false" />
+          <Property Name="ProfileUrl" Type="nvarchar" MaxLength="150" />
+          <Property Name="RT_Count" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Fav_Count" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="created_at" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tblCatHF">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TwitID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="text" Type="nvarchar" MaxLength="500" />
+          <Property Name="userid" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="screenname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="location" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsVerified" Type="bit" Nullable="false" />
+          <Property Name="ProfileUrl" Type="nvarchar" MaxLength="150" />
+          <Property Name="RT_Count" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Fav_Count" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="created_at" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tblCatJokes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TwitID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="text" Type="nvarchar" MaxLength="500" />
+          <Property Name="userid" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="screenname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="location" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsVerified" Type="bit" Nullable="false" />
+          <Property Name="ProfileUrl" Type="nvarchar" MaxLength="150" />
+          <Property Name="RT_Count" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Fav_Count" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="created_at" Type="datetime" />
+          <Property Name="MediaUrl" Type="nvarchar" MaxLength="300" />
+          <Property Name="MediaType" Type="nvarchar" MaxLength="50" />
+          <Property Name="Url" Type="nvarchar" MaxLength="300" />
+          <Property Name="display_url" Type="nvarchar" MaxLength="300" />
+          <Property Name="expanded_url" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="tblCatLove">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TwitID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="text" Type="nvarchar" MaxLength="500" />
+          <Property Name="userid" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="screenname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="location" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsVerified" Type="bit" Nullable="false" />
+          <Property Name="ProfileUrl" Type="nvarchar" MaxLength="150" />
+          <Property Name="RT_Count" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Fav_Count" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="created_at" Type="datetime" />
+          <Property Name="MediaUrl" Type="nvarchar" MaxLength="300" />
+          <Property Name="MediaType" Type="nvarchar" MaxLength="50" />
+          <Property Name="Url" Type="nvarchar" MaxLength="300" />
+          <Property Name="display_url" Type="nvarchar" MaxLength="300" />
+          <Property Name="expanded_url" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="tblCatMovies">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TwitID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="text" Type="nvarchar" MaxLength="500" />
+          <Property Name="userid" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="screenname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="location" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsVerified" Type="bit" Nullable="false" />
+          <Property Name="ProfileUrl" Type="nvarchar" MaxLength="150" />
+          <Property Name="RT_Count" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Fav_Count" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="created_at" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tblCatMusic">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TwitID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="text" Type="nvarchar" MaxLength="500" />
+          <Property Name="userid" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="screenname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="location" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsVerified" Type="bit" Nullable="false" />
+          <Property Name="ProfileUrl" Type="nvarchar" MaxLength="150" />
+          <Property Name="RT_Count" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Fav_Count" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="created_at" Type="datetime" />
+          <Property Name="MediaUrl" Type="nvarchar" MaxLength="300" />
+          <Property Name="MediaType" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblCatNews">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TwitID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="text" Type="nvarchar" MaxLength="500" />
+          <Property Name="userid" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="screenname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="location" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsVerified" Type="bit" Nullable="false" />
+          <Property Name="ProfileUrl" Type="nvarchar" MaxLength="150" />
+          <Property Name="RT_Count" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Fav_Count" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="created_at" Type="datetime" />
+          <Property Name="MediaUrl" Type="nvarchar" MaxLength="300" />
+          <Property Name="MediaType" Type="nvarchar" MaxLength="50" />
+          <Property Name="Url" Type="nvarchar" MaxLength="300" />
+          <Property Name="display_url" Type="nvarchar" MaxLength="300" />
+          <Property Name="expanded_url" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="tblCatScience">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TwitID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="text" Type="nvarchar" MaxLength="500" />
+          <Property Name="userid" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="screenname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="location" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsVerified" Type="bit" Nullable="false" />
+          <Property Name="ProfileUrl" Type="nvarchar" MaxLength="150" />
+          <Property Name="RT_Count" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Fav_Count" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="created_at" Type="datetime" />
+          <Property Name="MediaUrl" Type="nvarchar" MaxLength="300" />
+          <Property Name="MediaType" Type="nvarchar" MaxLength="50" />
+          <Property Name="Url" Type="nvarchar" MaxLength="300" />
+          <Property Name="display_url" Type="nvarchar" MaxLength="300" />
+          <Property Name="expanded_url" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="tblCatSports">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TwitID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="text" Type="nvarchar" MaxLength="500" />
+          <Property Name="userid" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="screenname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="location" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsVerified" Type="bit" Nullable="false" />
+          <Property Name="ProfileUrl" Type="nvarchar" MaxLength="150" />
+          <Property Name="RT_Count" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Fav_Count" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="created_at" Type="datetime" />
+          <Property Name="MediaUrl" Type="nvarchar" MaxLength="300" />
+          <Property Name="MediaType" Type="nvarchar" MaxLength="50" />
+          <Property Name="Url" Type="nvarchar" MaxLength="300" />
+          <Property Name="display_url" Type="nvarchar" MaxLength="300" />
+          <Property Name="expanded_url" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="tblCatTech">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TwitID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="text" Type="nvarchar" MaxLength="500" />
+          <Property Name="userid" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="screenname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="location" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsVerified" Type="bit" Nullable="false" />
+          <Property Name="ProfileUrl" Type="nvarchar" MaxLength="150" />
+          <Property Name="RT_Count" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Fav_Count" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="created_at" Type="datetime" />
+          <Property Name="MediaUrl" Type="nvarchar" MaxLength="300" />
+          <Property Name="MediaType" Type="nvarchar" MaxLength="50" />
+          <Property Name="Url" Type="nvarchar" MaxLength="300" />
+          <Property Name="display_url" Type="nvarchar" MaxLength="300" />
+          <Property Name="expanded_url" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="tblCatTravel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TwitID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="text" Type="nvarchar" MaxLength="500" />
+          <Property Name="userid" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="screenname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="location" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsVerified" Type="bit" Nullable="false" />
+          <Property Name="ProfileUrl" Type="nvarchar" MaxLength="150" />
+          <Property Name="RT_Count" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Fav_Count" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="created_at" Type="datetime" />
+          <Property Name="MediaUrl" Type="nvarchar" MaxLength="300" />
+          <Property Name="MediaType" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblDemoBeacon">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Type" Type="int" Nullable="false" />
+          <Property Name="DeviceName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ZoneName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LogTime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TRDB2015.twitrapuser.tblCatLove1' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="tblCatLove1">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="TwitID" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="screenname" />
+            <PropertyRef Name="IsVerified" />
+            <PropertyRef Name="RT_Count" />
+            <PropertyRef Name="Fav_Count" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TwitID" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="text" Type="nvarchar" MaxLength="500" />
+          <Property Name="userid" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="screenname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="location" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsVerified" Type="bit" Nullable="false" />
+          <Property Name="ProfileUrl" Type="nvarchar" MaxLength="150" />
+          <Property Name="RT_Count" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Fav_Count" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="created_at" Type="datetime" />
+          <Property Name="MediaUrl" Type="nvarchar" MaxLength="300" />
+          <Property Name="MediaType" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Function Name="USP_FetchCATAutoTweets" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="fType" Type="int" Mode="In" />
+          <Parameter Name="fromId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="USP_FetchCATBusinessTweets" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="fType" Type="int" Mode="In" />
+          <Parameter Name="fromId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="USP_FetchCATFactsTweets" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="fType" Type="int" Mode="In" />
+          <Parameter Name="fromId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="USP_FetchCATJokesTweets" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="fType" Type="int" Mode="In" />
+          <Parameter Name="fromId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="USP_FetchCATLoveTweets" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="fType" Type="int" Mode="In" />
+          <Parameter Name="fromId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="USP_FetchCATNewsTweets" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="fType" Type="int" Mode="In" />
+          <Parameter Name="fromId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="USP_FetchCATScienceTweets" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="fType" Type="int" Mode="In" />
+          <Parameter Name="fromId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="USP_FetchCATSportsTweets" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="fType" Type="int" Mode="In" />
+          <Parameter Name="fromId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="USP_FetchCATTechTweets" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="fType" Type="int" Mode="In" />
+          <Parameter Name="fromId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="USP_FetchCATTravelTweets" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="fType" Type="int" Mode="In" />
+          <Parameter Name="fromId" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="TwitRapDBModelStoreContainer">
+          <EntitySet Name="tblCatAuto" EntityType="Self.tblCatAuto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblCatBusiness" EntityType="Self.tblCatBusiness" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblCatFacts" EntityType="Self.tblCatFacts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblCatGadgets" EntityType="Self.tblCatGadgets" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblCatHF" EntityType="Self.tblCatHF" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblCatJokes" EntityType="Self.tblCatJokes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblCatLove" EntityType="Self.tblCatLove" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblCatMovies" EntityType="Self.tblCatMovies" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblCatMusic" EntityType="Self.tblCatMusic" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblCatNews" EntityType="Self.tblCatNews" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblCatScience" EntityType="Self.tblCatScience" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblCatSports" EntityType="Self.tblCatSports" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblCatTech" EntityType="Self.tblCatTech" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblCatTravel" EntityType="Self.tblCatTravel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblDemoBeacon" EntityType="Self.tblDemoBeacon" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblCatLove1" EntityType="Self.tblCatLove1" store:Type="Tables" store:Schema="twitrapuser">
+            <DefiningQuery>SELECT 
+[tblCatLove1].[Id] AS [Id], 
+[tblCatLove1].[TwitID] AS [TwitID], 
+[tblCatLove1].[text] AS [text], 
+[tblCatLove1].[userid] AS [userid], 
+[tblCatLove1].[name] AS [name], 
+[tblCatLove1].[screenname] AS [screenname], 
+[tblCatLove1].[location] AS [location], 
+[tblCatLove1].[IsVerified] AS [IsVerified], 
+[tblCatLove1].[ProfileUrl] AS [ProfileUrl], 
+[tblCatLove1].[RT_Count] AS [RT_Count], 
+[tblCatLove1].[Fav_Count] AS [Fav_Count], 
+[tblCatLove1].[created_at] AS [created_at], 
+[tblCatLove1].[MediaUrl] AS [MediaUrl], 
+[tblCatLove1].[MediaType] AS [MediaType]
+FROM [twitrapuser].[tblCatLove1] AS [tblCatLove1]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TwitRapDBModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="TwitRapDBEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="tblCatAutoes" EntityType="TwitRapDBModel.tblCatAuto" />
+          <EntitySet Name="tblCatBusinesses" EntityType="TwitRapDBModel.tblCatBusiness" />
+          <EntitySet Name="tblCatFacts" EntityType="TwitRapDBModel.tblCatFact" />
+          <EntitySet Name="tblCatGadgets" EntityType="TwitRapDBModel.tblCatGadget" />
+          <EntitySet Name="tblCatHFs" EntityType="TwitRapDBModel.tblCatHF" />
+          <EntitySet Name="tblCatJokes" EntityType="TwitRapDBModel.tblCatJoke" />
+          <EntitySet Name="tblCatMovies" EntityType="TwitRapDBModel.tblCatMovy" />
+          <EntitySet Name="tblCatMusics" EntityType="TwitRapDBModel.tblCatMusic" />
+          <EntitySet Name="tblCatNews" EntityType="TwitRapDBModel.tblCatNew" />
+          <EntitySet Name="tblCatSports" EntityType="TwitRapDBModel.tblCatSport" />
+          <EntitySet Name="tblCatTravels" EntityType="TwitRapDBModel.tblCatTravel" />
+          <EntitySet Name="tblDemoBeacons" EntityType="TwitRapDBModel.tblDemoBeacon" />
+          <FunctionImport Name="USP_FetchCATLoveTweets" ReturnType="Collection(TwitRapDBModel.USP_FetchCATLoveTweets_Result)">
+            <Parameter Name="fType" Mode="In" Type="Int32" />
+            <Parameter Name="fromId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="tblCatLoves" EntityType="TwitRapDBModel.tblCatLove" />
+          <FunctionImport Name="USP_FetchCATAutoTweets" ReturnType="Collection(TwitRapDBModel.USP_FetchCATAutoTweets_Result)">
+            <Parameter Name="fType" Mode="In" Type="Int32" />
+            <Parameter Name="fromId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="USP_FetchCATFactsTweets" ReturnType="Collection(TwitRapDBModel.USP_FetchCATFactsTweets_Result)">
+            <Parameter Name="fType" Mode="In" Type="Int32" />
+            <Parameter Name="fromId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="USP_FetchCATJokesTweets" ReturnType="Collection(TwitRapDBModel.USP_FetchCATJokesTweets_Result)">
+            <Parameter Name="fType" Mode="In" Type="Int32" />
+            <Parameter Name="fromId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="USP_FetchCATNewsTweets" ReturnType="Collection(TwitRapDBModel.USP_FetchCATNewsTweets_Result)">
+            <Parameter Name="fType" Mode="In" Type="Int32" />
+            <Parameter Name="fromId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="USP_FetchCATSportsTweets" ReturnType="Collection(TwitRapDBModel.USP_FetchCATSportsTweets_Result)">
+            <Parameter Name="fType" Mode="In" Type="Int32" />
+            <Parameter Name="fromId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="USP_FetchCATTravelTweets" ReturnType="Collection(TwitRapDBModel.USP_FetchCATTravelTweets_Result)">
+            <Parameter Name="fType" Mode="In" Type="Int32" />
+            <Parameter Name="fromId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="tblCatTeches" EntityType="TwitRapDBModel.tblCatTech" />
+          <EntitySet Name="tblCatSciences" EntityType="TwitRapDBModel.tblCatScience" />
+          <EntitySet Name="tblCatLove1" EntityType="TwitRapDBModel.tblCatLove1" />
+          <FunctionImport Name="USP_FetchCATBusinessTweets" ReturnType="Collection(TwitRapDBModel.USP_FetchCATBusinessTweets_Result)">
+            <Parameter Name="fType" Mode="In" Type="Int32" />
+            <Parameter Name="fromId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="USP_FetchCATScienceTweets" ReturnType="Collection(TwitRapDBModel.USP_FetchCATScienceTweets_Result)">
+            <Parameter Name="fType" Mode="In" Type="Int32" />
+            <Parameter Name="fromId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="USP_FetchCATTechTweets" ReturnType="Collection(TwitRapDBModel.USP_FetchCATTechTweets_Result)">
+            <Parameter Name="fType" Mode="In" Type="Int32" />
+            <Parameter Name="fromId" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <EntityType Name="tblCatAuto">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Decimal" Name="TwitID" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="text" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="userid" Precision="18" Scale="0" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="screenname" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="location" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsVerified" Nullable="false" />
+          <Property Type="String" Name="ProfileUrl" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="RT_Count" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="Fav_Count" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="DateTime" Name="created_at" Precision="3" />
+          <Property Type="String" Name="MediaUrl" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MediaType" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Url" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="display_url" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="expanded_url" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tblCatBusiness">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Decimal" Name="TwitID" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="text" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="userid" Precision="18" Scale="0" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="screenname" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="location" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsVerified" Nullable="false" />
+          <Property Type="String" Name="ProfileUrl" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="RT_Count" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="Fav_Count" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="DateTime" Name="created_at" Precision="3" />
+          <Property Type="String" Name="MediaUrl" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MediaType" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Url" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="display_url" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="expanded_url" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tblCatFact">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Decimal" Name="TwitID" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="text" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="userid" Precision="18" Scale="0" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="screenname" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="location" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsVerified" Nullable="false" />
+          <Property Type="String" Name="ProfileUrl" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="RT_Count" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="Fav_Count" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="DateTime" Name="created_at" Precision="3" />
+          <Property Type="String" Name="MediaUrl" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MediaType" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Url" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="display_url" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="expanded_url" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tblCatGadget">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Decimal" Name="TwitID" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="text" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="userid" Precision="18" Scale="0" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="screenname" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="location" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsVerified" Nullable="false" />
+          <Property Type="String" Name="ProfileUrl" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="RT_Count" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="Fav_Count" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="DateTime" Name="created_at" Precision="3" />
+        </EntityType>
+        <EntityType Name="tblCatHF">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Decimal" Name="TwitID" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="text" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="userid" Precision="18" Scale="0" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="screenname" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="location" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsVerified" Nullable="false" />
+          <Property Type="String" Name="ProfileUrl" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="RT_Count" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="Fav_Count" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="DateTime" Name="created_at" Precision="3" />
+        </EntityType>
+        <EntityType Name="tblCatJoke">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Decimal" Name="TwitID" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="text" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="userid" Precision="18" Scale="0" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="screenname" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="location" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsVerified" Nullable="false" />
+          <Property Type="String" Name="ProfileUrl" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="RT_Count" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="Fav_Count" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="DateTime" Name="created_at" Precision="3" />
+          <Property Type="String" Name="MediaUrl" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MediaType" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Url" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="display_url" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="expanded_url" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tblCatMovy">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Decimal" Name="TwitID" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="text" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="userid" Precision="18" Scale="0" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="screenname" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="location" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsVerified" Nullable="false" />
+          <Property Type="String" Name="ProfileUrl" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="RT_Count" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="Fav_Count" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="DateTime" Name="created_at" Precision="3" />
+        </EntityType>
+        <EntityType Name="tblCatMusic">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Decimal" Name="TwitID" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="text" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="userid" Precision="18" Scale="0" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="screenname" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="location" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsVerified" Nullable="false" />
+          <Property Type="String" Name="ProfileUrl" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="RT_Count" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="Fav_Count" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="DateTime" Name="created_at" Precision="3" />
+          <Property Type="String" Name="MediaUrl" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MediaType" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tblCatNew">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Decimal" Name="TwitID" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="text" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="userid" Precision="18" Scale="0" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="screenname" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="location" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsVerified" Nullable="false" />
+          <Property Type="String" Name="ProfileUrl" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="RT_Count" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="Fav_Count" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="DateTime" Name="created_at" Precision="3" />
+          <Property Type="String" Name="MediaUrl" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MediaType" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Url" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="display_url" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="expanded_url" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tblCatSport">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Decimal" Name="TwitID" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="text" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="userid" Precision="18" Scale="0" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="screenname" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="location" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsVerified" Nullable="false" />
+          <Property Type="String" Name="ProfileUrl" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="RT_Count" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="Fav_Count" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="DateTime" Name="created_at" Precision="3" />
+          <Property Type="String" Name="MediaUrl" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MediaType" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Url" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="display_url" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="expanded_url" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tblCatTravel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Decimal" Name="TwitID" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="text" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="userid" Precision="18" Scale="0" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="screenname" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="location" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsVerified" Nullable="false" />
+          <Property Type="String" Name="ProfileUrl" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="RT_Count" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="Fav_Count" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="DateTime" Name="created_at" Precision="3" />
+          <Property Type="String" Name="MediaUrl" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MediaType" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tblDemoBeacon">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="Type" Nullable="false" />
+          <Property Type="String" Name="DeviceName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ZoneName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="LogTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <ComplexType Name="USP_FetchCATLoveTweets_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Decimal" Name="TwitID" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="text" Nullable="true" MaxLength="500" />
+          <Property Type="Decimal" Name="userid" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="screenname" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="location" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsVerified" Nullable="false" />
+          <Property Type="String" Name="ProfileUrl" Nullable="true" MaxLength="150" />
+          <Property Type="Decimal" Name="RT_Count" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="Fav_Count" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="DateTime" Name="created_at" Nullable="true" Precision="23" />
+        </ComplexType>
+        <EntityType Name="tblCatLove">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Decimal" Name="TwitID" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="text" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="userid" Precision="18" Scale="0" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="screenname" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="location" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsVerified" Nullable="false" />
+          <Property Type="String" Name="ProfileUrl" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="RT_Count" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="Fav_Count" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="DateTime" Name="created_at" Precision="3" />
+          <Property Type="String" Name="MediaUrl" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MediaType" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Url" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="display_url" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="expanded_url" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <ComplexType Name="USP_FetchCATAutoTweets_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Decimal" Name="TwitID" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="text" Nullable="true" MaxLength="500" />
+          <Property Type="Decimal" Name="userid" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="screenname" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="location" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsVerified" Nullable="false" />
+          <Property Type="String" Name="ProfileUrl" Nullable="true" MaxLength="150" />
+          <Property Type="Decimal" Name="RT_Count" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="Fav_Count" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="DateTime" Name="created_at" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="USP_FetchCATFactsTweets_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Decimal" Name="TwitID" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="text" Nullable="true" MaxLength="500" />
+          <Property Type="Decimal" Name="userid" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="screenname" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="location" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsVerified" Nullable="false" />
+          <Property Type="String" Name="ProfileUrl" Nullable="true" MaxLength="150" />
+          <Property Type="Decimal" Name="RT_Count" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="Fav_Count" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="DateTime" Name="created_at" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="USP_FetchCATJokesTweets_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Decimal" Name="TwitID" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="text" Nullable="true" MaxLength="500" />
+          <Property Type="Decimal" Name="userid" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="screenname" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="location" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsVerified" Nullable="false" />
+          <Property Type="String" Name="ProfileUrl" Nullable="true" MaxLength="150" />
+          <Property Type="Decimal" Name="RT_Count" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="Fav_Count" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="DateTime" Name="created_at" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="USP_FetchCATNewsTweets_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Decimal" Name="TwitID" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="text" Nullable="true" MaxLength="500" />
+          <Property Type="Decimal" Name="userid" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="screenname" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="location" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsVerified" Nullable="false" />
+          <Property Type="String" Name="ProfileUrl" Nullable="true" MaxLength="150" />
+          <Property Type="Decimal" Name="RT_Count" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="Fav_Count" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="DateTime" Name="created_at" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="USP_FetchCATSportsTweets_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Decimal" Name="TwitID" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="text" Nullable="true" MaxLength="500" />
+          <Property Type="Decimal" Name="userid" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="screenname" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="location" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsVerified" Nullable="false" />
+          <Property Type="String" Name="ProfileUrl" Nullable="true" MaxLength="150" />
+          <Property Type="Decimal" Name="RT_Count" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="Fav_Count" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="DateTime" Name="created_at" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="USP_FetchCATTravelTweets_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Decimal" Name="TwitID" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="text" Nullable="true" MaxLength="500" />
+          <Property Type="Decimal" Name="userid" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="screenname" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="location" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsVerified" Nullable="false" />
+          <Property Type="String" Name="ProfileUrl" Nullable="true" MaxLength="150" />
+          <Property Type="Decimal" Name="RT_Count" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="Fav_Count" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="DateTime" Name="created_at" Nullable="true" Precision="23" />
+        </ComplexType>
+        <EntityType Name="tblCatTech">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TwitID" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="text" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="userid" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="screenname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="location" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsVerified" Type="Boolean" Nullable="false" />
+          <Property Name="ProfileUrl" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="RT_Count" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="Fav_Count" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="created_at" Type="DateTime" Precision="3" />
+          <Property Name="MediaUrl" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="MediaType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Url" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="display_url" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="expanded_url" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tblCatScience">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TwitID" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="text" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="userid" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="screenname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="location" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsVerified" Type="Boolean" Nullable="false" />
+          <Property Name="ProfileUrl" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="RT_Count" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="Fav_Count" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="created_at" Type="DateTime" Precision="3" />
+          <Property Name="MediaUrl" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="MediaType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Url" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="display_url" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="expanded_url" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tblCatLove1">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="TwitID" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="screenname" />
+            <PropertyRef Name="IsVerified" />
+            <PropertyRef Name="RT_Count" />
+            <PropertyRef Name="Fav_Count" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TwitID" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="text" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="userid" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="screenname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="location" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsVerified" Type="Boolean" Nullable="false" />
+          <Property Name="ProfileUrl" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="RT_Count" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="Fav_Count" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="created_at" Type="DateTime" Precision="3" />
+          <Property Name="MediaUrl" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="MediaType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <ComplexType Name="USP_FetchCATBusinessTweets_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Decimal" Name="TwitID" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="text" Nullable="true" MaxLength="500" />
+          <Property Type="Decimal" Name="userid" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="screenname" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="location" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsVerified" Nullable="false" />
+          <Property Type="String" Name="ProfileUrl" Nullable="true" MaxLength="150" />
+          <Property Type="Decimal" Name="RT_Count" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="Fav_Count" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="DateTime" Name="created_at" Nullable="true" Precision="23" />
+          <Property Type="String" Name="MediaUrl" Nullable="true" MaxLength="300" />
+          <Property Type="String" Name="MediaType" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="USP_FetchCATScienceTweets_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Decimal" Name="TwitID" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="text" Nullable="true" MaxLength="500" />
+          <Property Type="Decimal" Name="userid" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="screenname" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="location" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsVerified" Nullable="false" />
+          <Property Type="String" Name="ProfileUrl" Nullable="true" MaxLength="150" />
+          <Property Type="Decimal" Name="RT_Count" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="Fav_Count" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="DateTime" Name="created_at" Nullable="true" Precision="23" />
+          <Property Type="String" Name="MediaUrl" Nullable="true" MaxLength="300" />
+          <Property Type="String" Name="MediaType" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="USP_FetchCATTechTweets_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Decimal" Name="TwitID" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="String" Name="text" Nullable="true" MaxLength="500" />
+          <Property Type="Decimal" Name="userid" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="screenname" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="location" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="IsVerified" Nullable="false" />
+          <Property Type="String" Name="ProfileUrl" Nullable="true" MaxLength="150" />
+          <Property Type="Decimal" Name="RT_Count" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="Fav_Count" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="DateTime" Name="created_at" Nullable="true" Precision="23" />
+          <Property Type="String" Name="MediaUrl" Nullable="true" MaxLength="300" />
+          <Property Type="String" Name="MediaType" Nullable="true" MaxLength="50" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TwitRapDBModelStoreContainer" CdmEntityContainer="TwitRapDBEntities">
+          <EntitySetMapping Name="tblCatAutoes">
+            <EntityTypeMapping TypeName="TwitRapDBModel.tblCatAuto">
+              <MappingFragment StoreEntitySet="tblCatAuto">
+                <ScalarProperty Name="expanded_url" ColumnName="expanded_url" />
+                <ScalarProperty Name="display_url" ColumnName="display_url" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="MediaType" ColumnName="MediaType" />
+                <ScalarProperty Name="MediaUrl" ColumnName="MediaUrl" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="Fav_Count" ColumnName="Fav_Count" />
+                <ScalarProperty Name="RT_Count" ColumnName="RT_Count" />
+                <ScalarProperty Name="ProfileUrl" ColumnName="ProfileUrl" />
+                <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
+                <ScalarProperty Name="location" ColumnName="location" />
+                <ScalarProperty Name="screenname" ColumnName="screenname" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="text" ColumnName="text" />
+                <ScalarProperty Name="TwitID" ColumnName="TwitID" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblCatBusinesses">
+            <EntityTypeMapping TypeName="TwitRapDBModel.tblCatBusiness">
+              <MappingFragment StoreEntitySet="tblCatBusiness">
+                <ScalarProperty Name="expanded_url" ColumnName="expanded_url" />
+                <ScalarProperty Name="display_url" ColumnName="display_url" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="MediaType" ColumnName="MediaType" />
+                <ScalarProperty Name="MediaUrl" ColumnName="MediaUrl" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="Fav_Count" ColumnName="Fav_Count" />
+                <ScalarProperty Name="RT_Count" ColumnName="RT_Count" />
+                <ScalarProperty Name="ProfileUrl" ColumnName="ProfileUrl" />
+                <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
+                <ScalarProperty Name="location" ColumnName="location" />
+                <ScalarProperty Name="screenname" ColumnName="screenname" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="text" ColumnName="text" />
+                <ScalarProperty Name="TwitID" ColumnName="TwitID" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblCatFacts">
+            <EntityTypeMapping TypeName="TwitRapDBModel.tblCatFact">
+              <MappingFragment StoreEntitySet="tblCatFacts">
+                <ScalarProperty Name="expanded_url" ColumnName="expanded_url" />
+                <ScalarProperty Name="display_url" ColumnName="display_url" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="MediaType" ColumnName="MediaType" />
+                <ScalarProperty Name="MediaUrl" ColumnName="MediaUrl" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="Fav_Count" ColumnName="Fav_Count" />
+                <ScalarProperty Name="RT_Count" ColumnName="RT_Count" />
+                <ScalarProperty Name="ProfileUrl" ColumnName="ProfileUrl" />
+                <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
+                <ScalarProperty Name="location" ColumnName="location" />
+                <ScalarProperty Name="screenname" ColumnName="screenname" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="text" ColumnName="text" />
+                <ScalarProperty Name="TwitID" ColumnName="TwitID" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblCatGadgets">
+            <EntityTypeMapping TypeName="TwitRapDBModel.tblCatGadget">
+              <MappingFragment StoreEntitySet="tblCatGadgets">
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="Fav_Count" ColumnName="Fav_Count" />
+                <ScalarProperty Name="RT_Count" ColumnName="RT_Count" />
+                <ScalarProperty Name="ProfileUrl" ColumnName="ProfileUrl" />
+                <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
+                <ScalarProperty Name="location" ColumnName="location" />
+                <ScalarProperty Name="screenname" ColumnName="screenname" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="text" ColumnName="text" />
+                <ScalarProperty Name="TwitID" ColumnName="TwitID" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblCatHFs">
+            <EntityTypeMapping TypeName="TwitRapDBModel.tblCatHF">
+              <MappingFragment StoreEntitySet="tblCatHF">
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="Fav_Count" ColumnName="Fav_Count" />
+                <ScalarProperty Name="RT_Count" ColumnName="RT_Count" />
+                <ScalarProperty Name="ProfileUrl" ColumnName="ProfileUrl" />
+                <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
+                <ScalarProperty Name="location" ColumnName="location" />
+                <ScalarProperty Name="screenname" ColumnName="screenname" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="text" ColumnName="text" />
+                <ScalarProperty Name="TwitID" ColumnName="TwitID" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblCatJokes">
+            <EntityTypeMapping TypeName="TwitRapDBModel.tblCatJoke">
+              <MappingFragment StoreEntitySet="tblCatJokes">
+                <ScalarProperty Name="expanded_url" ColumnName="expanded_url" />
+                <ScalarProperty Name="display_url" ColumnName="display_url" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="MediaType" ColumnName="MediaType" />
+                <ScalarProperty Name="MediaUrl" ColumnName="MediaUrl" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="Fav_Count" ColumnName="Fav_Count" />
+                <ScalarProperty Name="RT_Count" ColumnName="RT_Count" />
+                <ScalarProperty Name="ProfileUrl" ColumnName="ProfileUrl" />
+                <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
+                <ScalarProperty Name="location" ColumnName="location" />
+                <ScalarProperty Name="screenname" ColumnName="screenname" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="text" ColumnName="text" />
+                <ScalarProperty Name="TwitID" ColumnName="TwitID" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblCatMovies">
+            <EntityTypeMapping TypeName="TwitRapDBModel.tblCatMovy">
+              <MappingFragment StoreEntitySet="tblCatMovies">
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="Fav_Count" ColumnName="Fav_Count" />
+                <ScalarProperty Name="RT_Count" ColumnName="RT_Count" />
+                <ScalarProperty Name="ProfileUrl" ColumnName="ProfileUrl" />
+                <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
+                <ScalarProperty Name="location" ColumnName="location" />
+                <ScalarProperty Name="screenname" ColumnName="screenname" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="text" ColumnName="text" />
+                <ScalarProperty Name="TwitID" ColumnName="TwitID" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblCatMusics">
+            <EntityTypeMapping TypeName="TwitRapDBModel.tblCatMusic">
+              <MappingFragment StoreEntitySet="tblCatMusic">
+                <ScalarProperty Name="MediaType" ColumnName="MediaType" />
+                <ScalarProperty Name="MediaUrl" ColumnName="MediaUrl" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="Fav_Count" ColumnName="Fav_Count" />
+                <ScalarProperty Name="RT_Count" ColumnName="RT_Count" />
+                <ScalarProperty Name="ProfileUrl" ColumnName="ProfileUrl" />
+                <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
+                <ScalarProperty Name="location" ColumnName="location" />
+                <ScalarProperty Name="screenname" ColumnName="screenname" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="text" ColumnName="text" />
+                <ScalarProperty Name="TwitID" ColumnName="TwitID" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblCatNews">
+            <EntityTypeMapping TypeName="TwitRapDBModel.tblCatNew">
+              <MappingFragment StoreEntitySet="tblCatNews">
+                <ScalarProperty Name="expanded_url" ColumnName="expanded_url" />
+                <ScalarProperty Name="display_url" ColumnName="display_url" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="MediaType" ColumnName="MediaType" />
+                <ScalarProperty Name="MediaUrl" ColumnName="MediaUrl" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="Fav_Count" ColumnName="Fav_Count" />
+                <ScalarProperty Name="RT_Count" ColumnName="RT_Count" />
+                <ScalarProperty Name="ProfileUrl" ColumnName="ProfileUrl" />
+                <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
+                <ScalarProperty Name="location" ColumnName="location" />
+                <ScalarProperty Name="screenname" ColumnName="screenname" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="text" ColumnName="text" />
+                <ScalarProperty Name="TwitID" ColumnName="TwitID" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblCatSports">
+            <EntityTypeMapping TypeName="TwitRapDBModel.tblCatSport">
+              <MappingFragment StoreEntitySet="tblCatSports">
+                <ScalarProperty Name="expanded_url" ColumnName="expanded_url" />
+                <ScalarProperty Name="display_url" ColumnName="display_url" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="MediaType" ColumnName="MediaType" />
+                <ScalarProperty Name="MediaUrl" ColumnName="MediaUrl" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="Fav_Count" ColumnName="Fav_Count" />
+                <ScalarProperty Name="RT_Count" ColumnName="RT_Count" />
+                <ScalarProperty Name="ProfileUrl" ColumnName="ProfileUrl" />
+                <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
+                <ScalarProperty Name="location" ColumnName="location" />
+                <ScalarProperty Name="screenname" ColumnName="screenname" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="text" ColumnName="text" />
+                <ScalarProperty Name="TwitID" ColumnName="TwitID" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblCatTravels">
+            <EntityTypeMapping TypeName="TwitRapDBModel.tblCatTravel">
+              <MappingFragment StoreEntitySet="tblCatTravel">
+                <ScalarProperty Name="MediaType" ColumnName="MediaType" />
+                <ScalarProperty Name="MediaUrl" ColumnName="MediaUrl" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="Fav_Count" ColumnName="Fav_Count" />
+                <ScalarProperty Name="RT_Count" ColumnName="RT_Count" />
+                <ScalarProperty Name="ProfileUrl" ColumnName="ProfileUrl" />
+                <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
+                <ScalarProperty Name="location" ColumnName="location" />
+                <ScalarProperty Name="screenname" ColumnName="screenname" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="text" ColumnName="text" />
+                <ScalarProperty Name="TwitID" ColumnName="TwitID" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblDemoBeacons">
+            <EntityTypeMapping TypeName="TwitRapDBModel.tblDemoBeacon">
+              <MappingFragment StoreEntitySet="tblDemoBeacon">
+                <ScalarProperty Name="LogTime" ColumnName="LogTime" />
+                <ScalarProperty Name="ZoneName" ColumnName="ZoneName" />
+                <ScalarProperty Name="DeviceName" ColumnName="DeviceName" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="USP_FetchCATLoveTweets" FunctionName="TwitRapDBModel.Store.USP_FetchCATLoveTweets">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TwitRapDBModel.USP_FetchCATLoveTweets_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="TwitID" ColumnName="TwitID" />
+                <ScalarProperty Name="text" ColumnName="text" />
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="screenname" ColumnName="screenname" />
+                <ScalarProperty Name="location" ColumnName="location" />
+                <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
+                <ScalarProperty Name="ProfileUrl" ColumnName="ProfileUrl" />
+                <ScalarProperty Name="RT_Count" ColumnName="RT_Count" />
+                <ScalarProperty Name="Fav_Count" ColumnName="Fav_Count" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="tblCatLoves">
+            <EntityTypeMapping TypeName="TwitRapDBModel.tblCatLove">
+              <MappingFragment StoreEntitySet="tblCatLove">
+                <ScalarProperty Name="expanded_url" ColumnName="expanded_url" />
+                <ScalarProperty Name="display_url" ColumnName="display_url" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="MediaType" ColumnName="MediaType" />
+                <ScalarProperty Name="MediaUrl" ColumnName="MediaUrl" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="Fav_Count" ColumnName="Fav_Count" />
+                <ScalarProperty Name="RT_Count" ColumnName="RT_Count" />
+                <ScalarProperty Name="ProfileUrl" ColumnName="ProfileUrl" />
+                <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
+                <ScalarProperty Name="location" ColumnName="location" />
+                <ScalarProperty Name="screenname" ColumnName="screenname" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="text" ColumnName="text" />
+                <ScalarProperty Name="TwitID" ColumnName="TwitID" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="USP_FetchCATAutoTweets" FunctionName="TwitRapDBModel.Store.USP_FetchCATAutoTweets">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TwitRapDBModel.USP_FetchCATAutoTweets_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="TwitID" ColumnName="TwitID" />
+                <ScalarProperty Name="text" ColumnName="text" />
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="screenname" ColumnName="screenname" />
+                <ScalarProperty Name="location" ColumnName="location" />
+                <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
+                <ScalarProperty Name="ProfileUrl" ColumnName="ProfileUrl" />
+                <ScalarProperty Name="RT_Count" ColumnName="RT_Count" />
+                <ScalarProperty Name="Fav_Count" ColumnName="Fav_Count" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_FetchCATFactsTweets" FunctionName="TwitRapDBModel.Store.USP_FetchCATFactsTweets">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TwitRapDBModel.USP_FetchCATFactsTweets_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="TwitID" ColumnName="TwitID" />
+                <ScalarProperty Name="text" ColumnName="text" />
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="screenname" ColumnName="screenname" />
+                <ScalarProperty Name="location" ColumnName="location" />
+                <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
+                <ScalarProperty Name="ProfileUrl" ColumnName="ProfileUrl" />
+                <ScalarProperty Name="RT_Count" ColumnName="RT_Count" />
+                <ScalarProperty Name="Fav_Count" ColumnName="Fav_Count" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_FetchCATJokesTweets" FunctionName="TwitRapDBModel.Store.USP_FetchCATJokesTweets">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TwitRapDBModel.USP_FetchCATJokesTweets_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="TwitID" ColumnName="TwitID" />
+                <ScalarProperty Name="text" ColumnName="text" />
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="screenname" ColumnName="screenname" />
+                <ScalarProperty Name="location" ColumnName="location" />
+                <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
+                <ScalarProperty Name="ProfileUrl" ColumnName="ProfileUrl" />
+                <ScalarProperty Name="RT_Count" ColumnName="RT_Count" />
+                <ScalarProperty Name="Fav_Count" ColumnName="Fav_Count" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_FetchCATNewsTweets" FunctionName="TwitRapDBModel.Store.USP_FetchCATNewsTweets">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TwitRapDBModel.USP_FetchCATNewsTweets_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="TwitID" ColumnName="TwitID" />
+                <ScalarProperty Name="text" ColumnName="text" />
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="screenname" ColumnName="screenname" />
+                <ScalarProperty Name="location" ColumnName="location" />
+                <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
+                <ScalarProperty Name="ProfileUrl" ColumnName="ProfileUrl" />
+                <ScalarProperty Name="RT_Count" ColumnName="RT_Count" />
+                <ScalarProperty Name="Fav_Count" ColumnName="Fav_Count" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_FetchCATSportsTweets" FunctionName="TwitRapDBModel.Store.USP_FetchCATSportsTweets">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TwitRapDBModel.USP_FetchCATSportsTweets_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="TwitID" ColumnName="TwitID" />
+                <ScalarProperty Name="text" ColumnName="text" />
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="screenname" ColumnName="screenname" />
+                <ScalarProperty Name="location" ColumnName="location" />
+                <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
+                <ScalarProperty Name="ProfileUrl" ColumnName="ProfileUrl" />
+                <ScalarProperty Name="RT_Count" ColumnName="RT_Count" />
+                <ScalarProperty Name="Fav_Count" ColumnName="Fav_Count" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_FetchCATTravelTweets" FunctionName="TwitRapDBModel.Store.USP_FetchCATTravelTweets">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TwitRapDBModel.USP_FetchCATTravelTweets_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="TwitID" ColumnName="TwitID" />
+                <ScalarProperty Name="text" ColumnName="text" />
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="screenname" ColumnName="screenname" />
+                <ScalarProperty Name="location" ColumnName="location" />
+                <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
+                <ScalarProperty Name="ProfileUrl" ColumnName="ProfileUrl" />
+                <ScalarProperty Name="RT_Count" ColumnName="RT_Count" />
+                <ScalarProperty Name="Fav_Count" ColumnName="Fav_Count" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="tblCatTeches">
+            <EntityTypeMapping TypeName="TwitRapDBModel.tblCatTech">
+              <MappingFragment StoreEntitySet="tblCatTech">
+                <ScalarProperty Name="expanded_url" ColumnName="expanded_url" />
+                <ScalarProperty Name="display_url" ColumnName="display_url" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="MediaType" ColumnName="MediaType" />
+                <ScalarProperty Name="MediaUrl" ColumnName="MediaUrl" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="Fav_Count" ColumnName="Fav_Count" />
+                <ScalarProperty Name="RT_Count" ColumnName="RT_Count" />
+                <ScalarProperty Name="ProfileUrl" ColumnName="ProfileUrl" />
+                <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
+                <ScalarProperty Name="location" ColumnName="location" />
+                <ScalarProperty Name="screenname" ColumnName="screenname" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="text" ColumnName="text" />
+                <ScalarProperty Name="TwitID" ColumnName="TwitID" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblCatSciences">
+            <EntityTypeMapping TypeName="TwitRapDBModel.tblCatScience">
+              <MappingFragment StoreEntitySet="tblCatScience">
+                <ScalarProperty Name="expanded_url" ColumnName="expanded_url" />
+                <ScalarProperty Name="display_url" ColumnName="display_url" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="MediaType" ColumnName="MediaType" />
+                <ScalarProperty Name="MediaUrl" ColumnName="MediaUrl" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="Fav_Count" ColumnName="Fav_Count" />
+                <ScalarProperty Name="RT_Count" ColumnName="RT_Count" />
+                <ScalarProperty Name="ProfileUrl" ColumnName="ProfileUrl" />
+                <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
+                <ScalarProperty Name="location" ColumnName="location" />
+                <ScalarProperty Name="screenname" ColumnName="screenname" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="text" ColumnName="text" />
+                <ScalarProperty Name="TwitID" ColumnName="TwitID" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblCatLove1">
+            <EntityTypeMapping TypeName="TwitRapDBModel.tblCatLove1">
+              <MappingFragment StoreEntitySet="tblCatLove1">
+                <ScalarProperty Name="MediaType" ColumnName="MediaType" />
+                <ScalarProperty Name="MediaUrl" ColumnName="MediaUrl" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="Fav_Count" ColumnName="Fav_Count" />
+                <ScalarProperty Name="RT_Count" ColumnName="RT_Count" />
+                <ScalarProperty Name="ProfileUrl" ColumnName="ProfileUrl" />
+                <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
+                <ScalarProperty Name="location" ColumnName="location" />
+                <ScalarProperty Name="screenname" ColumnName="screenname" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="text" ColumnName="text" />
+                <ScalarProperty Name="TwitID" ColumnName="TwitID" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="USP_FetchCATBusinessTweets" FunctionName="TwitRapDBModel.Store.USP_FetchCATBusinessTweets">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TwitRapDBModel.USP_FetchCATBusinessTweets_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="TwitID" ColumnName="TwitID" />
+                <ScalarProperty Name="text" ColumnName="text" />
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="screenname" ColumnName="screenname" />
+                <ScalarProperty Name="location" ColumnName="location" />
+                <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
+                <ScalarProperty Name="ProfileUrl" ColumnName="ProfileUrl" />
+                <ScalarProperty Name="RT_Count" ColumnName="RT_Count" />
+                <ScalarProperty Name="Fav_Count" ColumnName="Fav_Count" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="MediaUrl" ColumnName="MediaUrl" />
+                <ScalarProperty Name="MediaType" ColumnName="MediaType" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_FetchCATScienceTweets" FunctionName="TwitRapDBModel.Store.USP_FetchCATScienceTweets">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TwitRapDBModel.USP_FetchCATScienceTweets_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="TwitID" ColumnName="TwitID" />
+                <ScalarProperty Name="text" ColumnName="text" />
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="screenname" ColumnName="screenname" />
+                <ScalarProperty Name="location" ColumnName="location" />
+                <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
+                <ScalarProperty Name="ProfileUrl" ColumnName="ProfileUrl" />
+                <ScalarProperty Name="RT_Count" ColumnName="RT_Count" />
+                <ScalarProperty Name="Fav_Count" ColumnName="Fav_Count" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="MediaUrl" ColumnName="MediaUrl" />
+                <ScalarProperty Name="MediaType" ColumnName="MediaType" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="USP_FetchCATTechTweets" FunctionName="TwitRapDBModel.Store.USP_FetchCATTechTweets">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TwitRapDBModel.USP_FetchCATTechTweets_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="TwitID" ColumnName="TwitID" />
+                <ScalarProperty Name="text" ColumnName="text" />
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="screenname" ColumnName="screenname" />
+                <ScalarProperty Name="location" ColumnName="location" />
+                <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
+                <ScalarProperty Name="ProfileUrl" ColumnName="ProfileUrl" />
+                <ScalarProperty Name="RT_Count" ColumnName="RT_Count" />
+                <ScalarProperty Name="Fav_Count" ColumnName="Fav_Count" />
+                <ScalarProperty Name="created_at" ColumnName="created_at" />
+                <ScalarProperty Name="MediaUrl" ColumnName="MediaUrl" />
+                <ScalarProperty Name="MediaType" ColumnName="MediaType" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

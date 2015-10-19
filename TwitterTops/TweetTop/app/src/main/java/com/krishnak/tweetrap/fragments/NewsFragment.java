@@ -60,7 +60,7 @@ public class NewsFragment extends Fragment {
         AdView mAdView = (AdView) rootView.findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         //adRequest.isTestDevice(this);
-        //mAdView.loadAd(adRequest);
+        mAdView.loadAd(adRequest);
         pullToRefreshView = (PullToRefreshListView) rootView.findViewById(R.id.pull_to_refresh_listview_news);
         pullToRefreshView.setMode(PullToRefreshBase.Mode.BOTH);
         pullToRefreshView.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener2<ListView>() {
@@ -113,6 +113,7 @@ public class NewsFragment extends Fragment {
                     syncTweets(jsonFromNet, jsonData);
                     madapter.notifyDataSetChanged();
                 }
+                isRefreshinProgress = false;
                 pullToRefreshView.onRefreshComplete();
             }
 
@@ -183,7 +184,7 @@ public class NewsFragment extends Fragment {
         Gson gson = new Gson();
         String json = gson.toJson(jsonData);
         com.droid108.tweetrap.Helpers.SPF.SetSharedPreference(rootView.getContext(), R.string.spf_news_tweets, json);
-        isRefreshinProgress = false;
+
     }
 
     private ArrayList<JSONObject> convertJsonToAL(JSONArray jsonObject) {

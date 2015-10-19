@@ -122,6 +122,7 @@ public class AutoFragment extends Fragment {
                     syncTweets(jsonFromNet, jsonData);
                     madapter.notifyDataSetChanged();
                 }
+                isRefreshinProgress = false;
                 pullToRefreshView.onRefreshComplete();
             }
 
@@ -192,7 +193,7 @@ public class AutoFragment extends Fragment {
         Gson gson = new Gson();
         String json = gson.toJson(jsonData);
         SPF.SetSharedPreference(rootView.getContext(), R.string.spf_auto_tweets, json);
-        isRefreshinProgress = false;
+
     }
 
     private ArrayList<JSONObject> convertJsonToAL(JSONArray jsonObject) {

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">TweetRap</string>
+    <string name="action_settings">Settings</string>
+    <string name="Dialog_share_title">Tweet Options</string>
+    <string name="Dialog_share_body">More options coming soon...</string>
+    <string name="options_ok">Ok</string>
+    <string name="options_cancel">Cancel</string>
+    <string name="options_continue">Continue</string>
+    <string name="options_appplication">Application</string>
+    <string name="spf_love_tweets" translatable="false">com.droid108.tweetrap.spf_love_tweets</string>
+    <string name="spf_news_tweets" translatable="false">com.droid108.tweetrap.spf_news_tweets</string>
+    <string name="spf_jokes_tweets" translatable="false">com.droid108.tweetrap.spf_jokes_tweets</string>
+    <string name="spf_busines_tweets" translatable="false">com.droid108.tweetrap.spf_busines_tweets</string>
+    <string name="spf_facts_tweets" translatable="false">com.droid108.tweetrap.spf_facts_tweets</string>
+    <string name="spf_sports_tweets" translatable="false">com.droid108.tweetrap.spf_sports_tweets</string>
+    <string name="spf_tecchnology_tweets" translatable="false">com.droid108.tweetrap.spf_tecchnology_tweets</string>
+    <string name="spf_science_tweets" translatable="false">com.droid108.tweetrap.spf_science_tweets</string>
+    <string name="spf_auto_tweets" translatable="false">com.droid108.tweetrap.spf_auto_tweets</string>
+    <string name="empty_tweet_view">Pull down to get tweets..</string>
+    <string name="spf_selected_fragment" translatable="false">com.droid108.tweetrap.spf_selected_fragment</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_full_screen">FullScreenActivity</string>
+    <string name="hello_world">Hello world!</string>
+
+</resources>

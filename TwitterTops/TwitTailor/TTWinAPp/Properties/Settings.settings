@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="TTWinAPp.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="MAX_LOVE_ID" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">33922</Value>
+    </Setting>
+    <Setting Name="MAX_JOKES_ID" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">20200</Value>
+    </Setting>
+    <Setting Name="MAX_FACTS_ID" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">36839</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

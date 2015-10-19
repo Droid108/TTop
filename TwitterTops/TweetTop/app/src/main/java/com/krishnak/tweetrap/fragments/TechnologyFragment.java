@@ -123,6 +123,7 @@ public class TechnologyFragment extends Fragment {
                     madapter.notifyDataSetChanged();
                 }
                 pullToRefreshView.onRefreshComplete();
+                isRefreshinProgress = false;
             }
 
             @Override
@@ -192,7 +193,6 @@ public class TechnologyFragment extends Fragment {
         Gson gson = new Gson();
         String json = gson.toJson(jsonData);
         SPF.SetSharedPreference(rootView.getContext(), R.string.spf_tecchnology_tweets, json);
-        isRefreshinProgress = false;
     }
 
     private ArrayList<JSONObject> convertJsonToAL(JSONArray jsonObject) {
